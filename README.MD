@@ -2,7 +2,7 @@
 
 This repo outlines a proposal for an AVS rust sdk. This sdk could be leveraged for building arbitrary AVS's. This may include completely custom AVS or AVS's that use pre-existing frameworks like Substrate.
 
-## Proposal Overview 
+## Proposal Overview
 
 The initial proposal is to provide a rust analogue for the [eigensdk-go, maintained by EigenLabs](https://github.com/Layr-Labs/eigensdk-go). The proposed rust sdk could be built under Eigen Labs or another entity.
 

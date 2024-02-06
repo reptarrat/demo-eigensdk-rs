@@ -1,5 +1,18 @@
 [workspace]
-members = ["crates/*"]
+members = [
+	"crates/chainio",
+	"crates/contracts",
+	"crates/crypto/bls",
+	"crates/crypto/bn254",
+	"crates/crypto/ecdsa",
+	"crates/node-api",
+	"crates/node-metrics",
+	"crates/services/avs-registry",
+	"crates/services/bls-aggregator",
+	"crates/services/operator-pubkeys",
+	"crates/signer",
+	"crates/tracing"
+]
 resolver = "2"
 
 [workspace.package]
@@ -18,6 +31,8 @@ rust.rust_2018_idioms = "deny"
 [workspace.dependencies]
 # crypto
 ecdsa = { version = "0.16", default-features = false }
+bn254 = { version = "0.0.1", default-features = false }
+bls-signatures = { version = "0.15.0" }
 
 # eth
 alloy-primitives = { version = "0.6", default-features = false }
