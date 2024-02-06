@@ -1,0 +1,13 @@
+[package]
+name = "avs-node-metrics"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# TBD: we may use prometheus rust crates directly instead of these abstractions over them
+metrics.workspace = true
+metrics-exporter-prometheus.workspace = true
