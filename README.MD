@@ -6,12 +6,14 @@ This repo outlines a proposal for an AVS rust sdk. This sdk can be leveraged to 
 
 The initial proposal is to provide a rust analogue for the [eigensdk-go, maintained by EigenLabs](https://github.com/Layr-Labs/eigensdk-go). The proposed rust sdk can be built under EigenLabs or another entity.
 
-### Modules
+### Crates
 
 Specifically, we propose building the following crates to reach feature parity with the eigensdk-go:
 
-
-* `chainio` - a series of clients to interact directly with the EigenLayer core and middleware smart contracts.
+* chainio - a series of clients to interact directly with the EigenLayer core and middleware smart contracts.
+  * `avs-contracts`
+  * `el-contracts`
+  * `eth-client`
 * `contracts` - bindings for EigenLayer core and middleware smart contracts.
 * crypto - convenience wrappers with secret persistence formats for cryptographic primitives.
   * `bls`
@@ -19,9 +21,8 @@ Specifically, we propose building the following crates to reach feature parity w
   * `ecdsa`
 * services
   * `operator-pubkeys` - index [NewPubkeyRegistration events](https://github.com/Layr-Labs/eigenlayer-middleware/blob/9aa6eb543fe38db6e41516f89f15b654ad4d6bf4/src/interfaces/IBLSApkRegistry.sol#L38) and provide an endpoint to query for the G1 and G2 key by operator address.
-  * `avs-registry` - index AVS registry and expose of series endpoints to query for operator metadata and AVS quorum info.
+  * `avs-registry` - index AVS registry and expose a series endpoints to query operator metadata and AVS quorum info.
   * `bls-aggregator` - provide endpoints to initialize AVS tasks, gather task signatures, and provide BLS aggregations for tasks that require a threshold of signatures.
-* `signer` - ECDSA signer for smart contract interactions. This will support signing with keys passed by value and password encrypted keys stored as JSON.
 * `tracing` - a default tokio-rs tracing subscriber for plugging into the `log` facade used in the rest of the crates.
 * `node-api` - HTTP REST API for common AVS endpoints ([specs](https://eigen.nethermind.io/docs/category/avs-node-api))
 * `node-metrics` - Prometheus metrics common for AVS nodes. We propose implementing a generic metric interface and providing a compatible ready to use Prometheus registry that developers can opt into. ([specs](https://eigen.nethermind.io/docs/category/metrics))
@@ -63,13 +64,72 @@ tracing = { version = "0.1.0", default-features = false }
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"], default-features = false }
 ```
 
+### Integration
+
+Create and register an Operator with an AVS.
+```rs
+use eigensdk::{Operator, errors:EigenSdkError};
+use tracing::{info, error};
+
+fn main() {
+  let args = get_cli_args();
+
+  if let Err(e) = setup_operator(args.operator_config) {
+    error!("Failed to setup operator: {}", e);
+    std::process::exit(1); // Exit the program
+  }
+
+  // AVSs can have different designs for their task managers
+  let task_stream = match operator.stream_tasks() {
+    Ok(stream) => stream,
+    Err(e) => {
+      error!("Failed to start streaming tasks: {}", e);
+      std::process::exit(1);
+    },
+  };
+  info!("Started streaming tasks.");
+
+  // Assuming this is a blocking iterator over tasks
+  for task in task_stream {
+    // Execute core AVS logic here
+  }
+}
+
+fn setup_operator(config: OperatorConfig) -> Result<Operator, EigenSdkError> {
+  // Initialize new operator from config
+  let operator = Operator::new(&config)?;
+
+  // Calls the delegation manager's isOperator function
+  if operator.is_registered_with_el()? {
+    true => info!("Already registered with EigenLayer."),
+  } else {
+    // Registers bls public key and operator with EigenLayer
+    let tx_receipt = operator.register_with_el()?;
+    info!("Registered with EigenLayer: {tx_receipt}");
+  }
+
+  if operator.is_registered_with_avs()? {
+    info!("Already registered with AVS.");
+  } else {
+    // Registers operator with avs registry coordinator
+    let tx_reciept = operator.register_with_avs()?;
+    info!("Registered with AVS: {tx_receipt}");
+  }
+
+  // Get operator status
+  let status = operator.status()?;
+  info!("Operator status: {status}");
+
+  Ok(operator)
+}
+```
+
 
 ## Deliverables
 
 ### Phase 1: Launchpad
 
 * Basic Github CI: test, fmt, clippy, release build
-* Signer
 * Logging facade and tracing
 * Contract bindings
 * Crypto
@@ -81,8 +141,8 @@ tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"]
 ### Phase 2: Engines running
 
 * Chain I/O
-  * ETH client convenience wrapper
-  * Transaction manager
+  * ETH client wrapper with transaction manager and signer
+  * Contract clients 
 * Unit tests
 * Integration tests with Anvil chain
 
@@ -98,6 +158,8 @@ Each of these services will be a running binary as well as an associated set of 
 These services will be implemented such that they are generic over a database. As a first pass, the databases will be instantiated as in-memory stores, usable in local dev and testing.
 
 ### Phase 4: Follow-up
+
+Every AVS node implementation must comply to the Eigenlayer AVS Node Specification.
 
 * AVS node API
 * AVS node metrics
@@ -120,7 +182,7 @@ Different AVSs may have different requirements for task queues or pools.
 
 ### Hot and cold wallet support
 
-### Operator rotation module
+### Operator rotation
 
 
 
