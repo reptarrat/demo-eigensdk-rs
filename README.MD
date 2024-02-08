@@ -11,8 +11,8 @@ The initial proposal is to provide a rust analogue for the [eigensdk-go, maintai
 Specifically, we propose building the following crates to reach feature parity with the eigensdk-go:
 
 * chainio - a series of clients to interact directly with the EigenLayer core and middleware smart contracts.
-  * `avs-contracts`
-  * `el-contracts`
+  * `avs-contracts`: [EigenLayer middleware contracts](https://github.com/Layr-Labs/eigenlayer-middleware)
+  * `el-contracts`: [EigenLayer core contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
   * `eth-client`
 * `contracts` - bindings for EigenLayer core and middleware smart contracts.
 * crypto - convenience wrappers with secret persistence formats for cryptographic primitives.
@@ -64,7 +64,7 @@ tracing = { version = "0.1.0", default-features = false }
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"], default-features = false }
 ```
 
-### Integration
+### Usage
 
 Create and register an Operator with an AVS.
 ```rs
