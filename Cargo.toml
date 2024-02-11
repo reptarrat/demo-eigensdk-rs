@@ -38,6 +38,8 @@ bls-signatures = { version = "0.15.0" }
 alloy-primitives = { version = "0.6", default-features = false }
 alloy-json-abi = { version = "0.6", default-features = false }
 alloy-rpc-client = { git = "https://github.com/alloy-rs/alloy" }
+alloy-signer = { git = "https://github.com/alloy-rs/alloy", features = ["keystore"] }
+alloy-consensus = { git = "https://github.com/alloy-rs/alloy" }
 
 # serde
 serde = { version = "1.0", features = ["derive"], default-features = false }
@@ -50,3 +52,4 @@ metrics-exporter-prometheus = { version = "0.13", default-features = false }
 log = { version = "0.4", default-features = false }
 tracing = { version = "0.1.0", default-features = false }
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"], default-features = false }
+tokio = "1.33"

@@ -8,6 +8,9 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
-ecdsa.workspace = true
-serde.workspace = true
-serde_json.workspace = true
+alloy-signer.workspace = true
+
+[dev-dependencies]
+alloy-primitives = { workspace = true, features = ["k256"] }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+alloy-consensus.workspace = true
