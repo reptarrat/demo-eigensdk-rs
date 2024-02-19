@@ -1,0 +1,597 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct BN254.G1Point",
+          "name": "pubkeyG1",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256[2]",
+              "name": "X",
+              "type": "uint256[2]"
+            },
+            {
+              "internalType": "uint256[2]",
+              "name": "Y",
+              "type": "uint256[2]"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct BN254.G2Point",
+          "name": "pubkeyG2",
+          "type": "tuple"
+        }
+      ],
+      "name": "NewPubkeyRegistration",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "OperatorAddedToQuorums",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "OperatorRemovedFromQuorums",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct BN254.G1Point\",\"name\":\"pubkeyG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"indexed\":false,\"internalType\":\"struct BN254.G2Point\",\"name\":\"pubkeyG2\",\"type\":\"tuple\"}],\"name\":\"NewPubkeyRegistration\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"OperatorAddedToQuorums\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"OperatorRemovedFromQuorums\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"NewPubkeyRegistration(address,(uint256,uint256),(uint256[2],uint256[2]))\":{\"notice\":\"Emitted when `operator` registers with the public keys `pubkeyG1` and `pubkeyG2`.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/events/IBLSApkRegistryEvents.sol\":\"IBLSApkRegistryEvents\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/libraries/BN254.sol\":{\"keccak256\":\"0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49\",\"dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91\"]},\"test/events/IBLSApkRegistryEvents.sol\":{\"keccak256\":\"0x5cb39dbaf5d51ae1b98d4240420162be074c06ea43b8381533900e72bc73b47b\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://e1f3566f608c913962fd9f73a2b3438bec26efcf0c58f4870f23682fb905ba64\",\"dweb:/ipfs/QmfH5VdsWa66z7sMihCwFYe26fr22A7bdAsFPVgSLmxFGc\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "struct BN254.G1Point",
+              "name": "pubkeyG1",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false
+            },
+            {
+              "internalType": "struct BN254.G2Point",
+              "name": "pubkeyG2",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "NewPubkeyRegistration",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorAddedToQuorums",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorRemovedFromQuorums",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "test/events/IBLSApkRegistryEvents.sol": "IBLSApkRegistryEvents"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/libraries/BN254.sol": {
+        "keccak256": "0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417",
+        "urls": [
+          "bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49",
+          "dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91"
+        ],
+        "license": "MIT"
+      },
+      "test/events/IBLSApkRegistryEvents.sol": {
+        "keccak256": "0x5cb39dbaf5d51ae1b98d4240420162be074c06ea43b8381533900e72bc73b47b",
+        "urls": [
+          "bzz-raw://e1f3566f608c913962fd9f73a2b3438bec26efcf0c58f4870f23682fb905ba64",
+          "dweb:/ipfs/QmfH5VdsWa66z7sMihCwFYe26fr22A7bdAsFPVgSLmxFGc"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "test/events/IBLSApkRegistryEvents.sol",
+    "id": 72484,
+    "exportedSymbols": {
+      "BN254": [
+        72029
+      ],
+      "IBLSApkRegistryEvents": [
+        72483
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:697:113",
+    "nodes": [
+      {
+        "id": 72457,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:113",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 72459,
+        "nodeType": "ImportDirective",
+        "src": "63:52:113",
+        "nodes": [],
+        "absolutePath": "src/libraries/BN254.sol",
+        "file": "../../src/libraries/BN254.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 72484,
+        "sourceUnit": 72030,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 72458,
+              "name": "BN254",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 72029,
+              "src": "71:5:113",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_BN254_$72029_$",
+                "typeString": "type(library BN254)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 72483,
+        "nodeType": "ContractDefinition",
+        "src": "117:616:113",
+        "nodes": [
+          {
+            "id": 72470,
+            "nodeType": "EventDefinition",
+            "src": "267:102:113",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72460,
+              "nodeType": "StructuredDocumentation",
+              "src": "169:93:113",
+              "text": "@notice Emitted when `operator` registers with the public keys `pubkeyG1` and `pubkeyG2`."
+            },
+            "name": "NewPubkeyRegistration",
+            "nameLocation": "273:21:113",
+            "parameters": {
+              "id": 72469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72462,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "311:8:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72470,
+                  "src": "295:24:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 72461,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "295:7:113",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72465,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "pubkeyG1",
+                  "nameLocation": "335:8:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72470,
+                  "src": "321:22:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_memory_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  },
+                  "typeName": {
+                    "id": 72464,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 72463,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "321:13:113"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "321:13:113",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72468,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "pubkeyG2",
+                  "nameLocation": "359:8:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72470,
+                  "src": "345:22:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$71170_memory_ptr",
+                    "typeString": "struct BN254.G2Point"
+                  },
+                  "typeName": {
+                    "id": 72467,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 72466,
+                      "name": "BN254.G2Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71170,
+                      "src": "345:13:113"
+                    },
+                    "referencedDeclaration": 71170,
+                    "src": "345:13:113",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                      "typeString": "struct BN254.G2Point"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "294:74:113"
+            }
+          },
+          {
+            "id": 72476,
+            "nodeType": "EventDefinition",
+            "src": "460:90:113",
+            "nodes": [],
+            "anonymous": false,
+            "name": "OperatorAddedToQuorums",
+            "nameLocation": "466:22:113",
+            "parameters": {
+              "id": 72475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72472,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "506:8:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72476,
+                  "src": "498:16:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 72471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "498:7:113",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72474,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "530:13:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72476,
+                  "src": "524:19:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 72473,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:5:113",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "488:61:113"
+            }
+          },
+          {
+            "id": 72482,
+            "nodeType": "EventDefinition",
+            "src": "636:95:113",
+            "nodes": [],
+            "anonymous": false,
+            "name": "OperatorRemovedFromQuorums",
+            "nameLocation": "642:26:113",
+            "parameters": {
+              "id": 72481,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72478,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "686:8:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72482,
+                  "src": "678:16:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 72477,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "678:7:113",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72480,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "711:13:113",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72482,
+                  "src": "705:19:113",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 72479,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:5:113",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "668:62:113"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBLSApkRegistryEvents",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          72483
+        ],
+        "name": "IBLSApkRegistryEvents",
+        "nameLocation": "127:21:113",
+        "scope": 72484,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 113
+}

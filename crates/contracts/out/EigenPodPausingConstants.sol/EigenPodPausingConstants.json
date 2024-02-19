@@ -1,0 +1,420 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Constants shared between 'EigenPod' and 'EigenPodManager' contracts.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-service\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/contracts/pods/EigenPodPausingConstants.sol\":\"EigenPodPausingConstants\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/pods/EigenPodPausingConstants.sol\":{\"keccak256\":\"0x6f0520e59145fb727d3ab5d02e4bda102d880092611d78cb992ad579ffb47a5e\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5933839384ac86f70a1c78ecc670ef59ba23ea1bc0181e00037b0867cf94c649\",\"dweb:/ipfs/Qmf7zT2VmHL4hLWgCojsVoejhR3r2wN5cEb8Fssv934wVV\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/contracts/pods/EigenPodPausingConstants.sol": "EigenPodPausingConstants"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/pods/EigenPodPausingConstants.sol": {
+        "keccak256": "0x6f0520e59145fb727d3ab5d02e4bda102d880092611d78cb992ad579ffb47a5e",
+        "urls": [
+          "bzz-raw://5933839384ac86f70a1c78ecc670ef59ba23ea1bc0181e00037b0867cf94c649",
+          "dweb:/ipfs/Qmf7zT2VmHL4hLWgCojsVoejhR3r2wN5cEb8Fssv934wVV"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/contracts/pods/EigenPodPausingConstants.sol",
+    "id": 14201,
+    "exportedSymbols": {
+      "EigenPodPausingConstants": [
+        14200
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:1482:33",
+    "nodes": [
+      {
+        "id": 14174,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:33",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 14200,
+        "nodeType": "ContractDefinition",
+        "src": "260:1258:33",
+        "nodes": [
+          {
+            "id": 14179,
+            "nodeType": "VariableDeclaration",
+            "src": "426:48:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14176,
+              "nodeType": "StructuredDocumentation",
+              "src": "309:112:33",
+              "text": "@notice Index for flag that pauses creation of new EigenPods when set. See EigenPodManager code for details."
+            },
+            "mutability": "constant",
+            "name": "PAUSED_NEW_EIGENPODS",
+            "nameLocation": "450:20:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14177,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "426:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 14178,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "473:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14183,
+            "nodeType": "VariableDeclaration",
+            "src": "682:56:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14180,
+              "nodeType": "StructuredDocumentation",
+              "src": "480:197:33",
+              "text": " @notice Index for flag that pauses all withdrawal-of-restaked ETH related functionality `\n function *of the EigenPodManager* when set. See EigenPodManager code for details."
+            },
+            "mutability": "constant",
+            "name": "PAUSED_WITHDRAW_RESTAKED_ETH",
+            "nameLocation": "706:28:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14181,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "682:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "31",
+              "id": 14182,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "737:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14187,
+            "nodeType": "VariableDeclaration",
+            "src": "878:63:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14184,
+              "nodeType": "StructuredDocumentation",
+              "src": "745:128:33",
+              "text": "@notice Index for flag that pauses the deposit related functions *of the EigenPods* when set. see EigenPod code for details."
+            },
+            "mutability": "constant",
+            "name": "PAUSED_EIGENPODS_VERIFY_CREDENTIALS",
+            "nameLocation": "902:35:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14185,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "878:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "32",
+              "id": 14186,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "940:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14191,
+            "nodeType": "VariableDeclaration",
+            "src": "1085:66:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14188,
+              "nodeType": "StructuredDocumentation",
+              "src": "947:133:33",
+              "text": "@notice Index for flag that pauses the `verifyBalanceUpdate` function *of the EigenPods* when set. see EigenPod code for details."
+            },
+            "mutability": "constant",
+            "name": "PAUSED_EIGENPODS_VERIFY_BALANCE_UPDATE",
+            "nameLocation": "1109:38:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14189,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "1085:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 14190,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1150:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14195,
+            "nodeType": "VariableDeclaration",
+            "src": "1307:62:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14192,
+              "nodeType": "StructuredDocumentation",
+              "src": "1157:145:33",
+              "text": "@notice Index for flag that pauses the `verifyBeaconChainFullWithdrawal` function *of the EigenPods* when set. see EigenPod code for details."
+            },
+            "mutability": "constant",
+            "name": "PAUSED_EIGENPODS_VERIFY_WITHDRAWAL",
+            "nameLocation": "1331:34:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14193,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "1307:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "34",
+              "id": 14194,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1368:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_4_by_1",
+                "typeString": "int_const 4"
+              },
+              "value": "4"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14199,
+            "nodeType": "VariableDeclaration",
+            "src": "1459:56:33",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14196,
+              "nodeType": "StructuredDocumentation",
+              "src": "1375:79:33",
+              "text": "@notice Pausability for EigenPod's \"accidental transfer\" withdrawal methods"
+            },
+            "mutability": "constant",
+            "name": "PAUSED_NON_PROOF_WITHDRAWALS",
+            "nameLocation": "1483:28:33",
+            "scope": 14200,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 14197,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "1459:5:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "35",
+              "id": 14198,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1514:1:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5_by_1",
+                "typeString": "int_const 5"
+              },
+              "value": "5"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "EigenPodPausingConstants",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 14175,
+          "nodeType": "StructuredDocumentation",
+          "src": "63:196:33",
+          "text": " @title Constants shared between 'EigenPod' and 'EigenPodManager' contracts.\n @author Layr Labs, Inc.\n @notice Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-service"
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          14200
+        ],
+        "name": "EigenPodPausingConstants",
+        "nameLocation": "278:24:33",
+        "scope": 14201,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 33
+}

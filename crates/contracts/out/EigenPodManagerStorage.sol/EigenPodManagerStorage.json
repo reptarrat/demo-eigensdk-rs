@@ -1,0 +1,3046 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BeaconChainETHDeposited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shares",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint96",
+          "name": "nonce",
+          "type": "uint96"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "delegatedAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "withdrawer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "withdrawalRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "BeaconChainETHWithdrawalCompleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOracleAddress",
+          "type": "address"
+        }
+      ],
+      "name": "BeaconOracleUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "newValue",
+          "type": "uint64"
+        }
+      ],
+      "name": "DenebForkTimestampUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "previousValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "MaxPodsUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract IPauserRegistry",
+          "name": "pauserRegistry",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IPauserRegistry",
+          "name": "newPauserRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "PauserRegistrySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "eigenPod",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        }
+      ],
+      "name": "PodDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "sharesDelta",
+          "type": "int256"
+        }
+      ],
+      "name": "PodSharesUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shares",
+          "type": "uint256"
+        }
+      ],
+      "name": "addShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "beaconChainETHStrategy",
+      "outputs": [
+        {
+          "internalType": "contract IStrategy",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "beaconChainOracle",
+      "outputs": [
+        {
+          "internalType": "contract IBeaconChainOracle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "createPod",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "delegationManager",
+      "outputs": [
+        {
+          "internalType": "contract IDelegationManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "denebForkTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "eigenPodBeacon",
+      "outputs": [
+        {
+          "internalType": "contract IBeacon",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ethPOS",
+      "outputs": [
+        {
+          "internalType": "contract IETHPOSDeposit",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "timestamp",
+          "type": "uint64"
+        }
+      ],
+      "name": "getBlockRootAtTimestamp",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        }
+      ],
+      "name": "getPod",
+      "outputs": [
+        {
+          "internalType": "contract IEigenPod",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        }
+      ],
+      "name": "hasPod",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxPods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "numPods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "ownerToPod",
+      "outputs": [
+        {
+          "internalType": "contract IEigenPod",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauseAll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "index",
+          "type": "uint8"
+        }
+      ],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauserRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IPauserRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "podOwnerShares",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "sharesDelta",
+          "type": "int256"
+        }
+      ],
+      "name": "recordBeaconChainETHBalanceUpdate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shares",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeShares",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "newDenebForkTimestamp",
+          "type": "uint64"
+        }
+      ],
+      "name": "setDenebForkTimestamp",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPauserRegistry",
+          "name": "newPauserRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setPauserRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "slasher",
+      "outputs": [
+        {
+          "internalType": "contract ISlasher",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "pubkey",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "depositDataRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "strategyManager",
+      "outputs": [
+        {
+          "internalType": "contract IStrategyManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IBeaconChainOracle",
+          "name": "newBeaconChainOracle",
+          "type": "address"
+        }
+      ],
+      "name": "updateBeaconChainOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shares",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawSharesAsTokens",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addShares(address,uint256)": "0e81073c",
+    "beaconChainETHStrategy()": "9104c319",
+    "beaconChainOracle()": "c052bd61",
+    "createPod()": "84d81062",
+    "delegationManager()": "ea4d3c9b",
+    "denebForkTimestamp()": "44e71c80",
+    "eigenPodBeacon()": "292b7b2b",
+    "ethPOS()": "74cdd798",
+    "getBlockRootAtTimestamp(uint64)": "d1c64cc9",
+    "getPod(address)": "a38406a3",
+    "hasPod(address)": "f6848d24",
+    "maxPods()": "c0ccbf10",
+    "numPods()": "a6a509be",
+    "ownerToPod(address)": "9ba06275",
+    "pause(uint256)": "136439dd",
+    "pauseAll()": "595c6a67",
+    "paused()": "5c975abb",
+    "paused(uint8)": "5ac86ab7",
+    "pauserRegistry()": "886f1195",
+    "podOwnerShares(address)": "60f4062b",
+    "recordBeaconChainETHBalanceUpdate(address,int256)": "c2c51c40",
+    "removeShares(address,uint256)": "beffbb89",
+    "setDenebForkTimestamp(uint64)": "463db038",
+    "setPauserRegistry(address)": "10d67a2f",
+    "slasher()": "b1344271",
+    "stake(bytes,bytes,bytes32)": "9b4e4634",
+    "strategyManager()": "39b70e38",
+    "unpause(uint256)": "fabc1cbc",
+    "updateBeaconChainOracle(address)": "c1de3aef",
+    "withdrawSharesAsTokens(address,address,uint256)": "387b1300"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BeaconChainETHDeposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint96\",\"name\":\"nonce\",\"type\":\"uint96\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"delegatedAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"withdrawer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"withdrawalRoot\",\"type\":\"bytes32\"}],\"name\":\"BeaconChainETHWithdrawalCompleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOracleAddress\",\"type\":\"address\"}],\"name\":\"BeaconOracleUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"newValue\",\"type\":\"uint64\"}],\"name\":\"DenebForkTimestampUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"previousValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newValue\",\"type\":\"uint256\"}],\"name\":\"MaxPodsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"contract IPauserRegistry\",\"name\":\"pauserRegistry\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"contract IPauserRegistry\",\"name\":\"newPauserRegistry\",\"type\":\"address\"}],\"name\":\"PauserRegistrySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"eigenPod\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"}],\"name\":\"PodDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"sharesDelta\",\"type\":\"int256\"}],\"name\":\"PodSharesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"addShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"beaconChainETHStrategy\",\"outputs\":[{\"internalType\":\"contract IStrategy\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"beaconChainOracle\",\"outputs\":[{\"internalType\":\"contract IBeaconChainOracle\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"createPod\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"delegationManager\",\"outputs\":[{\"internalType\":\"contract IDelegationManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"denebForkTimestamp\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"eigenPodBeacon\",\"outputs\":[{\"internalType\":\"contract IBeacon\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethPOS\",\"outputs\":[{\"internalType\":\"contract IETHPOSDeposit\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"timestamp\",\"type\":\"uint64\"}],\"name\":\"getBlockRootAtTimestamp\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"}],\"name\":\"getPod\",\"outputs\":[{\"internalType\":\"contract IEigenPod\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"}],\"name\":\"hasPod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxPods\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"numPods\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ownerToPod\",\"outputs\":[{\"internalType\":\"contract IEigenPod\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauseAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"index\",\"type\":\"uint8\"}],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauserRegistry\",\"outputs\":[{\"internalType\":\"contract IPauserRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"podOwnerShares\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"sharesDelta\",\"type\":\"int256\"}],\"name\":\"recordBeaconChainETHBalanceUpdate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"removeShares\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"newDenebForkTimestamp\",\"type\":\"uint64\"}],\"name\":\"setDenebForkTimestamp\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IPauserRegistry\",\"name\":\"newPauserRegistry\",\"type\":\"address\"}],\"name\":\"setPauserRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"slasher\",\"outputs\":[{\"internalType\":\"contract ISlasher\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"pubkey\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"depositDataRoot\",\"type\":\"bytes32\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"strategyManager\",\"outputs\":[{\"internalType\":\"contract IStrategyManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IBeaconChainOracle\",\"name\":\"newBeaconChainOracle\",\"type\":\"address\"}],\"name\":\"updateBeaconChainOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"withdrawSharesAsTokens\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addShares(address,uint256)\":{\"details\":\"Returns the number of shares added to `podOwnerShares[podOwner]` above zero, which will be less than the `shares` input in the event that the podOwner has an existing shares deficit (i.e. `podOwnerShares[podOwner]` starts below zero)Reverts if `shares` is not a whole Gwei amount\"},\"createPod()\":{\"details\":\"Function will revert if the `msg.sender` already has an EigenPod.Returns EigenPod address \"},\"pause(uint256)\":{\"details\":\"This function can only pause functionality, and thus cannot 'unflip' any bit in `_paused` from 1 to 0.\",\"params\":{\"newPausedStatus\":\"represents the new value for `_paused` to take, which means it may flip several bits at once.\"}},\"recordBeaconChainETHBalanceUpdate(address,int256)\":{\"details\":\"Callable only by the podOwner's EigenPod contract.Reverts if `sharesDelta` is not a whole Gwei amount\",\"params\":{\"podOwner\":\"is the pod owner whose balance is being updated.\",\"sharesDelta\":\"is the change in podOwner's beaconChainETHStrategy shares\"}},\"removeShares(address,uint256)\":{\"details\":\"This function reverts if it would result in `podOwnerShares[podOwner]` being less than zero, i.e. it is forbidden for this function to result in the `podOwner` incurring a \\\"share deficit\\\". This behavior prevents a Staker from queuing a withdrawal which improperly removes excessive shares from the operator to whom the staker is delegated.Reverts if `shares` is not a whole Gwei amount\"},\"setDenebForkTimestamp(uint64)\":{\"details\":\"this function is designed to be called twice.  Once, it is set to type(uint64).max  prior to the actual deneb fork timestamp being set, and then the second time it is set  to the actual deneb fork timestamp.\"},\"stake(bytes,bytes,bytes32)\":{\"params\":{\"depositDataRoot\":\"The root/hash of the deposit data for the validator's deposit.\",\"pubkey\":\"The 48 bytes public key of the beacon chain validator.\",\"signature\":\"The validator's signature of the deposit data.\"}},\"unpause(uint256)\":{\"details\":\"This function can only unpause functionality, and thus cannot 'flip' any bit in `_paused` from 0 to 1.\",\"params\":{\"newPausedStatus\":\"represents the new value for `_paused` to take, which means it may flip several bits at once.\"}},\"updateBeaconChainOracle(address)\":{\"details\":\"Callable only by the owner of this contract (i.e. governance)\",\"params\":{\"newBeaconChainOracle\":\"is the new oracle contract being pointed to\"}},\"withdrawSharesAsTokens(address,address,uint256)\":{\"details\":\"Prioritizes decreasing the podOwner's share deficit, if they have oneReverts if `shares` is not a whole Gwei amount\"}},\"stateVariables\":{\"__gap\":{\"details\":\"This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain. See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\"},\"beaconProxyBytecode\":{\"details\":\"Maintained as a constant to solve an edge case - changes to OpenZeppelin's BeaconProxy code should not cause addresses of EigenPods that are pre-computed with Create2 to change, even upon upgrading this contract, changing compiler version, etc.\"},\"podOwnerShares\":{\"details\":\"The share amount can become negative. This is necessary to accommodate the fact that a pod owner's virtual beacon chain ETH shares can decrease between the pod owner queuing and completing a withdrawal. When the pod owner's shares would otherwise increase, this \\\"deficit\\\" is decreased first _instead_. Likewise, when a withdrawal is completed, this \\\"deficit\\\" is decreased and the withdrawal amount is decreased; We can think of this as the withdrawal \\\"paying off the deficit\\\".\"}},\"version\":1},\"userdoc\":{\"events\":{\"BeaconChainETHDeposited(address,uint256)\":{\"notice\":\"Emitted to notify a deposit of beacon chain ETH recorded in the strategy manager\"},\"BeaconChainETHWithdrawalCompleted(address,uint256,uint96,address,address,bytes32)\":{\"notice\":\"Emitted when a withdrawal of beacon chain ETH is completed\"},\"BeaconOracleUpdated(address)\":{\"notice\":\"Emitted to notify the update of the beaconChainOracle address\"},\"MaxPodsUpdated(uint256,uint256)\":{\"notice\":\"Emitted when `maxPods` value is updated from `previousValue` to `newValue`\"},\"Paused(address,uint256)\":{\"notice\":\"Emitted when the pause is triggered by `account`, and changed to `newPausedStatus`.\"},\"PauserRegistrySet(address,address)\":{\"notice\":\"Emitted when the `pauserRegistry` is set to `newPauserRegistry`.\"},\"PodDeployed(address,address)\":{\"notice\":\"Emitted to notify the deployment of an EigenPod\"},\"PodSharesUpdated(address,int256)\":{\"notice\":\"Emitted when the balance of an EigenPod is updated\"},\"Unpaused(address,uint256)\":{\"notice\":\"Emitted when the pause is lifted by `account`, and changed to `newPausedStatus`.\"}},\"kind\":\"user\",\"methods\":{\"addShares(address,uint256)\":{\"notice\":\"Increases the `podOwner`'s shares by `shares`, paying off deficit if possible. Used by the DelegationManager to award a pod owner shares on exiting the withdrawal queue\"},\"beaconChainETHStrategy()\":{\"notice\":\"Canonical, virtual beacon chain ETH strategy\"},\"beaconChainOracle()\":{\"notice\":\"Oracle contract that provides updates to the beacon chain's state\"},\"createPod()\":{\"notice\":\"Creates an EigenPod for the sender.\"},\"delegationManager()\":{\"notice\":\"EigenLayer's DelegationManager contract\"},\"denebForkTimestamp()\":{\"notice\":\"the deneb hard fork timestamp used to determine which proof path to use for proving a withdrawal\"},\"eigenPodBeacon()\":{\"notice\":\"Beacon proxy to which the EigenPods point\"},\"ethPOS()\":{\"notice\":\"The ETH2 Deposit Contract\"},\"getBlockRootAtTimestamp(uint64)\":{\"notice\":\"Returns the beacon block root at `timestamp`. Reverts if the Beacon block root at `timestamp` has not yet been finalized.\"},\"getPod(address)\":{\"notice\":\"Returns the address of the `podOwner`'s EigenPod (whether it is deployed yet or not).\"},\"hasPod(address)\":{\"notice\":\"Returns 'true' if the `podOwner` has created an EigenPod, and 'false' otherwise.\"},\"maxPods()\":{\"notice\":\"The maximum number of EigenPods that can be deployed\"},\"numPods()\":{\"notice\":\"The number of EigenPods that have been deployed\"},\"ownerToPod(address)\":{\"notice\":\"Pod owner to deployed EigenPod address\"},\"pause(uint256)\":{\"notice\":\"This function is used to pause an EigenLayer contract's functionality. It is permissioned to the `pauser` address, which is expected to be a low threshold multisig.\"},\"pauseAll()\":{\"notice\":\"Alias for `pause(type(uint256).max)`.\"},\"paused()\":{\"notice\":\"Returns the current paused status as a uint256.\"},\"paused(uint8)\":{\"notice\":\"Returns 'true' if the `indexed`th bit of `_paused` is 1, and 'false' otherwise\"},\"pauserRegistry()\":{\"notice\":\"Address of the `PauserRegistry` contract that this contract defers to for determining access control (for pausing).\"},\"podOwnerShares(address)\":{\"notice\":\"Mapping from Pod owner owner to the number of shares they have in the virtual beacon chain ETH strategy.\"},\"recordBeaconChainETHBalanceUpdate(address,int256)\":{\"notice\":\"Changes the `podOwner`'s shares by `sharesDelta` and performs a call to the DelegationManager to ensure that delegated shares are also tracked correctly\"},\"removeShares(address,uint256)\":{\"notice\":\"Used by the DelegationManager to remove a pod owner's shares while they're in the withdrawal queue. Simply decreases the `podOwner`'s shares by `shares`, down to a minimum of zero.\"},\"setDenebForkTimestamp(uint64)\":{\"notice\":\"setting the deneb hard fork timestamp by the eigenPodManager owner\"},\"setPauserRegistry(address)\":{\"notice\":\"Allows the unpauser to set a new pauser registry\"},\"slasher()\":{\"notice\":\"EigenLayer's Slasher contract\"},\"stake(bytes,bytes,bytes32)\":{\"notice\":\"Stakes for a new beacon chain validator on the sender's EigenPod. Also creates an EigenPod for the sender if they don't have one already.\"},\"strategyManager()\":{\"notice\":\"EigenLayer's StrategyManager contract\"},\"unpause(uint256)\":{\"notice\":\"This function is used to unpause an EigenLayer contract's functionality. It is permissioned to the `unpauser` address, which is expected to be a high threshold multisig or governance contract.\"},\"updateBeaconChainOracle(address)\":{\"notice\":\"Updates the oracle contract that provides the beacon chain state root\"},\"withdrawSharesAsTokens(address,address,uint256)\":{\"notice\":\"Used by the DelegationManager to complete a withdrawal, sending tokens to some destination address\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/contracts/pods/EigenPodManagerStorage.sol\":\"EigenPodManagerStorage\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol\":{\"keccak256\":\"0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983\",\"dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol\":{\"keccak256\":\"0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e\",\"dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol\":{\"keccak256\":\"0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91\",\"dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol\":{\"keccak256\":\"0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc\",\"dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol\":{\"keccak256\":\"0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d\",\"dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":{\"keccak256\":\"0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324\",\"dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol\":{\"keccak256\":\"0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d\",\"dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol\":{\"keccak256\":\"0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c\",\"dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol\":{\"keccak256\":\"0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232\",\"dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol\":{\"keccak256\":\"0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73\",\"dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol\":{\"keccak256\":\"0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234\",\"dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol\":{\"keccak256\":\"0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235\",\"dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol\":{\"keccak256\":\"0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f\",\"dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol\":{\"keccak256\":\"0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8\",\"dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss\"]},\"lib/eigenlayer-contracts/src/contracts/pods/EigenPodManagerStorage.sol\":{\"keccak256\":\"0x295dda6bf8a47824bc90c92fd9b42ea108283364f6b7e23acce7f8037385b2bc\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://6a9ea5be65d1c5101eb092b73c23ad83a9998db4e78e4024bf54b96495a68790\",\"dweb:/ipfs/QmU6VrqJg6jmkThF8Y1etcy5tWAR8aTHq49iB412tUmzvs\"]},\"lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354\",\"dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "BeaconChainETHDeposited",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint96",
+              "name": "nonce",
+              "type": "uint96",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "delegatedAddress",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "withdrawer",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes32",
+              "name": "withdrawalRoot",
+              "type": "bytes32",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "BeaconChainETHWithdrawalCompleted",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOracleAddress",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "BeaconOracleUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "newValue",
+              "type": "uint64",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "DenebForkTimestampUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "previousValue",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "newValue",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "MaxPodsUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Paused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "pauserRegistry",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "newPauserRegistry",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PauserRegistrySet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "eigenPod",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "PodDeployed",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "int256",
+              "name": "sharesDelta",
+              "type": "int256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PodSharesUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Unpaused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addShares",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "beaconChainETHStrategy",
+          "outputs": [
+            {
+              "internalType": "contract IStrategy",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "beaconChainOracle",
+          "outputs": [
+            {
+              "internalType": "contract IBeaconChainOracle",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "createPod",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "delegationManager",
+          "outputs": [
+            {
+              "internalType": "contract IDelegationManager",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "denebForkTimestamp",
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "eigenPodBeacon",
+          "outputs": [
+            {
+              "internalType": "contract IBeacon",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "ethPOS",
+          "outputs": [
+            {
+              "internalType": "contract IETHPOSDeposit",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "timestamp",
+              "type": "uint64"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getBlockRootAtTimestamp",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getPod",
+          "outputs": [
+            {
+              "internalType": "contract IEigenPod",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "hasPod",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "maxPods",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "numPods",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "ownerToPod",
+          "outputs": [
+            {
+              "internalType": "contract IEigenPod",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "pause"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "pauseAll"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "index",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paused",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paused",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "pauserRegistry",
+          "outputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "podOwnerShares",
+          "outputs": [
+            {
+              "internalType": "int256",
+              "name": "",
+              "type": "int256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "int256",
+              "name": "sharesDelta",
+              "type": "int256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "recordBeaconChainETHBalanceUpdate"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeShares"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "newDenebForkTimestamp",
+              "type": "uint64"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setDenebForkTimestamp"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "newPauserRegistry",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setPauserRegistry"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "slasher",
+          "outputs": [
+            {
+              "internalType": "contract ISlasher",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "pubkey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "depositDataRoot",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "stake"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "strategyManager",
+          "outputs": [
+            {
+              "internalType": "contract IStrategyManager",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "unpause"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IBeaconChainOracle",
+              "name": "newBeaconChainOracle",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateBeaconChainOracle"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdrawSharesAsTokens"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addShares(address,uint256)": {
+            "details": "Returns the number of shares added to `podOwnerShares[podOwner]` above zero, which will be less than the `shares` input in the event that the podOwner has an existing shares deficit (i.e. `podOwnerShares[podOwner]` starts below zero)Reverts if `shares` is not a whole Gwei amount"
+          },
+          "createPod()": {
+            "details": "Function will revert if the `msg.sender` already has an EigenPod.Returns EigenPod address "
+          },
+          "pause(uint256)": {
+            "details": "This function can only pause functionality, and thus cannot 'unflip' any bit in `_paused` from 1 to 0.",
+            "params": {
+              "newPausedStatus": "represents the new value for `_paused` to take, which means it may flip several bits at once."
+            }
+          },
+          "recordBeaconChainETHBalanceUpdate(address,int256)": {
+            "details": "Callable only by the podOwner's EigenPod contract.Reverts if `sharesDelta` is not a whole Gwei amount",
+            "params": {
+              "podOwner": "is the pod owner whose balance is being updated.",
+              "sharesDelta": "is the change in podOwner's beaconChainETHStrategy shares"
+            }
+          },
+          "removeShares(address,uint256)": {
+            "details": "This function reverts if it would result in `podOwnerShares[podOwner]` being less than zero, i.e. it is forbidden for this function to result in the `podOwner` incurring a \"share deficit\". This behavior prevents a Staker from queuing a withdrawal which improperly removes excessive shares from the operator to whom the staker is delegated.Reverts if `shares` is not a whole Gwei amount"
+          },
+          "setDenebForkTimestamp(uint64)": {
+            "details": "this function is designed to be called twice.  Once, it is set to type(uint64).max  prior to the actual deneb fork timestamp being set, and then the second time it is set  to the actual deneb fork timestamp."
+          },
+          "stake(bytes,bytes,bytes32)": {
+            "params": {
+              "depositDataRoot": "The root/hash of the deposit data for the validator's deposit.",
+              "pubkey": "The 48 bytes public key of the beacon chain validator.",
+              "signature": "The validator's signature of the deposit data."
+            }
+          },
+          "unpause(uint256)": {
+            "details": "This function can only unpause functionality, and thus cannot 'flip' any bit in `_paused` from 0 to 1.",
+            "params": {
+              "newPausedStatus": "represents the new value for `_paused` to take, which means it may flip several bits at once."
+            }
+          },
+          "updateBeaconChainOracle(address)": {
+            "details": "Callable only by the owner of this contract (i.e. governance)",
+            "params": {
+              "newBeaconChainOracle": "is the new oracle contract being pointed to"
+            }
+          },
+          "withdrawSharesAsTokens(address,address,uint256)": {
+            "details": "Prioritizes decreasing the podOwner's share deficit, if they have oneReverts if `shares` is not a whole Gwei amount"
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addShares(address,uint256)": {
+            "notice": "Increases the `podOwner`'s shares by `shares`, paying off deficit if possible. Used by the DelegationManager to award a pod owner shares on exiting the withdrawal queue"
+          },
+          "beaconChainETHStrategy()": {
+            "notice": "Canonical, virtual beacon chain ETH strategy"
+          },
+          "beaconChainOracle()": {
+            "notice": "Oracle contract that provides updates to the beacon chain's state"
+          },
+          "createPod()": {
+            "notice": "Creates an EigenPod for the sender."
+          },
+          "delegationManager()": {
+            "notice": "EigenLayer's DelegationManager contract"
+          },
+          "denebForkTimestamp()": {
+            "notice": "the deneb hard fork timestamp used to determine which proof path to use for proving a withdrawal"
+          },
+          "eigenPodBeacon()": {
+            "notice": "Beacon proxy to which the EigenPods point"
+          },
+          "ethPOS()": {
+            "notice": "The ETH2 Deposit Contract"
+          },
+          "getBlockRootAtTimestamp(uint64)": {
+            "notice": "Returns the beacon block root at `timestamp`. Reverts if the Beacon block root at `timestamp` has not yet been finalized."
+          },
+          "getPod(address)": {
+            "notice": "Returns the address of the `podOwner`'s EigenPod (whether it is deployed yet or not)."
+          },
+          "hasPod(address)": {
+            "notice": "Returns 'true' if the `podOwner` has created an EigenPod, and 'false' otherwise."
+          },
+          "maxPods()": {
+            "notice": "The maximum number of EigenPods that can be deployed"
+          },
+          "numPods()": {
+            "notice": "The number of EigenPods that have been deployed"
+          },
+          "ownerToPod(address)": {
+            "notice": "Pod owner to deployed EigenPod address"
+          },
+          "pause(uint256)": {
+            "notice": "This function is used to pause an EigenLayer contract's functionality. It is permissioned to the `pauser` address, which is expected to be a low threshold multisig."
+          },
+          "pauseAll()": {
+            "notice": "Alias for `pause(type(uint256).max)`."
+          },
+          "paused()": {
+            "notice": "Returns the current paused status as a uint256."
+          },
+          "paused(uint8)": {
+            "notice": "Returns 'true' if the `indexed`th bit of `_paused` is 1, and 'false' otherwise"
+          },
+          "pauserRegistry()": {
+            "notice": "Address of the `PauserRegistry` contract that this contract defers to for determining access control (for pausing)."
+          },
+          "podOwnerShares(address)": {
+            "notice": "Mapping from Pod owner owner to the number of shares they have in the virtual beacon chain ETH strategy."
+          },
+          "recordBeaconChainETHBalanceUpdate(address,int256)": {
+            "notice": "Changes the `podOwner`'s shares by `sharesDelta` and performs a call to the DelegationManager to ensure that delegated shares are also tracked correctly"
+          },
+          "removeShares(address,uint256)": {
+            "notice": "Used by the DelegationManager to remove a pod owner's shares while they're in the withdrawal queue. Simply decreases the `podOwner`'s shares by `shares`, down to a minimum of zero."
+          },
+          "setDenebForkTimestamp(uint64)": {
+            "notice": "setting the deneb hard fork timestamp by the eigenPodManager owner"
+          },
+          "setPauserRegistry(address)": {
+            "notice": "Allows the unpauser to set a new pauser registry"
+          },
+          "slasher()": {
+            "notice": "EigenLayer's Slasher contract"
+          },
+          "stake(bytes,bytes,bytes32)": {
+            "notice": "Stakes for a new beacon chain validator on the sender's EigenPod. Also creates an EigenPod for the sender if they don't have one already."
+          },
+          "strategyManager()": {
+            "notice": "EigenLayer's StrategyManager contract"
+          },
+          "unpause(uint256)": {
+            "notice": "This function is used to unpause an EigenLayer contract's functionality. It is permissioned to the `unpauser` address, which is expected to be a high threshold multisig or governance contract."
+          },
+          "updateBeaconChainOracle(address)": {
+            "notice": "Updates the oracle contract that provides the beacon chain state root"
+          },
+          "withdrawSharesAsTokens(address,address,uint256)": {
+            "notice": "Used by the DelegationManager to complete a withdrawal, sending tokens to some destination address"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/contracts/pods/EigenPodManagerStorage.sol": "EigenPodManagerStorage"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol": {
+        "keccak256": "0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00",
+        "urls": [
+          "bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983",
+          "dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol": {
+        "keccak256": "0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb",
+        "urls": [
+          "bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e",
+          "dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol": {
+        "keccak256": "0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c",
+        "urls": [
+          "bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91",
+          "dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz"
+        ],
+        "license": "CC0-1.0"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol": {
+        "keccak256": "0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba",
+        "urls": [
+          "bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc",
+          "dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol": {
+        "keccak256": "0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f",
+        "urls": [
+          "bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d",
+          "dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": {
+        "keccak256": "0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f",
+        "urls": [
+          "bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324",
+          "dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol": {
+        "keccak256": "0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49",
+        "urls": [
+          "bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d",
+          "dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol": {
+        "keccak256": "0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092",
+        "urls": [
+          "bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c",
+          "dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol": {
+        "keccak256": "0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79",
+        "urls": [
+          "bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232",
+          "dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol": {
+        "keccak256": "0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420",
+        "urls": [
+          "bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73",
+          "dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol": {
+        "keccak256": "0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674",
+        "urls": [
+          "bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234",
+          "dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol": {
+        "keccak256": "0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9",
+        "urls": [
+          "bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235",
+          "dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol": {
+        "keccak256": "0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d",
+        "urls": [
+          "bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f",
+          "dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol": {
+        "keccak256": "0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a",
+        "urls": [
+          "bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8",
+          "dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/pods/EigenPodManagerStorage.sol": {
+        "keccak256": "0x295dda6bf8a47824bc90c92fd9b42ea108283364f6b7e23acce7f8037385b2bc",
+        "urls": [
+          "bzz-raw://6a9ea5be65d1c5101eb092b73c23ad83a9998db4e78e4024bf54b96495a68790",
+          "dweb:/ipfs/QmU6VrqJg6jmkThF8Y1etcy5tWAR8aTHq49iB412tUmzvs"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol": {
+        "keccak256": "0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61",
+        "urls": [
+          "bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354",
+          "dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+        "urls": [
+          "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+          "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/contracts/pods/EigenPodManagerStorage.sol",
+    "id": 14173,
+    "exportedSymbols": {
+      "BeaconChainProofs": [
+        9143
+      ],
+      "EigenPodManagerStorage": [
+        14172
+      ],
+      "Endian": [
+        9613
+      ],
+      "IBeacon": [
+        58703
+      ],
+      "IBeaconChainOracle": [
+        6462
+      ],
+      "IDelegationManager": [
+        7102
+      ],
+      "IERC20": [
+        59726
+      ],
+      "IETHPOSDeposit": [
+        7143
+      ],
+      "IEigenPod": [
+        7443
+      ],
+      "IEigenPodManager": [
+        7676
+      ],
+      "IPausable": [
+        7748
+      ],
+      "IPauserRegistry": [
+        7778
+      ],
+      "ISignatureUtils": [
+        7794
+      ],
+      "ISlasher": [
+        8033
+      ],
+      "IStrategy": [
+        8135
+      ],
+      "IStrategyManager": [
+        8383
+      ],
+      "Merkle": [
+        9899
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:8399:32",
+    "nodes": [
+      {
+        "id": 14061,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:32",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 14062,
+        "nodeType": "ImportDirective",
+        "src": "63:58:32",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol",
+        "file": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 58704,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14063,
+        "nodeType": "ImportDirective",
+        "src": "123:37:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol",
+        "file": "../interfaces/IStrategy.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 8136,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14064,
+        "nodeType": "ImportDirective",
+        "src": "161:44:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol",
+        "file": "../interfaces/IEigenPodManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 7677,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14065,
+        "nodeType": "ImportDirective",
+        "src": "206:44:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol",
+        "file": "../interfaces/IStrategyManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 8384,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14066,
+        "nodeType": "ImportDirective",
+        "src": "251:46:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol",
+        "file": "../interfaces/IDelegationManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 7103,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14067,
+        "nodeType": "ImportDirective",
+        "src": "298:42:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol",
+        "file": "../interfaces/IETHPOSDeposit.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 7144,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14068,
+        "nodeType": "ImportDirective",
+        "src": "341:37:32",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol",
+        "file": "../interfaces/IEigenPod.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14173,
+        "sourceUnit": 7444,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 14172,
+        "nodeType": "ContractDefinition",
+        "src": "380:8055:32",
+        "nodes": [
+          {
+            "id": 14074,
+            "nodeType": "VariableDeclaration",
+            "src": "489:38:32",
+            "nodes": [],
+            "baseFunctions": [
+              7564
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14071,
+              "nodeType": "StructuredDocumentation",
+              "src": "447:37:32",
+              "text": "@notice The ETH2 Deposit Contract"
+            },
+            "functionSelector": "74cdd798",
+            "mutability": "immutable",
+            "name": "ethPOS",
+            "nameLocation": "521:6:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+              "typeString": "contract IETHPOSDeposit"
+            },
+            "typeName": {
+              "id": 14073,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14072,
+                "name": "IETHPOSDeposit",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 7143,
+                "src": "489:14:32"
+              },
+              "referencedDeclaration": 7143,
+              "src": "489:14:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                "typeString": "contract IETHPOSDeposit"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14078,
+            "nodeType": "VariableDeclaration",
+            "src": "592:39:32",
+            "nodes": [],
+            "baseFunctions": [
+              7571
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14075,
+              "nodeType": "StructuredDocumentation",
+              "src": "534:53:32",
+              "text": "@notice Beacon proxy to which the EigenPods point"
+            },
+            "functionSelector": "292b7b2b",
+            "mutability": "immutable",
+            "name": "eigenPodBeacon",
+            "nameLocation": "617:14:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IBeacon_$58703",
+              "typeString": "contract IBeacon"
+            },
+            "typeName": {
+              "id": 14077,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14076,
+                "name": "IBeacon",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 58703,
+                "src": "592:7:32"
+              },
+              "referencedDeclaration": 58703,
+              "src": "592:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IBeacon_$58703",
+                "typeString": "contract IBeacon"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14082,
+            "nodeType": "VariableDeclaration",
+            "src": "692:49:32",
+            "nodes": [],
+            "baseFunctions": [
+              7593
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14079,
+              "nodeType": "StructuredDocumentation",
+              "src": "638:49:32",
+              "text": "@notice EigenLayer's StrategyManager contract"
+            },
+            "functionSelector": "39b70e38",
+            "mutability": "immutable",
+            "name": "strategyManager",
+            "nameLocation": "726:15:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+              "typeString": "contract IStrategyManager"
+            },
+            "typeName": {
+              "id": 14081,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14080,
+                "name": "IStrategyManager",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 8383,
+                "src": "692:16:32"
+              },
+              "referencedDeclaration": 8383,
+              "src": "692:16:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                "typeString": "contract IStrategyManager"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14086,
+            "nodeType": "VariableDeclaration",
+            "src": "794:33:32",
+            "nodes": [],
+            "baseFunctions": [
+              7600
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14083,
+              "nodeType": "StructuredDocumentation",
+              "src": "748:41:32",
+              "text": "@notice EigenLayer's Slasher contract"
+            },
+            "functionSelector": "b1344271",
+            "mutability": "immutable",
+            "name": "slasher",
+            "nameLocation": "820:7:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISlasher_$8033",
+              "typeString": "contract ISlasher"
+            },
+            "typeName": {
+              "id": 14085,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14084,
+                "name": "ISlasher",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 8033,
+                "src": "794:8:32"
+              },
+              "referencedDeclaration": 8033,
+              "src": "794:8:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISlasher_$8033",
+                "typeString": "contract ISlasher"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14090,
+            "nodeType": "VariableDeclaration",
+            "src": "890:53:32",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 14087,
+              "nodeType": "StructuredDocumentation",
+              "src": "834:51:32",
+              "text": "@notice EigenLayer's DelegationManager contract"
+            },
+            "functionSelector": "ea4d3c9b",
+            "mutability": "immutable",
+            "name": "delegationManager",
+            "nameLocation": "926:17:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+              "typeString": "contract IDelegationManager"
+            },
+            "typeName": {
+              "id": 14089,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14088,
+                "name": "IDelegationManager",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 7102,
+                "src": "890:18:32"
+              },
+              "referencedDeclaration": 7102,
+              "src": "890:18:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                "typeString": "contract IDelegationManager"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14094,
+            "nodeType": "VariableDeclaration",
+            "src": "1291:4695:32",
+            "nodes": [],
+            "constant": true,
+            "documentation": {
+              "id": 14091,
+              "nodeType": "StructuredDocumentation",
+              "src": "950:336:32",
+              "text": " @notice Stored code of type(BeaconProxy).creationCode\n @dev Maintained as a constant to solve an edge case - changes to OpenZeppelin's BeaconProxy code should not cause\n addresses of EigenPods that are pre-computed with Create2 to change, even upon upgrading this contract, changing compiler version, etc."
+            },
+            "mutability": "constant",
+            "name": "beaconProxyBytecode",
+            "nameLocation": "1315:19:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes_memory_ptr",
+              "typeString": "bytes"
+            },
+            "typeName": {
+              "id": 14092,
+              "name": "bytes",
+              "nodeType": "ElementaryTypeName",
+              "src": "1291:5:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes_storage_ptr",
+                "typeString": "bytes"
+              }
+            },
+            "value": {
+              "hexValue": "608060405260405161090e38038061090e83398101604081905261002291610460565b61002e82826000610035565b505061058a565b61003e83610100565b6040516001600160a01b038416907f1cf3b03a6cf19fa2baba4df148e9dcabedea7f8a5c07840e207e5c089be95d3e90600090a260008251118061007f5750805b156100fb576100f9836001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100c5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100e99190610520565b836102a360201b6100291760201c565b505b505050565b610113816102cf60201b6100551760201c565b6101725760405162461bcd60e51b815260206004820152602560248201527f455243313936373a206e657720626561636f6e206973206e6f74206120636f6e6044820152641d1c9858dd60da1b60648201526084015b60405180910390fd5b6101e6816001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156101b3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101d79190610520565b6102cf60201b6100551760201c565b61024b5760405162461bcd60e51b815260206004820152603060248201527f455243313936373a20626561636f6e20696d706c656d656e746174696f6e206960448201526f1cc81b9bdd08184818dbdb9d1c9858dd60821b6064820152608401610169565b806102827fa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d5060001b6102de60201b6100641760201c565b80546001600160a01b0319166001600160a01b039290921691909117905550565b60606102c883836040518060600160405280602781526020016108e7602791396102e1565b9392505050565b6001600160a01b03163b151590565b90565b6060600080856001600160a01b0316856040516102fe919061053b565b600060405180830381855af49150503d8060008114610339576040519150601f19603f3d011682016040523d82523d6000602084013e61033e565b606091505b5090925090506103508683838761035a565b9695505050505050565b606083156103c65782516103bf576001600160a01b0385163b6103bf5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401610169565b50816103d0565b6103d083836103d8565b949350505050565b8151156103e85781518083602001fd5b8060405162461bcd60e51b81526004016101699190610557565b80516001600160a01b038116811461041957600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b60005b8381101561044f578181015183820152602001610437565b838111156100f95750506000910152565b6000806040838503121561047357600080fd5b61047c83610402565b60208401519092506001600160401b038082111561049957600080fd5b818501915085601f8301126104ad57600080fd5b8151818111156104bf576104bf61041e565b604051601f8201601f19908116603f011681019083821181831017156104e7576104e761041e565b8160405282815288602084870101111561050057600080fd5b610511836020830160208801610434565b80955050505050509250929050565b60006020828403121561053257600080fd5b6102c882610402565b6000825161054d818460208701610434565b9190910192915050565b6020815260008251806020840152610576816040850160208701610434565b601f01601f19169190910160400192915050565b61034e806105996000396000f3fe60806040523661001357610011610017565b005b6100115b610027610022610067565b610100565b565b606061004e83836040518060600160405280602781526020016102f260279139610124565b9392505050565b6001600160a01b03163b151590565b90565b600061009a7fa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50546001600160a01b031690565b6001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100fb9190610249565b905090565b3660008037600080366000845af43d6000803e80801561011f573d6000f35b3d6000fd5b6060600080856001600160a01b03168560405161014191906102a2565b600060405180830381855af49150503d806000811461017c576040519150601f19603f3d011682016040523d82523d6000602084013e610181565b606091505b50915091506101928683838761019c565b9695505050505050565b6060831561020d578251610206576001600160a01b0385163b6102065760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e747261637400000060448201526064015b60405180910390fd5b5081610217565b610217838361021f565b949350505050565b81511561022f5781518083602001fd5b8060405162461bcd60e51b81526004016101fd91906102be565b60006020828403121561025b57600080fd5b81516001600160a01b038116811461004e57600080fd5b60005b8381101561028d578181015183820152602001610275565b8381111561029c576000848401525b50505050565b600082516102b4818460208701610272565b9190910192915050565b60208152600082518060208401526102dd816040850160208701610272565b601f01601f1916919091016040019291505056fe416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220d51e81d3bc5ed20a26aeb05dce7e825c503b2061aa78628027300c8d65b9d89a64736f6c634300080c0033416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564",
+              "id": 14093,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "hexString",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1345:4641:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_9349121a50022136a9010839f896ced1550509e36596d63006f44c5a4a565b20",
+                "typeString": "literal_string hex\"608060405260405161090e38038061090e83398101604081905261002291610460565b61002e82826000610035565b505061058a565b61003e83610100565b6040516001600160a01b038416907f1cf3b03a6cf19fa2baba4df148e9dcabedea7f8a5c07840e207e5c089be95d3e90600090a260008251118061007f5750805b156100fb576100f9836001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100c5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100e99190610520565b836102a360201b6100291760201c565b505b505050565b610113816102cf60201b6100551760201c565b6101725760405162461bcd60e51b815260206004820152602560248201527f455243313936373a206e657720626561636f6e206973206e6f74206120636f6e6044820152641d1c9858dd60da1b60648201526084015b60405180910390fd5b6101e6816001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156101b3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101d79190610520565b6102cf60201b6100551760201c565b61024b5760405162461bcd60e51b815260206004820152603060248201527f455243313936373a20626561636f6e20696d706c656d656e746174696f6e206960448201526f1cc81b9bdd08184818dbdb9d1c9858dd60821b6064820152608401610169565b806102827fa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d5060001b6102de60201b6100641760201c565b80546001600160a01b0319166001600160a01b039290921691909117905550565b60606102c883836040518060600160405280602781526020016108e7602791396102e1565b9392505050565b6001600160a01b03163b151590565b90565b6060600080856001600160a01b0316856040516102fe919061053b565b600060405180830381855af49150503d8060008114610339576040519150601f19603f3d011682016040523d82523d6000602084013e61033e565b606091505b5090925090506103508683838761035a565b9695505050505050565b606083156103c65782516103bf576001600160a01b0385163b6103bf5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401610169565b50816103d0565b6103d083836103d8565b949350505050565b8151156103e85781518083602001fd5b8060405162461bcd60e51b81526004016101699190610557565b80516001600160a01b038116811461041957600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b60005b8381101561044f578181015183820152602001610437565b838111156100f95750506000910152565b6000806040838503121561047357600080fd5b61047c83610402565b60208401519092506001600160401b038082111561049957600080fd5b818501915085601f8301126104ad57600080fd5b8151818111156104bf576104bf61041e565b604051601f8201601f19908116603f011681019083821181831017156104e7576104e761041e565b8160405282815288602084870101111561050057600080fd5b610511836020830160208801610434565b80955050505050509250929050565b60006020828403121561053257600080fd5b6102c882610402565b6000825161054d818460208701610434565b9190910192915050565b6020815260008251806020840152610576816040850160208701610434565b601f01601f19169190910160400192915050565b61034e806105996000396000f3fe60806040523661001357610011610017565b005b6100115b610027610022610067565b610100565b565b606061004e83836040518060600160405280602781526020016102f260279139610124565b9392505050565b6001600160a01b03163b151590565b90565b600061009a7fa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50546001600160a01b031690565b6001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100fb9190610249565b905090565b3660008037600080366000845af43d6000803e80801561011f573d6000f35b3d6000fd5b6060600080856001600160a01b03168560405161014191906102a2565b600060405180830381855af49150503d806000811461017c576040519150601f19603f3d011682016040523d82523d6000602084013e610181565b606091505b50915091506101928683838761019c565b9695505050505050565b6060831561020d578251610206576001600160a01b0385163b6102065760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e747261637400000060448201526064015b60405180910390fd5b5081610217565b610217838361021f565b949350505050565b81511561022f5781518083602001fd5b8060405162461bcd60e51b81526004016101fd91906102be565b60006020828403121561025b57600080fd5b81516001600160a01b038116811461004e57600080fd5b60005b8381101561028d578181015183820152602001610275565b8381111561029c576000848401525b50505050565b600082516102b4818460208701610272565b9190910192915050565b60208152600082518060208401526102dd816040850160208701610272565b601f01601f1916919091016040019291505056fe416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220d51e81d3bc5ed20a26aeb05dce7e825c503b2061aa78628027300c8d65b9d89a64736f6c634300080c0033416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564\""
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14097,
+            "nodeType": "VariableDeclaration",
+            "src": "6111:43:32",
+            "nodes": [],
+            "constant": true,
+            "mutability": "constant",
+            "name": "GWEI_TO_WEI",
+            "nameLocation": "6137:11:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14095,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "6111:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "316539",
+              "id": 14096,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "6151:3:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000000000_by_1",
+                "typeString": "int_const 1000000000"
+              },
+              "value": "1e9"
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14104,
+            "nodeType": "VariableDeclaration",
+            "src": "6222:104:32",
+            "nodes": [],
+            "baseFunctions": [
+              7635
+            ],
+            "constant": true,
+            "documentation": {
+              "id": 14098,
+              "nodeType": "StructuredDocumentation",
+              "src": "6161:56:32",
+              "text": "@notice Canonical, virtual beacon chain ETH strategy"
+            },
+            "functionSelector": "9104c319",
+            "mutability": "constant",
+            "name": "beaconChainETHStrategy",
+            "nameLocation": "6248:22:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IStrategy_$8135",
+              "typeString": "contract IStrategy"
+            },
+            "typeName": {
+              "id": 14100,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14099,
+                "name": "IStrategy",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 8135,
+                "src": "6222:9:32"
+              },
+              "referencedDeclaration": 8135,
+              "src": "6222:9:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IStrategy_$8135",
+                "typeString": "contract IStrategy"
+              }
+            },
+            "value": {
+              "arguments": [
+                {
+                  "hexValue": "307862656143306565456565656545456545654545454565654545654565656545656545454245614330",
+                  "id": 14102,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "6283:42:32",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "value": "0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                ],
+                "id": 14101,
+                "name": "IStrategy",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 8135,
+                "src": "6273:9:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_contract$_IStrategy_$8135_$",
+                  "typeString": "type(contract IStrategy)"
+                }
+              },
+              "id": 14103,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "6273:53:32",
+              "tryCall": false,
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IStrategy_$8135",
+                "typeString": "contract IStrategy"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14108,
+            "nodeType": "VariableDeclaration",
+            "src": "6415:43:32",
+            "nodes": [],
+            "baseFunctions": [
+              7578
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14105,
+              "nodeType": "StructuredDocumentation",
+              "src": "6333:77:32",
+              "text": "@notice Oracle contract that provides updates to the beacon chain's state"
+            },
+            "functionSelector": "c052bd61",
+            "mutability": "mutable",
+            "name": "beaconChainOracle",
+            "nameLocation": "6441:17:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IBeaconChainOracle_$6462",
+              "typeString": "contract IBeaconChainOracle"
+            },
+            "typeName": {
+              "id": 14107,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 14106,
+                "name": "IBeaconChainOracle",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 6462,
+                "src": "6415:18:32"
+              },
+              "referencedDeclaration": 6462,
+              "src": "6415:18:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IBeaconChainOracle_$6462",
+                "typeString": "contract IBeaconChainOracle"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14114,
+            "nodeType": "VariableDeclaration",
+            "src": "6520:47:32",
+            "nodes": [],
+            "baseFunctions": [
+              7548
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14109,
+              "nodeType": "StructuredDocumentation",
+              "src": "6465:50:32",
+              "text": "@notice Pod owner to deployed EigenPod address"
+            },
+            "functionSelector": "9ba06275",
+            "mutability": "mutable",
+            "name": "ownerToPod",
+            "nameLocation": "6557:10:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_contract$_IEigenPod_$7443_$",
+              "typeString": "mapping(address => contract IEigenPod)"
+            },
+            "typeName": {
+              "id": 14113,
+              "keyType": {
+                "id": 14110,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "6528:7:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "6520:29:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_contract$_IEigenPod_$7443_$",
+                "typeString": "mapping(address => contract IEigenPod)"
+              },
+              "valueType": {
+                "id": 14112,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 14111,
+                  "name": "IEigenPod",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 7443,
+                  "src": "6539:9:32"
+                },
+                "referencedDeclaration": 7443,
+                "src": "6539:9:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IEigenPod_$7443",
+                  "typeString": "contract IEigenPod"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14117,
+            "nodeType": "VariableDeclaration",
+            "src": "6757:22:32",
+            "nodes": [],
+            "baseFunctions": [
+              7614
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14115,
+              "nodeType": "StructuredDocumentation",
+              "src": "6693:59:32",
+              "text": "@notice The number of EigenPods that have been deployed"
+            },
+            "functionSelector": "a6a509be",
+            "mutability": "mutable",
+            "name": "numPods",
+            "nameLocation": "6772:7:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14116,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "6757:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14120,
+            "nodeType": "VariableDeclaration",
+            "src": "6855:22:32",
+            "nodes": [],
+            "baseFunctions": [
+              7620
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14118,
+              "nodeType": "StructuredDocumentation",
+              "src": "6786:64:32",
+              "text": "@notice The maximum number of EigenPods that can be deployed"
+            },
+            "functionSelector": "c0ccbf10",
+            "mutability": "mutable",
+            "name": "maxPods",
+            "nameLocation": "6870:7:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14119,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "6855:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14125,
+            "nodeType": "VariableDeclaration",
+            "src": "7650:48:32",
+            "nodes": [],
+            "baseFunctions": [
+              7628
+            ],
+            "constant": false,
+            "documentation": {
+              "id": 14121,
+              "nodeType": "StructuredDocumentation",
+              "src": "6997:648:32",
+              "text": " @notice Mapping from Pod owner owner to the number of shares they have in the virtual beacon chain ETH strategy.\n @dev The share amount can become negative. This is necessary to accommodate the fact that a pod owner's virtual beacon chain ETH shares can\n decrease between the pod owner queuing and completing a withdrawal.\n When the pod owner's shares would otherwise increase, this \"deficit\" is decreased first _instead_.\n Likewise, when a withdrawal is completed, this \"deficit\" is decreased and the withdrawal amount is decreased; We can think of this\n as the withdrawal \"paying off the deficit\"."
+            },
+            "functionSelector": "60f4062b",
+            "mutability": "mutable",
+            "name": "podOwnerShares",
+            "nameLocation": "7684:14:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_int256_$",
+              "typeString": "mapping(address => int256)"
+            },
+            "typeName": {
+              "id": 14124,
+              "keyType": {
+                "id": 14122,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "7658:7:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "7650:26:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_int256_$",
+                "typeString": "mapping(address => int256)"
+              },
+              "valueType": {
+                "id": 14123,
+                "name": "int256",
+                "nodeType": "ElementaryTypeName",
+                "src": "7669:6:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 14127,
+            "nodeType": "VariableDeclaration",
+            "src": "7705:35:32",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "_denebForkTimestamp",
+            "nameLocation": "7721:19:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint64",
+              "typeString": "uint64"
+            },
+            "typeName": {
+              "id": 14126,
+              "name": "uint64",
+              "nodeType": "ElementaryTypeName",
+              "src": "7705:6:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint64",
+                "typeString": "uint64"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 14166,
+            "nodeType": "FunctionDefinition",
+            "src": "7747:395:32",
+            "nodes": [],
+            "body": {
+              "id": 14165,
+              "nodeType": "Block",
+              "src": "7947:195:32",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 14147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14145,
+                      "name": "ethPOS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14074,
+                      "src": "7957:6:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                        "typeString": "contract IETHPOSDeposit"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 14146,
+                      "name": "_ethPOS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14130,
+                      "src": "7966:7:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                        "typeString": "contract IETHPOSDeposit"
+                      }
+                    },
+                    "src": "7957:16:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                      "typeString": "contract IETHPOSDeposit"
+                    }
+                  },
+                  "id": 14148,
+                  "nodeType": "ExpressionStatement",
+                  "src": "7957:16:32"
+                },
+                {
+                  "expression": {
+                    "id": 14151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14149,
+                      "name": "eigenPodBeacon",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14078,
+                      "src": "7983:14:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IBeacon_$58703",
+                        "typeString": "contract IBeacon"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 14150,
+                      "name": "_eigenPodBeacon",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14133,
+                      "src": "8000:15:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IBeacon_$58703",
+                        "typeString": "contract IBeacon"
+                      }
+                    },
+                    "src": "7983:32:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBeacon_$58703",
+                      "typeString": "contract IBeacon"
+                    }
+                  },
+                  "id": 14152,
+                  "nodeType": "ExpressionStatement",
+                  "src": "7983:32:32"
+                },
+                {
+                  "expression": {
+                    "id": 14155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14153,
+                      "name": "strategyManager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14082,
+                      "src": "8025:15:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                        "typeString": "contract IStrategyManager"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 14154,
+                      "name": "_strategyManager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14136,
+                      "src": "8043:16:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                        "typeString": "contract IStrategyManager"
+                      }
+                    },
+                    "src": "8025:34:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                      "typeString": "contract IStrategyManager"
+                    }
+                  },
+                  "id": 14156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "8025:34:32"
+                },
+                {
+                  "expression": {
+                    "id": 14159,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14157,
+                      "name": "slasher",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14086,
+                      "src": "8069:7:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ISlasher_$8033",
+                        "typeString": "contract ISlasher"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 14158,
+                      "name": "_slasher",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14139,
+                      "src": "8079:8:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ISlasher_$8033",
+                        "typeString": "contract ISlasher"
+                      }
+                    },
+                    "src": "8069:18:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISlasher_$8033",
+                      "typeString": "contract ISlasher"
+                    }
+                  },
+                  "id": 14160,
+                  "nodeType": "ExpressionStatement",
+                  "src": "8069:18:32"
+                },
+                {
+                  "expression": {
+                    "id": 14163,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14161,
+                      "name": "delegationManager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14090,
+                      "src": "8097:17:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                        "typeString": "contract IDelegationManager"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 14162,
+                      "name": "_delegationManager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14142,
+                      "src": "8117:18:32",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                        "typeString": "contract IDelegationManager"
+                      }
+                    },
+                    "src": "8097:38:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                      "typeString": "contract IDelegationManager"
+                    }
+                  },
+                  "id": 14164,
+                  "nodeType": "ExpressionStatement",
+                  "src": "8097:38:32"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 14143,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14130,
+                  "mutability": "mutable",
+                  "name": "_ethPOS",
+                  "nameLocation": "7783:7:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14166,
+                  "src": "7768:22:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                    "typeString": "contract IETHPOSDeposit"
+                  },
+                  "typeName": {
+                    "id": 14129,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14128,
+                      "name": "IETHPOSDeposit",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7143,
+                      "src": "7768:14:32"
+                    },
+                    "referencedDeclaration": 7143,
+                    "src": "7768:14:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IETHPOSDeposit_$7143",
+                      "typeString": "contract IETHPOSDeposit"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14133,
+                  "mutability": "mutable",
+                  "name": "_eigenPodBeacon",
+                  "nameLocation": "7808:15:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14166,
+                  "src": "7800:23:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBeacon_$58703",
+                    "typeString": "contract IBeacon"
+                  },
+                  "typeName": {
+                    "id": 14132,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14131,
+                      "name": "IBeacon",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 58703,
+                      "src": "7800:7:32"
+                    },
+                    "referencedDeclaration": 58703,
+                    "src": "7800:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBeacon_$58703",
+                      "typeString": "contract IBeacon"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14136,
+                  "mutability": "mutable",
+                  "name": "_strategyManager",
+                  "nameLocation": "7850:16:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14166,
+                  "src": "7833:33:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                    "typeString": "contract IStrategyManager"
+                  },
+                  "typeName": {
+                    "id": 14135,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14134,
+                      "name": "IStrategyManager",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8383,
+                      "src": "7833:16:32"
+                    },
+                    "referencedDeclaration": 8383,
+                    "src": "7833:16:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStrategyManager_$8383",
+                      "typeString": "contract IStrategyManager"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14139,
+                  "mutability": "mutable",
+                  "name": "_slasher",
+                  "nameLocation": "7885:8:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14166,
+                  "src": "7876:17:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISlasher_$8033",
+                    "typeString": "contract ISlasher"
+                  },
+                  "typeName": {
+                    "id": 14138,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14137,
+                      "name": "ISlasher",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8033,
+                      "src": "7876:8:32"
+                    },
+                    "referencedDeclaration": 8033,
+                    "src": "7876:8:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISlasher_$8033",
+                      "typeString": "contract ISlasher"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14142,
+                  "mutability": "mutable",
+                  "name": "_delegationManager",
+                  "nameLocation": "7922:18:32",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14166,
+                  "src": "7903:37:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                    "typeString": "contract IDelegationManager"
+                  },
+                  "typeName": {
+                    "id": 14141,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14140,
+                      "name": "IDelegationManager",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7102,
+                      "src": "7903:18:32"
+                    },
+                    "referencedDeclaration": 7102,
+                    "src": "7903:18:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                      "typeString": "contract IDelegationManager"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7758:188:32"
+            },
+            "returnParameters": {
+              "id": 14144,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7947:0:32"
+            },
+            "scope": 14172,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 14171,
+            "nodeType": "VariableDeclaration",
+            "src": "8407:25:32",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 14167,
+              "nodeType": "StructuredDocumentation",
+              "src": "8148:254:32",
+              "text": " @dev This empty reserved space is put in place to allow future versions to add new\n variables without shifting down storage in the inheritance chain.\n See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps"
+            },
+            "mutability": "mutable",
+            "name": "__gap",
+            "nameLocation": "8427:5:32",
+            "scope": 14172,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$44_storage",
+              "typeString": "uint256[44]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 14168,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "8407:7:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 14170,
+              "length": {
+                "hexValue": "3434",
+                "id": 14169,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "8415:2:32",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_44_by_1",
+                  "typeString": "int_const 44"
+                },
+                "value": "44"
+              },
+              "nodeType": "ArrayTypeName",
+              "src": "8407:11:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$44_storage_ptr",
+                "typeString": "uint256[44]"
+              }
+            },
+            "visibility": "private"
+          }
+        ],
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 14069,
+              "name": "IEigenPodManager",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7676,
+              "src": "424:16:32"
+            },
+            "id": 14070,
+            "nodeType": "InheritanceSpecifier",
+            "src": "424:16:32"
+          }
+        ],
+        "canonicalName": "EigenPodManagerStorage",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          14172,
+          7676,
+          7748
+        ],
+        "name": "EigenPodManagerStorage",
+        "nameLocation": "398:22:32",
+        "scope": 14173,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 32
+}

@@ -1,0 +1,1179 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract IPauserRegistry",
+          "name": "pauserRegistry",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IPauserRegistry",
+          "name": "newPauserRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "PauserRegistrySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauseAll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "index",
+          "type": "uint8"
+        }
+      ],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauserRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IPauserRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPauserRegistry",
+          "name": "newPauserRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setPauserRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newPausedStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "pause(uint256)": "136439dd",
+    "pauseAll()": "595c6a67",
+    "paused()": "5c975abb",
+    "paused(uint8)": "5ac86ab7",
+    "pauserRegistry()": "886f1195",
+    "setPauserRegistry(address)": "10d67a2f",
+    "unpause(uint256)": "fabc1cbc"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"contract IPauserRegistry\",\"name\":\"pauserRegistry\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"contract IPauserRegistry\",\"name\":\"newPauserRegistry\",\"type\":\"address\"}],\"name\":\"PauserRegistrySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauseAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"index\",\"type\":\"uint8\"}],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauserRegistry\",\"outputs\":[{\"internalType\":\"contract IPauserRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IPauserRegistry\",\"name\":\"newPauserRegistry\",\"type\":\"address\"}],\"name\":\"setPauserRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newPausedStatus\",\"type\":\"uint256\"}],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"details\":\"Pausability is implemented using a uint256, which allows up to 256 different single bit-flags; each bit can potentially pause different functionality. Inspiration for this was taken from the NearBridge design here https://etherscan.io/address/0x3FEFc5A4B1c02f21cBc8D3613643ba0635b9a873#code. For the `pause` and `unpause` functions we've implemented, if you pause, you can only flip (any number of) switches to on/1 (aka \\\"paused\\\"), and if you unpause, you can only flip (any number of) switches to off/0 (aka \\\"paused\\\"). If you want a pauseXYZ function that just flips a single bit / \\\"pausing flag\\\", it will: 1) 'bit-wise and' (aka `&`) a flag with the current paused state (as a uint256) 2) update the paused state to this new valueWe note as well that we have chosen to identify flags by their *bit index* as opposed to their numerical value, so, e.g. defining `DEPOSITS_PAUSED = 3` indicates specifically that if the *third bit* of `_paused` is flipped -- i.e. it is a '1' -- then deposits should be paused\",\"kind\":\"dev\",\"methods\":{\"pause(uint256)\":{\"details\":\"This function can only pause functionality, and thus cannot 'unflip' any bit in `_paused` from 1 to 0.\",\"params\":{\"newPausedStatus\":\"represents the new value for `_paused` to take, which means it may flip several bits at once.\"}},\"unpause(uint256)\":{\"details\":\"This function can only unpause functionality, and thus cannot 'flip' any bit in `_paused` from 0 to 1.\",\"params\":{\"newPausedStatus\":\"represents the new value for `_paused` to take, which means it may flip several bits at once.\"}}},\"title\":\"Adds pausability to a contract, with pausing & unpausing controlled by the `pauser` and `unpauser` of a PauserRegistry contract.\",\"version\":1},\"userdoc\":{\"events\":{\"Paused(address,uint256)\":{\"notice\":\"Emitted when the pause is triggered by `account`, and changed to `newPausedStatus`.\"},\"PauserRegistrySet(address,address)\":{\"notice\":\"Emitted when the `pauserRegistry` is set to `newPauserRegistry`.\"},\"Unpaused(address,uint256)\":{\"notice\":\"Emitted when the pause is lifted by `account`, and changed to `newPausedStatus`.\"}},\"kind\":\"user\",\"methods\":{\"pause(uint256)\":{\"notice\":\"This function is used to pause an EigenLayer contract's functionality. It is permissioned to the `pauser` address, which is expected to be a low threshold multisig.\"},\"pauseAll()\":{\"notice\":\"Alias for `pause(type(uint256).max)`.\"},\"paused()\":{\"notice\":\"Returns the current paused status as a uint256.\"},\"paused(uint8)\":{\"notice\":\"Returns 'true' if the `indexed`th bit of `_paused` is 1, and 'false' otherwise\"},\"pauserRegistry()\":{\"notice\":\"Address of the `PauserRegistry` contract that this contract defers to for determining access control (for pausing).\"},\"setPauserRegistry(address)\":{\"notice\":\"Allows the unpauser to set a new pauser registry\"},\"unpause(uint256)\":{\"notice\":\"This function is used to unpause an EigenLayer contract's functionality. It is permissioned to the `unpauser` address, which is expected to be a high threshold multisig or governance contract.\"}},\"notice\":\"Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-serviceContracts that inherit from this contract may define their own `pause` and `unpause` (and/or related) functions. These functions should be permissioned as \\\"onlyPauser\\\" which defers to a `PauserRegistry` for determining access control.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":\"IPausable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":{\"keccak256\":\"0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324\",\"dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol\":{\"keccak256\":\"0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d\",\"dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Paused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "pauserRegistry",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "newPauserRegistry",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PauserRegistrySet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Unpaused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "pause"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "pauseAll"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "index",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paused",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paused",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "pauserRegistry",
+          "outputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IPauserRegistry",
+              "name": "newPauserRegistry",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setPauserRegistry"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newPausedStatus",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "unpause"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "pause(uint256)": {
+            "details": "This function can only pause functionality, and thus cannot 'unflip' any bit in `_paused` from 1 to 0.",
+            "params": {
+              "newPausedStatus": "represents the new value for `_paused` to take, which means it may flip several bits at once."
+            }
+          },
+          "unpause(uint256)": {
+            "details": "This function can only unpause functionality, and thus cannot 'flip' any bit in `_paused` from 0 to 1.",
+            "params": {
+              "newPausedStatus": "represents the new value for `_paused` to take, which means it may flip several bits at once."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "pause(uint256)": {
+            "notice": "This function is used to pause an EigenLayer contract's functionality. It is permissioned to the `pauser` address, which is expected to be a low threshold multisig."
+          },
+          "pauseAll()": {
+            "notice": "Alias for `pause(type(uint256).max)`."
+          },
+          "paused()": {
+            "notice": "Returns the current paused status as a uint256."
+          },
+          "paused(uint8)": {
+            "notice": "Returns 'true' if the `indexed`th bit of `_paused` is 1, and 'false' otherwise"
+          },
+          "pauserRegistry()": {
+            "notice": "Address of the `PauserRegistry` contract that this contract defers to for determining access control (for pausing)."
+          },
+          "setPauserRegistry(address)": {
+            "notice": "Allows the unpauser to set a new pauser registry"
+          },
+          "unpause(uint256)": {
+            "notice": "This function is used to unpause an EigenLayer contract's functionality. It is permissioned to the `unpauser` address, which is expected to be a high threshold multisig or governance contract."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": "IPausable"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": {
+        "keccak256": "0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f",
+        "urls": [
+          "bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324",
+          "dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol": {
+        "keccak256": "0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49",
+        "urls": [
+          "bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d",
+          "dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol",
+    "id": 7749,
+    "exportedSymbols": {
+      "IPausable": [
+        7748
+      ],
+      "IPauserRegistry": [
+        7778
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:3920:15",
+    "nodes": [
+      {
+        "id": 7678,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:15",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ]
+      },
+      {
+        "id": 7679,
+        "nodeType": "ImportDirective",
+        "src": "63:43:15",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol",
+        "file": "../interfaces/IPauserRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 7749,
+        "sourceUnit": 7779,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 7748,
+        "nodeType": "ContractDefinition",
+        "src": "1662:2294:15",
+        "nodes": [
+          {
+            "id": 7689,
+            "nodeType": "EventDefinition",
+            "src": "1769:91:15",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 7681,
+              "nodeType": "StructuredDocumentation",
+              "src": "1688:76:15",
+              "text": "@notice Emitted when the `pauserRegistry` is set to `newPauserRegistry`."
+            },
+            "name": "PauserRegistrySet",
+            "nameLocation": "1775:17:15",
+            "parameters": {
+              "id": 7688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7684,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "pauserRegistry",
+                  "nameLocation": "1809:14:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7689,
+                  "src": "1793:30:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                    "typeString": "contract IPauserRegistry"
+                  },
+                  "typeName": {
+                    "id": 7683,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 7682,
+                      "name": "IPauserRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7778,
+                      "src": "1793:15:15"
+                    },
+                    "referencedDeclaration": 7778,
+                    "src": "1793:15:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                      "typeString": "contract IPauserRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7687,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newPauserRegistry",
+                  "nameLocation": "1841:17:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7689,
+                  "src": "1825:33:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                    "typeString": "contract IPauserRegistry"
+                  },
+                  "typeName": {
+                    "id": 7686,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 7685,
+                      "name": "IPauserRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7778,
+                      "src": "1825:15:15"
+                    },
+                    "referencedDeclaration": 7778,
+                    "src": "1825:15:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                      "typeString": "contract IPauserRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1792:67:15"
+            }
+          },
+          {
+            "id": 7696,
+            "nodeType": "EventDefinition",
+            "src": "1966:63:15",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 7690,
+              "nodeType": "StructuredDocumentation",
+              "src": "1866:95:15",
+              "text": "@notice Emitted when the pause is triggered by `account`, and changed to `newPausedStatus`."
+            },
+            "name": "Paused",
+            "nameLocation": "1972:6:15",
+            "parameters": {
+              "id": 7695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7692,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "1995:7:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7696,
+                  "src": "1979:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7691,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1979:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7694,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newPausedStatus",
+                  "nameLocation": "2012:15:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7696,
+                  "src": "2004:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7693,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2004:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1978:50:15"
+            }
+          },
+          {
+            "id": 7703,
+            "nodeType": "EventDefinition",
+            "src": "2132:65:15",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 7697,
+              "nodeType": "StructuredDocumentation",
+              "src": "2035:92:15",
+              "text": "@notice Emitted when the pause is lifted by `account`, and changed to `newPausedStatus`."
+            },
+            "name": "Unpaused",
+            "nameLocation": "2138:8:15",
+            "parameters": {
+              "id": 7702,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7699,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "2163:7:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7703,
+                  "src": "2147:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7698,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2147:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7701,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newPausedStatus",
+                  "nameLocation": "2180:15:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7703,
+                  "src": "2172:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7700,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2172:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2146:50:15"
+            }
+          },
+          {
+            "id": 7710,
+            "nodeType": "FunctionDefinition",
+            "src": "2339:66:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7704,
+              "nodeType": "StructuredDocumentation",
+              "src": "2207:127:15",
+              "text": "@notice Address of the `PauserRegistry` contract that this contract defers to for determining access control (for pausing)."
+            },
+            "functionSelector": "886f1195",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pauserRegistry",
+            "nameLocation": "2348:14:15",
+            "parameters": {
+              "id": 7705,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2362:2:15"
+            },
+            "returnParameters": {
+              "id": 7709,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7708,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7710,
+                  "src": "2388:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                    "typeString": "contract IPauserRegistry"
+                  },
+                  "typeName": {
+                    "id": 7707,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 7706,
+                      "name": "IPauserRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7778,
+                      "src": "2388:15:15"
+                    },
+                    "referencedDeclaration": 7778,
+                    "src": "2388:15:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                      "typeString": "contract IPauserRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2387:17:15"
+            },
+            "scope": 7748,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7716,
+            "nodeType": "FunctionDefinition",
+            "src": "2853:49:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7711,
+              "nodeType": "StructuredDocumentation",
+              "src": "2411:437:15",
+              "text": " @notice This function is used to pause an EigenLayer contract's functionality.\n It is permissioned to the `pauser` address, which is expected to be a low threshold multisig.\n @param newPausedStatus represents the new value for `_paused` to take, which means it may flip several bits at once.\n @dev This function can only pause functionality, and thus cannot 'unflip' any bit in `_paused` from 1 to 0."
+            },
+            "functionSelector": "136439dd",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pause",
+            "nameLocation": "2862:5:15",
+            "parameters": {
+              "id": 7714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7713,
+                  "mutability": "mutable",
+                  "name": "newPausedStatus",
+                  "nameLocation": "2876:15:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7716,
+                  "src": "2868:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7712,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2868:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2867:25:15"
+            },
+            "returnParameters": {
+              "id": 7715,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2901:0:15"
+            },
+            "scope": 7748,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7720,
+            "nodeType": "FunctionDefinition",
+            "src": "2977:29:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7717,
+              "nodeType": "StructuredDocumentation",
+              "src": "2908:64:15",
+              "text": " @notice Alias for `pause(type(uint256).max)`."
+            },
+            "functionSelector": "595c6a67",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pauseAll",
+            "nameLocation": "2986:8:15",
+            "parameters": {
+              "id": 7718,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2994:2:15"
+            },
+            "returnParameters": {
+              "id": 7719,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3005:0:15"
+            },
+            "scope": 7748,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7726,
+            "nodeType": "FunctionDefinition",
+            "src": "3482:51:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7721,
+              "nodeType": "StructuredDocumentation",
+              "src": "3012:465:15",
+              "text": " @notice This function is used to unpause an EigenLayer contract's functionality.\n It is permissioned to the `unpauser` address, which is expected to be a high threshold multisig or governance contract.\n @param newPausedStatus represents the new value for `_paused` to take, which means it may flip several bits at once.\n @dev This function can only unpause functionality, and thus cannot 'flip' any bit in `_paused` from 0 to 1."
+            },
+            "functionSelector": "fabc1cbc",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unpause",
+            "nameLocation": "3491:7:15",
+            "parameters": {
+              "id": 7724,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7723,
+                  "mutability": "mutable",
+                  "name": "newPausedStatus",
+                  "nameLocation": "3507:15:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7726,
+                  "src": "3499:23:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7722,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3499:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3498:25:15"
+            },
+            "returnParameters": {
+              "id": 7725,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3532:0:15"
+            },
+            "scope": 7748,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7732,
+            "nodeType": "FunctionDefinition",
+            "src": "3603:50:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7727,
+              "nodeType": "StructuredDocumentation",
+              "src": "3539:59:15",
+              "text": "@notice Returns the current paused status as a uint256."
+            },
+            "functionSelector": "5c975abb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "paused",
+            "nameLocation": "3612:6:15",
+            "parameters": {
+              "id": 7728,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3618:2:15"
+            },
+            "returnParameters": {
+              "id": 7731,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7730,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7732,
+                  "src": "3644:7:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7729,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3644:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3643:9:15"
+            },
+            "scope": 7748,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7740,
+            "nodeType": "FunctionDefinition",
+            "src": "3754:58:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7733,
+              "nodeType": "StructuredDocumentation",
+              "src": "3659:90:15",
+              "text": "@notice Returns 'true' if the `indexed`th bit of `_paused` is 1, and 'false' otherwise"
+            },
+            "functionSelector": "5ac86ab7",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "paused",
+            "nameLocation": "3763:6:15",
+            "parameters": {
+              "id": 7736,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7735,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "3776:5:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "3770:11:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 7734,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3770:5:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3769:13:15"
+            },
+            "returnParameters": {
+              "id": 7739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7738,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7740,
+                  "src": "3806:4:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7737,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3806:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3805:6:15"
+            },
+            "scope": 7748,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7747,
+            "nodeType": "FunctionDefinition",
+            "src": "3883:71:15",
+            "nodes": [],
+            "documentation": {
+              "id": 7741,
+              "nodeType": "StructuredDocumentation",
+              "src": "3818:60:15",
+              "text": "@notice Allows the unpauser to set a new pauser registry"
+            },
+            "functionSelector": "10d67a2f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setPauserRegistry",
+            "nameLocation": "3892:17:15",
+            "parameters": {
+              "id": 7745,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7744,
+                  "mutability": "mutable",
+                  "name": "newPauserRegistry",
+                  "nameLocation": "3926:17:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7747,
+                  "src": "3910:33:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                    "typeString": "contract IPauserRegistry"
+                  },
+                  "typeName": {
+                    "id": 7743,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 7742,
+                      "name": "IPauserRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7778,
+                      "src": "3910:15:15"
+                    },
+                    "referencedDeclaration": 7778,
+                    "src": "3910:15:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPauserRegistry_$7778",
+                      "typeString": "contract IPauserRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3909:35:15"
+            },
+            "returnParameters": {
+              "id": 7746,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3953:0:15"
+            },
+            "scope": 7748,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPausable",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 7680,
+          "nodeType": "StructuredDocumentation",
+          "src": "108:1552:15",
+          "text": " @title Adds pausability to a contract, with pausing & unpausing controlled by the `pauser` and `unpauser` of a PauserRegistry contract.\n @author Layr Labs, Inc.\n @notice Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-service\n @notice Contracts that inherit from this contract may define their own `pause` and `unpause` (and/or related) functions.\n These functions should be permissioned as \"onlyPauser\" which defers to a `PauserRegistry` for determining access control.\n @dev Pausability is implemented using a uint256, which allows up to 256 different single bit-flags; each bit can potentially pause different functionality.\n Inspiration for this was taken from the NearBridge design here https://etherscan.io/address/0x3FEFc5A4B1c02f21cBc8D3613643ba0635b9a873#code.\n For the `pause` and `unpause` functions we've implemented, if you pause, you can only flip (any number of) switches to on/1 (aka \"paused\"), and if you unpause,\n you can only flip (any number of) switches to off/0 (aka \"paused\").\n If you want a pauseXYZ function that just flips a single bit / \"pausing flag\", it will:\n 1) 'bit-wise and' (aka `&`) a flag with the current paused state (as a uint256)\n 2) update the paused state to this new value\n @dev We note as well that we have chosen to identify flags by their *bit index* as opposed to their numerical value, so, e.g. defining `DEPOSITS_PAUSED = 3`\n indicates specifically that if the *third bit* of `_paused` is flipped -- i.e. it is a '1' -- then deposits should be paused"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          7748
+        ],
+        "name": "IPausable",
+        "nameLocation": "1672:9:15",
+        "scope": 7749,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 15
+}

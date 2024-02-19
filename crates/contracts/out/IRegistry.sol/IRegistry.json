@@ -1,0 +1,207 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "registryCoordinator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "registryCoordinator()": "6d14a987"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"registryCoordinator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Minimal interface for a `Registry`-type contract.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-serviceFunctions related to the registration process itself have been intentionally excluded because their function signatures may vary significantly.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IRegistry.sol\":\"IRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registryCoordinator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IRegistry.sol": "IRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IRegistry.sol",
+    "id": 70499,
+    "exportedSymbols": {
+      "IRegistry": [
+        70498
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:454:106",
+    "nodes": [
+      {
+        "id": 70491,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:106",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ]
+      },
+      {
+        "id": 70498,
+        "nodeType": "ContractDefinition",
+        "src": "399:91:106",
+        "nodes": [
+          {
+            "id": 70497,
+            "nodeType": "FunctionDefinition",
+            "src": "425:63:106",
+            "nodes": [],
+            "functionSelector": "6d14a987",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registryCoordinator",
+            "nameLocation": "434:19:106",
+            "parameters": {
+              "id": 70493,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "453:2:106"
+            },
+            "returnParameters": {
+              "id": 70496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70495,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70497,
+                  "src": "479:7:106",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70494,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "479:7:106",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:9:106"
+            },
+            "scope": 70498,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 70492,
+          "nodeType": "StructuredDocumentation",
+          "src": "63:335:106",
+          "text": " @title Minimal interface for a `Registry`-type contract.\n @author Layr Labs, Inc.\n @notice Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-service\n @notice Functions related to the registration process itself have been intentionally excluded\n because their function signatures may vary significantly."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70498
+        ],
+        "name": "IRegistry",
+        "nameLocation": "409:9:106",
+        "scope": 70499,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 106
+}

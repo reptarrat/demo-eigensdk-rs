@@ -1,0 +1,266 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newOperatorIndex",
+          "type": "uint32"
+        }
+      ],
+      "name": "QuorumIndexUpdate",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newOperatorIndex\",\"type\":\"uint32\"}],\"name\":\"QuorumIndexUpdate\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/events/IIndexRegistryEvents.sol\":\"IIndexRegistryEvents\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"test/events/IIndexRegistryEvents.sol\":{\"keccak256\":\"0xbe94eafa4161380a9783a5d830fc97f6447f7a56646c6c55d42da046eb9af1f0\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://905150aa7131e441ab5eed260052970466355a579b28478cd149993d14f7231b\",\"dweb:/ipfs/QmaAdXS8mwWT75LETwMugtc3NH8YHc1f7Nsx2FjGjJYvKT\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": false
+            },
+            {
+              "internalType": "uint32",
+              "name": "newOperatorIndex",
+              "type": "uint32",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "QuorumIndexUpdate",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "test/events/IIndexRegistryEvents.sol": "IIndexRegistryEvents"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "test/events/IIndexRegistryEvents.sol": {
+        "keccak256": "0xbe94eafa4161380a9783a5d830fc97f6447f7a56646c6c55d42da046eb9af1f0",
+        "urls": [
+          "bzz-raw://905150aa7131e441ab5eed260052970466355a579b28478cd149993d14f7231b",
+          "dweb:/ipfs/QmaAdXS8mwWT75LETwMugtc3NH8YHc1f7Nsx2FjGjJYvKT"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "test/events/IIndexRegistryEvents.sol",
+    "id": 72495,
+    "exportedSymbols": {
+      "IIndexRegistryEvents": [
+        72494
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:285:114",
+    "nodes": [
+      {
+        "id": 72485,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:114",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 72494,
+        "nodeType": "ContractDefinition",
+        "src": "63:258:114",
+        "nodes": [
+          {
+            "id": 72493,
+            "nodeType": "EventDefinition",
+            "src": "222:97:114",
+            "nodes": [],
+            "anonymous": false,
+            "name": "QuorumIndexUpdate",
+            "nameLocation": "228:17:114",
+            "parameters": {
+              "id": 72492,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72487,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "262:10:114",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72493,
+                  "src": "246:26:114",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 72486,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:7:114",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72489,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "280:12:114",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72493,
+                  "src": "274:18:114",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72488,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:5:114",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72491,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newOperatorIndex",
+                  "nameLocation": "301:16:114",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72493,
+                  "src": "294:23:114",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 72490,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:6:114",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "245:73:114"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IIndexRegistryEvents",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          72494
+        ],
+        "name": "IIndexRegistryEvents",
+        "nameLocation": "73:20:114",
+        "scope": 72495,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 114
+}

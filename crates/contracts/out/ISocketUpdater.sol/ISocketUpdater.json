@@ -1,0 +1,331 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "socket",
+          "type": "string"
+        }
+      ],
+      "name": "OperatorSocketUpdate",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "socket",
+          "type": "string"
+        }
+      ],
+      "name": "updateSocket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "updateSocket(string)": "0cf4b767"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"socket\",\"type\":\"string\"}],\"name\":\"OperatorSocketUpdate\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"socket\",\"type\":\"string\"}],\"name\":\"updateSocket\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{\"updateSocket(string)\":{\"params\":{\"socket\":\"is the new socket of the operator\"}}},\"title\":\"Interface for an `ISocketUpdater` where operators can update their sockets.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"updateSocket(string)\":{\"notice\":\"Updates the socket of the msg.sender given they are a registered operator\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ISocketUpdater.sol\":\"ISocketUpdater\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/ISocketUpdater.sol\":{\"keccak256\":\"0x4fa9fc61ed778d76d3b0ac1974000d7cb613e413e363a2334dd08e0fcd013b01\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://fb67e3964e93cc9fca3ce91a7f6b67d7b1ea95a4e0568c05ad93185191ebaad0\",\"dweb:/ipfs/QmaJKFPh99zYjjpdNUS9ZbZPwamogr5FjaxuTKDJ63jwiU\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "string",
+              "name": "socket",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorSocketUpdate",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "socket",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateSocket"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "updateSocket(string)": {
+            "params": {
+              "socket": "is the new socket of the operator"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "updateSocket(string)": {
+            "notice": "Updates the socket of the msg.sender given they are a registered operator"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/ISocketUpdater.sol": "ISocketUpdater"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/ISocketUpdater.sol": {
+        "keccak256": "0x4fa9fc61ed778d76d3b0ac1974000d7cb613e413e363a2334dd08e0fcd013b01",
+        "urls": [
+          "bzz-raw://fb67e3964e93cc9fca3ce91a7f6b67d7b1ea95a4e0568c05ad93185191ebaad0",
+          "dweb:/ipfs/QmaJKFPh99zYjjpdNUS9ZbZPwamogr5FjaxuTKDJ63jwiU"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ISocketUpdater.sol",
+    "id": 70813,
+    "exportedSymbols": {
+      "ISocketUpdater": [
+        70812
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:507:109",
+    "nodes": [
+      {
+        "id": 70798,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:109",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 70812,
+        "nodeType": "ContractDefinition",
+        "src": "184:359:109",
+        "nodes": [
+          {
+            "id": 70805,
+            "nodeType": "EventDefinition",
+            "src": "230:70:109",
+            "nodes": [],
+            "anonymous": false,
+            "name": "OperatorSocketUpdate",
+            "nameLocation": "236:20:109",
+            "parameters": {
+              "id": 70804,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70801,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "273:10:109",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70805,
+                  "src": "257:26:109",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70800,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "257:7:109",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70803,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "socket",
+                  "nameLocation": "292:6:109",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70805,
+                  "src": "285:13:109",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 70802,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "285:6:109",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "256:43:109"
+            }
+          },
+          {
+            "id": 70811,
+            "nodeType": "FunctionDefinition",
+            "src": "488:53:109",
+            "nodes": [],
+            "documentation": {
+              "id": 70806,
+              "nodeType": "StructuredDocumentation",
+              "src": "328:155:109",
+              "text": " @notice Updates the socket of the msg.sender given they are a registered operator\n @param socket is the new socket of the operator"
+            },
+            "functionSelector": "0cf4b767",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateSocket",
+            "nameLocation": "497:12:109",
+            "parameters": {
+              "id": 70809,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70808,
+                  "mutability": "mutable",
+                  "name": "socket",
+                  "nameLocation": "524:6:109",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70811,
+                  "src": "510:20:109",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 70807,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "510:6:109",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "509:22:109"
+            },
+            "returnParameters": {
+              "id": 70810,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "540:0:109"
+            },
+            "scope": 70812,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISocketUpdater",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 70799,
+          "nodeType": "StructuredDocumentation",
+          "src": "63:120:109",
+          "text": " @title Interface for an `ISocketUpdater` where operators can update their sockets.\n @author Layr Labs, Inc."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70812
+        ],
+        "name": "ISocketUpdater",
+        "nameLocation": "194:14:109",
+        "scope": 70813,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 109
+}

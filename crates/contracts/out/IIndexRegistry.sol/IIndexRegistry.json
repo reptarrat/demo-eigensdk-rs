@@ -1,0 +1,2019 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newOperatorIndex",
+          "type": "uint32"
+        }
+      ],
+      "name": "QuorumIndexUpdate",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "deregisterOperator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "operatorIndex",
+          "type": "uint32"
+        }
+      ],
+      "name": "getLatestOperatorUpdate",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "fromBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct IIndexRegistry.OperatorUpdate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "getLatestQuorumUpdate",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "fromBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "numOperators",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IIndexRegistry.QuorumUpdate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "blockNumber",
+          "type": "uint32"
+        }
+      ],
+      "name": "getOperatorListAtBlockNumber",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "operatorIndex",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "arrayIndex",
+          "type": "uint32"
+        }
+      ],
+      "name": "getOperatorUpdateAtIndex",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "fromBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct IIndexRegistry.OperatorUpdate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "quorumIndex",
+          "type": "uint32"
+        }
+      ],
+      "name": "getQuorumUpdateAtIndex",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "fromBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "numOperators",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IIndexRegistry.QuorumUpdate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "initializeQuorum",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "registerOperator",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registryCoordinator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "totalOperatorsForQuorum",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "deregisterOperator(bytes32,bytes)": "bd29b8cd",
+    "getLatestOperatorUpdate(uint8,uint32)": "12d1d74d",
+    "getLatestQuorumUpdate(uint8)": "8121906f",
+    "getOperatorListAtBlockNumber(uint8,uint32)": "89026245",
+    "getOperatorUpdateAtIndex(uint8,uint32,uint32)": "2ed583e5",
+    "getQuorumUpdateAtIndex(uint8,uint32)": "a48bb0ac",
+    "initializeQuorum(uint8)": "26d941f2",
+    "registerOperator(bytes32,bytes)": "00bff04d",
+    "registryCoordinator()": "6d14a987",
+    "totalOperatorsForQuorum(uint8)": "f3410922"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newOperatorIndex\",\"type\":\"uint32\"}],\"name\":\"QuorumIndexUpdate\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"deregisterOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"operatorIndex\",\"type\":\"uint32\"}],\"name\":\"getLatestOperatorUpdate\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"fromBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"}],\"internalType\":\"struct IIndexRegistry.OperatorUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getLatestQuorumUpdate\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"fromBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"numOperators\",\"type\":\"uint32\"}],\"internalType\":\"struct IIndexRegistry.QuorumUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"}],\"name\":\"getOperatorListAtBlockNumber\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"operatorIndex\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"arrayIndex\",\"type\":\"uint32\"}],\"name\":\"getOperatorUpdateAtIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"fromBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"}],\"internalType\":\"struct IIndexRegistry.OperatorUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"quorumIndex\",\"type\":\"uint32\"}],\"name\":\"getQuorumUpdateAtIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"fromBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"numOperators\",\"type\":\"uint32\"}],\"internalType\":\"struct IIndexRegistry.QuorumUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"initializeQuorum\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"registerOperator\",\"outputs\":[{\"internalType\":\"uint32[]\",\"name\":\"\",\"type\":\"uint32[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registryCoordinator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"totalOperatorsForQuorum\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{\"deregisterOperator(bytes32,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for\",\"params\":{\"operatorId\":\"is the id of the operator that is being deregistered\",\"quorumNumbers\":\"is the quorum numbers the operator is deregistered for\"}},\"initializeQuorum(uint8)\":{\"params\":{\"quorumNumber\":\"The number of the new quorum\"}},\"registerOperator(bytes32,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered\",\"params\":{\"operatorId\":\"is the id of the operator that is being registered\",\"quorumNumbers\":\"is the quorum numbers the operator is registered for\"},\"returns\":{\"_0\":\"numOperatorsPerQuorum is a list of the number of operators (including the registering operator) in each of the quorums the operator is registered for\"}}},\"title\":\"Interface for a `Registry`-type contract that keeps track of an ordered list of operators for up to 256 quorums.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"deregisterOperator(bytes32,bytes)\":{\"notice\":\"Deregisters the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`.\"},\"getLatestOperatorUpdate(uint8,uint32)\":{\"notice\":\"Returns the most recent OperatorUpdate entry for the specified quorumNumber and operatorIndex\"},\"getLatestQuorumUpdate(uint8)\":{\"notice\":\"Returns the most recent QuorumUpdate entry for the specified quorumNumber\"},\"getOperatorListAtBlockNumber(uint8,uint32)\":{\"notice\":\"Returns an ordered list of operators of the services for the given `quorumNumber` at the given `blockNumber`\"},\"getOperatorUpdateAtIndex(uint8,uint32,uint32)\":{\"notice\":\"Returns the OperatorUpdate entry for the specified `operatorIndex` and `quorumNumber` at the specified `arrayIndex`\"},\"getQuorumUpdateAtIndex(uint8,uint32)\":{\"notice\":\"Returns the QuorumUpdate entry for the specified `quorumNumber` at the specified `quorumIndex`\"},\"initializeQuorum(uint8)\":{\"notice\":\"Initialize a quorum by pushing its first quorum update\"},\"registerOperator(bytes32,bytes)\":{\"notice\":\"Registers the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`.\"},\"totalOperatorsForQuorum(uint8)\":{\"notice\":\"Returns the current number of operators of this service for `quorumNumber`.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IIndexRegistry.sol\":\"IIndexRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/IIndexRegistry.sol\":{\"keccak256\":\"0x66ea31c35539fd47a94b874ac9339bc178f9cea3dfee932fd6deec51945f59cf\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://48e0e16f4973a68487165cf35c178badd55c0d2c2e592c698723108694072637\",\"dweb:/ipfs/QmUG3aFym2i2bsUFD8YbicCEM6hLh1TsgM4XR89rkEUYzy\"]},\"src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": false
+            },
+            {
+              "internalType": "uint32",
+              "name": "newOperatorIndex",
+              "type": "uint32",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "QuorumIndexUpdate",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deregisterOperator"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "operatorIndex",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getLatestOperatorUpdate",
+          "outputs": [
+            {
+              "internalType": "struct IIndexRegistry.OperatorUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "fromBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "operatorId",
+                  "type": "bytes32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getLatestQuorumUpdate",
+          "outputs": [
+            {
+              "internalType": "struct IIndexRegistry.QuorumUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "fromBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "numOperators",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getOperatorListAtBlockNumber",
+          "outputs": [
+            {
+              "internalType": "bytes32[]",
+              "name": "",
+              "type": "bytes32[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "operatorIndex",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "arrayIndex",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getOperatorUpdateAtIndex",
+          "outputs": [
+            {
+              "internalType": "struct IIndexRegistry.OperatorUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "fromBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "operatorId",
+                  "type": "bytes32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "quorumIndex",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getQuorumUpdateAtIndex",
+          "outputs": [
+            {
+              "internalType": "struct IIndexRegistry.QuorumUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "fromBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "numOperators",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "initializeQuorum"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerOperator",
+          "outputs": [
+            {
+              "internalType": "uint32[]",
+              "name": "",
+              "type": "uint32[]"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registryCoordinator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "totalOperatorsForQuorum",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "deregisterOperator(bytes32,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for",
+            "params": {
+              "operatorId": "is the id of the operator that is being deregistered",
+              "quorumNumbers": "is the quorum numbers the operator is deregistered for"
+            }
+          },
+          "initializeQuorum(uint8)": {
+            "params": {
+              "quorumNumber": "The number of the new quorum"
+            }
+          },
+          "registerOperator(bytes32,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered",
+            "params": {
+              "operatorId": "is the id of the operator that is being registered",
+              "quorumNumbers": "is the quorum numbers the operator is registered for"
+            },
+            "returns": {
+              "_0": "numOperatorsPerQuorum is a list of the number of operators (including the registering operator) in each of the quorums the operator is registered for"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "deregisterOperator(bytes32,bytes)": {
+            "notice": "Deregisters the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`."
+          },
+          "getLatestOperatorUpdate(uint8,uint32)": {
+            "notice": "Returns the most recent OperatorUpdate entry for the specified quorumNumber and operatorIndex"
+          },
+          "getLatestQuorumUpdate(uint8)": {
+            "notice": "Returns the most recent QuorumUpdate entry for the specified quorumNumber"
+          },
+          "getOperatorListAtBlockNumber(uint8,uint32)": {
+            "notice": "Returns an ordered list of operators of the services for the given `quorumNumber` at the given `blockNumber`"
+          },
+          "getOperatorUpdateAtIndex(uint8,uint32,uint32)": {
+            "notice": "Returns the OperatorUpdate entry for the specified `operatorIndex` and `quorumNumber` at the specified `arrayIndex`"
+          },
+          "getQuorumUpdateAtIndex(uint8,uint32)": {
+            "notice": "Returns the QuorumUpdate entry for the specified `quorumNumber` at the specified `quorumIndex`"
+          },
+          "initializeQuorum(uint8)": {
+            "notice": "Initialize a quorum by pushing its first quorum update"
+          },
+          "registerOperator(bytes32,bytes)": {
+            "notice": "Registers the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`."
+          },
+          "totalOperatorsForQuorum(uint8)": {
+            "notice": "Returns the current number of operators of this service for `quorumNumber`."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IIndexRegistry.sol": "IIndexRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IIndexRegistry.sol": {
+        "keccak256": "0x66ea31c35539fd47a94b874ac9339bc178f9cea3dfee932fd6deec51945f59cf",
+        "urls": [
+          "bzz-raw://48e0e16f4973a68487165cf35c178badd55c0d2c2e592c698723108694072637",
+          "dweb:/ipfs/QmUG3aFym2i2bsUFD8YbicCEM6hLh1TsgM4XR89rkEUYzy"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IIndexRegistry.sol",
+    "id": 70490,
+    "exportedSymbols": {
+      "IIndexRegistry": [
+        70489
+      ],
+      "IRegistry": [
+        70498
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:4676:105",
+    "nodes": [
+      {
+        "id": 70377,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:105",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 70379,
+        "nodeType": "ImportDirective",
+        "src": "63:42:105",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IRegistry.sol",
+        "file": "./IRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70490,
+        "sourceUnit": 70499,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70378,
+              "name": "IRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 70498,
+              "src": "71:9:105",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IRegistry_$70498_$",
+                "typeString": "type(contract IRegistry)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70489,
+        "nodeType": "ContractDefinition",
+        "src": "265:4448:105",
+        "nodes": [
+          {
+            "id": 70390,
+            "nodeType": "EventDefinition",
+            "src": "450:97:105",
+            "nodes": [],
+            "anonymous": false,
+            "name": "QuorumIndexUpdate",
+            "nameLocation": "456:17:105",
+            "parameters": {
+              "id": 70389,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70384,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "490:10:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70390,
+                  "src": "474:26:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70383,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:7:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70386,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "508:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70390,
+                  "src": "502:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70385,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70388,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newOperatorIndex",
+                  "nameLocation": "529:16:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70390,
+                  "src": "522:23:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70387,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "522:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:73:105"
+            }
+          },
+          {
+            "id": 70395,
+            "nodeType": "StructDefinition",
+            "src": "659:308:105",
+            "nodes": [],
+            "canonicalName": "IIndexRegistry.OperatorUpdate",
+            "members": [
+              {
+                "constant": false,
+                "id": 70392,
+                "mutability": "mutable",
+                "name": "fromBlockNumber",
+                "nameLocation": "879:15:105",
+                "nodeType": "VariableDeclaration",
+                "scope": 70395,
+                "src": "872:22:105",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 70391,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "872:6:105",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70394,
+                "mutability": "mutable",
+                "name": "operatorId",
+                "nameLocation": "950:10:105",
+                "nodeType": "VariableDeclaration",
+                "scope": 70395,
+                "src": "942:18:105",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 70393,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "942:7:105",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "OperatorUpdate",
+            "nameLocation": "666:14:105",
+            "scope": 70489,
+            "visibility": "public"
+          },
+          {
+            "id": 70400,
+            "nodeType": "StructDefinition",
+            "src": "1061:272:105",
+            "nodes": [],
+            "canonicalName": "IIndexRegistry.QuorumUpdate",
+            "members": [
+              {
+                "constant": false,
+                "id": 70397,
+                "mutability": "mutable",
+                "name": "fromBlockNumber",
+                "nameLocation": "1226:15:105",
+                "nodeType": "VariableDeclaration",
+                "scope": 70400,
+                "src": "1219:22:105",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 70396,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1219:6:105",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70399,
+                "mutability": "mutable",
+                "name": "numOperators",
+                "nameLocation": "1314:12:105",
+                "nodeType": "VariableDeclaration",
+                "scope": 70400,
+                "src": "1307:19:105",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 70398,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1307:6:105",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "QuorumUpdate",
+            "nameLocation": "1068:12:105",
+            "scope": 70489,
+            "visibility": "public"
+          },
+          {
+            "id": 70411,
+            "nodeType": "FunctionDefinition",
+            "src": "2148:110:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70401,
+              "nodeType": "StructuredDocumentation",
+              "src": "1339:804:105",
+              "text": " @notice Registers the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`.\n @param operatorId is the id of the operator that is being registered\n @param quorumNumbers is the quorum numbers the operator is registered for\n @return numOperatorsPerQuorum is a list of the number of operators (including the registering operator) in each of the quorums the operator is registered for\n @dev access restricted to the RegistryCoordinator\n @dev Preconditions (these are assumed, not validated in this contract):\n         1) `quorumNumbers` has no duplicates\n         2) `quorumNumbers.length` != 0\n         3) `quorumNumbers` is ordered in ascending order\n         4) the operator is not already registered"
+            },
+            "functionSelector": "00bff04d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerOperator",
+            "nameLocation": "2157:16:105",
+            "parameters": {
+              "id": 70406,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70403,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "2182:10:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70411,
+                  "src": "2174:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70402,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2174:7:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70405,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "2209:13:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70411,
+                  "src": "2194:28:105",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70404,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2194:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2173:50:105"
+            },
+            "returnParameters": {
+              "id": 70410,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70409,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70411,
+                  "src": "2241:15:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$dyn_memory_ptr",
+                    "typeString": "uint32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 70407,
+                      "name": "uint32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2241:6:105",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 70408,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2241:8:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                      "typeString": "uint32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2240:17:105"
+            },
+            "scope": 70489,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70419,
+            "nodeType": "FunctionDefinition",
+            "src": "3019:87:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70412,
+              "nodeType": "StructuredDocumentation",
+              "src": "2264:750:105",
+              "text": " @notice Deregisters the operator with the specified `operatorId` for the quorums specified by `quorumNumbers`.\n @param operatorId is the id of the operator that is being deregistered\n @param quorumNumbers is the quorum numbers the operator is deregistered for\n @dev access restricted to the RegistryCoordinator\n @dev Preconditions (these are assumed, not validated in this contract):\n         1) `quorumNumbers` has no duplicates\n         2) `quorumNumbers.length` != 0\n         3) `quorumNumbers` is ordered in ascending order\n         4) the operator is not already deregistered\n         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for"
+            },
+            "functionSelector": "bd29b8cd",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deregisterOperator",
+            "nameLocation": "3028:18:105",
+            "parameters": {
+              "id": 70417,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70414,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "3055:10:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70419,
+                  "src": "3047:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70413,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3047:7:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70416,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "3082:13:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70419,
+                  "src": "3067:28:105",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70415,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3067:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3046:50:105"
+            },
+            "returnParameters": {
+              "id": 70418,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3105:0:105"
+            },
+            "scope": 70489,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70425,
+            "nodeType": "FunctionDefinition",
+            "src": "3254:55:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70420,
+              "nodeType": "StructuredDocumentation",
+              "src": "3112:137:105",
+              "text": " @notice Initialize a quorum by pushing its first quorum update\n @param quorumNumber The number of the new quorum"
+            },
+            "functionSelector": "26d941f2",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initializeQuorum",
+            "nameLocation": "3263:16:105",
+            "parameters": {
+              "id": 70423,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70422,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "3286:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70425,
+                  "src": "3280:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70421,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3280:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3279:20:105"
+            },
+            "returnParameters": {
+              "id": 70424,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3308:0:105"
+            },
+            "scope": 70489,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70438,
+            "nodeType": "FunctionDefinition",
+            "src": "3447:171:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70426,
+              "nodeType": "StructuredDocumentation",
+              "src": "3315:127:105",
+              "text": "@notice Returns the OperatorUpdate entry for the specified `operatorIndex` and `quorumNumber` at the specified `arrayIndex`"
+            },
+            "functionSelector": "2ed583e5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOperatorUpdateAtIndex",
+            "nameLocation": "3456:24:105",
+            "parameters": {
+              "id": 70433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70428,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "3496:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70438,
+                  "src": "3490:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70427,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3490:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70430,
+                  "mutability": "mutable",
+                  "name": "operatorIndex",
+                  "nameLocation": "3525:13:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70438,
+                  "src": "3518:20:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70429,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3518:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70432,
+                  "mutability": "mutable",
+                  "name": "arrayIndex",
+                  "nameLocation": "3555:10:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70438,
+                  "src": "3548:17:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70431,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3548:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3480:91:105"
+            },
+            "returnParameters": {
+              "id": 70437,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70436,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70438,
+                  "src": "3595:21:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_OperatorUpdate_$70395_memory_ptr",
+                    "typeString": "struct IIndexRegistry.OperatorUpdate"
+                  },
+                  "typeName": {
+                    "id": 70435,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70434,
+                      "name": "OperatorUpdate",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70395,
+                      "src": "3595:14:105"
+                    },
+                    "referencedDeclaration": 70395,
+                    "src": "3595:14:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OperatorUpdate_$70395_storage_ptr",
+                      "typeString": "struct IIndexRegistry.OperatorUpdate"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3594:23:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70449,
+            "nodeType": "FunctionDefinition",
+            "src": "3735:116:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70439,
+              "nodeType": "StructuredDocumentation",
+              "src": "3624:106:105",
+              "text": "@notice Returns the QuorumUpdate entry for the specified `quorumNumber` at the specified `quorumIndex`"
+            },
+            "functionSelector": "a48bb0ac",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getQuorumUpdateAtIndex",
+            "nameLocation": "3744:22:105",
+            "parameters": {
+              "id": 70444,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70441,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "3773:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70449,
+                  "src": "3767:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70440,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3767:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70443,
+                  "mutability": "mutable",
+                  "name": "quorumIndex",
+                  "nameLocation": "3794:11:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70449,
+                  "src": "3787:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70442,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3787:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3766:40:105"
+            },
+            "returnParameters": {
+              "id": 70448,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70447,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70449,
+                  "src": "3830:19:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_QuorumUpdate_$70400_memory_ptr",
+                    "typeString": "struct IIndexRegistry.QuorumUpdate"
+                  },
+                  "typeName": {
+                    "id": 70446,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70445,
+                      "name": "QuorumUpdate",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70400,
+                      "src": "3830:12:105"
+                    },
+                    "referencedDeclaration": 70400,
+                    "src": "3830:12:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_QuorumUpdate_$70400_storage_ptr",
+                      "typeString": "struct IIndexRegistry.QuorumUpdate"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3829:21:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70460,
+            "nodeType": "FunctionDefinition",
+            "src": "3967:121:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70450,
+              "nodeType": "StructuredDocumentation",
+              "src": "3857:105:105",
+              "text": "@notice Returns the most recent OperatorUpdate entry for the specified quorumNumber and operatorIndex"
+            },
+            "functionSelector": "12d1d74d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestOperatorUpdate",
+            "nameLocation": "3976:23:105",
+            "parameters": {
+              "id": 70455,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70452,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "4006:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70460,
+                  "src": "4000:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70451,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4000:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70454,
+                  "mutability": "mutable",
+                  "name": "operatorIndex",
+                  "nameLocation": "4027:13:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70460,
+                  "src": "4020:20:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70453,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4020:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3999:42:105"
+            },
+            "returnParameters": {
+              "id": 70459,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70458,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70460,
+                  "src": "4065:21:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_OperatorUpdate_$70395_memory_ptr",
+                    "typeString": "struct IIndexRegistry.OperatorUpdate"
+                  },
+                  "typeName": {
+                    "id": 70457,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70456,
+                      "name": "OperatorUpdate",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70395,
+                      "src": "4065:14:105"
+                    },
+                    "referencedDeclaration": 70395,
+                    "src": "4065:14:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OperatorUpdate_$70395_storage_ptr",
+                      "typeString": "struct IIndexRegistry.OperatorUpdate"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4064:23:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70469,
+            "nodeType": "FunctionDefinition",
+            "src": "4184:95:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70461,
+              "nodeType": "StructuredDocumentation",
+              "src": "4094:85:105",
+              "text": "@notice Returns the most recent QuorumUpdate entry for the specified quorumNumber"
+            },
+            "functionSelector": "8121906f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestQuorumUpdate",
+            "nameLocation": "4193:21:105",
+            "parameters": {
+              "id": 70464,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70463,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "4221:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70469,
+                  "src": "4215:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70462,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4215:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4214:20:105"
+            },
+            "returnParameters": {
+              "id": 70468,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70467,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70469,
+                  "src": "4258:19:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_QuorumUpdate_$70400_memory_ptr",
+                    "typeString": "struct IIndexRegistry.QuorumUpdate"
+                  },
+                  "typeName": {
+                    "id": 70466,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70465,
+                      "name": "QuorumUpdate",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70400,
+                      "src": "4258:12:105"
+                    },
+                    "referencedDeclaration": 70400,
+                    "src": "4258:12:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_QuorumUpdate_$70400_storage_ptr",
+                      "typeString": "struct IIndexRegistry.QuorumUpdate"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4257:21:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70477,
+            "nodeType": "FunctionDefinition",
+            "src": "4377:84:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70470,
+              "nodeType": "StructuredDocumentation",
+              "src": "4285:87:105",
+              "text": "@notice Returns the current number of operators of this service for `quorumNumber`."
+            },
+            "functionSelector": "f3410922",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalOperatorsForQuorum",
+            "nameLocation": "4386:23:105",
+            "parameters": {
+              "id": 70473,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70472,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "4416:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70477,
+                  "src": "4410:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70471,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4410:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4409:20:105"
+            },
+            "returnParameters": {
+              "id": 70476,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70475,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70477,
+                  "src": "4453:6:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70474,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4453:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4452:8:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70488,
+            "nodeType": "FunctionDefinition",
+            "src": "4592:119:105",
+            "nodes": [],
+            "documentation": {
+              "id": 70478,
+              "nodeType": "StructuredDocumentation",
+              "src": "4467:120:105",
+              "text": "@notice Returns an ordered list of operators of the services for the given `quorumNumber` at the given `blockNumber`"
+            },
+            "functionSelector": "89026245",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOperatorListAtBlockNumber",
+            "nameLocation": "4601:28:105",
+            "parameters": {
+              "id": 70483,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70480,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "4636:12:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70488,
+                  "src": "4630:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70479,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4630:5:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70482,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nameLocation": "4657:11:105",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70488,
+                  "src": "4650:18:105",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70481,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4650:6:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4629:40:105"
+            },
+            "returnParameters": {
+              "id": 70487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70486,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70488,
+                  "src": "4693:16:105",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 70484,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4693:7:105",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 70485,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4693:9:105",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4692:18:105"
+            },
+            "scope": 70489,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 70381,
+              "name": "IRegistry",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 70498,
+              "src": "293:9:105"
+            },
+            "id": 70382,
+            "nodeType": "InheritanceSpecifier",
+            "src": "293:9:105"
+          }
+        ],
+        "canonicalName": "IIndexRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 70380,
+          "nodeType": "StructuredDocumentation",
+          "src": "107:157:105",
+          "text": " @title Interface for a `Registry`-type contract that keeps track of an ordered list of operators for up to 256 quorums.\n @author Layr Labs, Inc."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70489,
+          70498
+        ],
+        "name": "IIndexRegistry",
+        "nameLocation": "275:14:105",
+        "scope": 70490,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 105
+}

@@ -1,0 +1,1789 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "name": "StaleStakesForbiddenUpdate",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "blsApkRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IBLSApkRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "msgHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint32",
+          "name": "referenceBlockNumber",
+          "type": "uint32"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint32[]",
+              "name": "nonSignerQuorumBitmapIndices",
+              "type": "uint32[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BN254.G1Point[]",
+              "name": "nonSignerPubkeys",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BN254.G1Point[]",
+              "name": "quorumApks",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct BN254.G2Point",
+              "name": "apkG2",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BN254.G1Point",
+              "name": "sigma",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint32[]",
+              "name": "quorumApkIndices",
+              "type": "uint32[]"
+            },
+            {
+              "internalType": "uint32[]",
+              "name": "totalStakeIndices",
+              "type": "uint32[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "nonSignerStakeIndices",
+              "type": "uint32[][]"
+            }
+          ],
+          "internalType": "struct IBLSSignatureChecker.NonSignerStakesAndSignature",
+          "name": "nonSignerStakesAndSignature",
+          "type": "tuple"
+        }
+      ],
+      "name": "checkSignatures",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint96[]",
+              "name": "signedStakeForQuorum",
+              "type": "uint96[]"
+            },
+            {
+              "internalType": "uint96[]",
+              "name": "totalStakeForQuorum",
+              "type": "uint96[]"
+            }
+          ],
+          "internalType": "struct IBLSSignatureChecker.QuorumStakeTotals",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "delegation",
+      "outputs": [
+        {
+          "internalType": "contract IDelegationManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registryCoordinator",
+      "outputs": [
+        {
+          "internalType": "contract IRegistryCoordinator",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stakeRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IStakeRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "blsApkRegistry()": "5df45946",
+    "checkSignatures(bytes32,bytes,uint32,(uint32[],(uint256,uint256)[],(uint256,uint256)[],(uint256[2],uint256[2]),(uint256,uint256),uint32[],uint32[],uint32[][]))": "6efb4636",
+    "delegation()": "df5cf723",
+    "registryCoordinator()": "6d14a987",
+    "stakeRegistry()": "68304835"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"StaleStakesForbiddenUpdate\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"blsApkRegistry\",\"outputs\":[{\"internalType\":\"contract IBLSApkRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"msgHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"},{\"internalType\":\"uint32\",\"name\":\"referenceBlockNumber\",\"type\":\"uint32\"},{\"components\":[{\"internalType\":\"uint32[]\",\"name\":\"nonSignerQuorumBitmapIndices\",\"type\":\"uint32[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point[]\",\"name\":\"nonSignerPubkeys\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point[]\",\"name\":\"quorumApks\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"struct BN254.G2Point\",\"name\":\"apkG2\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"sigma\",\"type\":\"tuple\"},{\"internalType\":\"uint32[]\",\"name\":\"quorumApkIndices\",\"type\":\"uint32[]\"},{\"internalType\":\"uint32[]\",\"name\":\"totalStakeIndices\",\"type\":\"uint32[]\"},{\"internalType\":\"uint32[][]\",\"name\":\"nonSignerStakeIndices\",\"type\":\"uint32[][]\"}],\"internalType\":\"struct IBLSSignatureChecker.NonSignerStakesAndSignature\",\"name\":\"nonSignerStakesAndSignature\",\"type\":\"tuple\"}],\"name\":\"checkSignatures\",\"outputs\":[{\"components\":[{\"internalType\":\"uint96[]\",\"name\":\"signedStakeForQuorum\",\"type\":\"uint96[]\"},{\"internalType\":\"uint96[]\",\"name\":\"totalStakeForQuorum\",\"type\":\"uint96[]\"}],\"internalType\":\"struct IBLSSignatureChecker.QuorumStakeTotals\",\"name\":\"\",\"type\":\"tuple\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"delegation\",\"outputs\":[{\"internalType\":\"contract IDelegationManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registryCoordinator\",\"outputs\":[{\"internalType\":\"contract IRegistryCoordinator\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakeRegistry\",\"outputs\":[{\"internalType\":\"contract IStakeRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{\"checkSignatures(bytes32,bytes,uint32,(uint32[],(uint256,uint256)[],(uint256,uint256)[],(uint256[2],uint256[2]),(uint256,uint256),uint32[],uint32[],uint32[][]))\":{\"details\":\"Before signature verification, the function verifies operator stake information.  This includes ensuring that the provided `referenceBlockNumber` is correct, i.e., ensure that the stake returned from the specified block number is recent enough and that the stake is either the most recent update for the total stake (or the operator) or latest before the referenceBlockNumber.\"}},\"title\":\"Used for checking BLS aggregate signatures from the operators of a EigenLayer AVS with the RegistryCoordinator/BLSApkRegistry/StakeRegistry architechture.\",\"version\":1},\"userdoc\":{\"events\":{\"StaleStakesForbiddenUpdate(bool)\":{\"notice\":\"Emitted when `staleStakesForbiddenUpdate` is set\"}},\"kind\":\"user\",\"methods\":{\"checkSignatures(bytes32,bytes,uint32,(uint32[],(uint256,uint256)[],(uint256,uint256)[],(uint256[2],uint256[2]),(uint256,uint256),uint32[],uint32[],uint32[][]))\":{\"notice\":\"This function is called by disperser when it has aggregated all the signatures of the operators that are part of the quorum for a particular taskNumber and is asserting them into onchain. The function checks that the claim for aggregated signatures are valid. The thesis of this procedure entails: - getting the aggregated pubkey of all registered nodes at the time of pre-commit by the disperser (represented by apk in the parameters), - subtracting the pubkeys of all the signers not in the quorum (nonSignerPubkeys) and storing  the output in apk to get aggregated pubkey of all operators that are part of quorum. - use this aggregated pubkey to verify the aggregated signature under BLS scheme. \"}},\"notice\":\"Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-serviceThis is the contract for checking the validity of aggregate operator signatures.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IBLSSignatureChecker.sol\":\"IBLSSignatureChecker\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol\":{\"keccak256\":\"0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983\",\"dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol\":{\"keccak256\":\"0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e\",\"dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol\":{\"keccak256\":\"0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91\",\"dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol\":{\"keccak256\":\"0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc\",\"dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol\":{\"keccak256\":\"0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d\",\"dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":{\"keccak256\":\"0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324\",\"dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol\":{\"keccak256\":\"0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d\",\"dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol\":{\"keccak256\":\"0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c\",\"dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol\":{\"keccak256\":\"0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232\",\"dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol\":{\"keccak256\":\"0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73\",\"dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol\":{\"keccak256\":\"0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234\",\"dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol\":{\"keccak256\":\"0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235\",\"dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol\":{\"keccak256\":\"0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f\",\"dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol\":{\"keccak256\":\"0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8\",\"dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss\"]},\"lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354\",\"dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"src/interfaces/IBLSApkRegistry.sol\":{\"keccak256\":\"0x8ab1a16d2d5fd7dd89447aaceb67a3d383d6bb484bbcf2a4755e780db0011a32\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5b69bad830b1983d436c923870489d0582fb16a5f88a0e978057c78b52e51b9e\",\"dweb:/ipfs/QmPnZBXLtivrjB1WxaaikCgcKUo9Bf87MkSM53DnfpUs8e\"]},\"src/interfaces/IBLSSignatureChecker.sol\":{\"keccak256\":\"0x15d69a34ec71a40a8be8f899d0b32afad4506942774fe13ec5b3761e102df0f4\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://1ca77384149eb38672feb4fd51664af7019ccde4e4ca2e1e1437ad9bdf28ae0f\",\"dweb:/ipfs/QmT2PmicsZEnbSHuHHdsHBjhK1jtaq7Zt1dXVx9x5roUgE\"]},\"src/interfaces/IIndexRegistry.sol\":{\"keccak256\":\"0x66ea31c35539fd47a94b874ac9339bc178f9cea3dfee932fd6deec51945f59cf\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://48e0e16f4973a68487165cf35c178badd55c0d2c2e592c698723108694072637\",\"dweb:/ipfs/QmUG3aFym2i2bsUFD8YbicCEM6hLh1TsgM4XR89rkEUYzy\"]},\"src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]},\"src/interfaces/IRegistryCoordinator.sol\":{\"keccak256\":\"0xaa994bdacd0d8718b4a9c018debece071e28a0906a3f041d53f1874eb882fad9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://0f175cfc849fb4ac38d1629e6f87c1d7b39bd5eb2bc62e6d40d57a9ec34a62db\",\"dweb:/ipfs/QmQhgQNjZaYYzEpk2X732ZKPfTbFGr8y8RLhDWizZSQLxi\"]},\"src/interfaces/IStakeRegistry.sol\":{\"keccak256\":\"0xa990d3cff41340b37d8e5218627f8f83cd60acbce5e1846af28f6d65db0e2b2f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://68cc70d64f757e21c8a5d67b93d17543a160a8507a7b29f77bba4d2dc6f2a9c3\",\"dweb:/ipfs/QmUjzs5cA3k86w7Cewbei7kUNfRymuEidEbEy9hKQe22Ve\"]},\"src/libraries/BN254.sol\":{\"keccak256\":\"0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49\",\"dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bool",
+              "name": "value",
+              "type": "bool",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StaleStakesForbiddenUpdate",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "blsApkRegistry",
+          "outputs": [
+            {
+              "internalType": "contract IBLSApkRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "msgHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint32",
+              "name": "referenceBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "struct IBLSSignatureChecker.NonSignerStakesAndSignature",
+              "name": "nonSignerStakesAndSignature",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32[]",
+                  "name": "nonSignerQuorumBitmapIndices",
+                  "type": "uint32[]"
+                },
+                {
+                  "internalType": "struct BN254.G1Point[]",
+                  "name": "nonSignerPubkeys",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "X",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "Y",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct BN254.G1Point[]",
+                  "name": "quorumApks",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "X",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "Y",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct BN254.G2Point",
+                  "name": "apkG2",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256[2]",
+                      "name": "X",
+                      "type": "uint256[2]"
+                    },
+                    {
+                      "internalType": "uint256[2]",
+                      "name": "Y",
+                      "type": "uint256[2]"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct BN254.G1Point",
+                  "name": "sigma",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "X",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "Y",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "uint32[]",
+                  "name": "quorumApkIndices",
+                  "type": "uint32[]"
+                },
+                {
+                  "internalType": "uint32[]",
+                  "name": "totalStakeIndices",
+                  "type": "uint32[]"
+                },
+                {
+                  "internalType": "uint32[][]",
+                  "name": "nonSignerStakeIndices",
+                  "type": "uint32[][]"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "checkSignatures",
+          "outputs": [
+            {
+              "internalType": "struct IBLSSignatureChecker.QuorumStakeTotals",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint96[]",
+                  "name": "signedStakeForQuorum",
+                  "type": "uint96[]"
+                },
+                {
+                  "internalType": "uint96[]",
+                  "name": "totalStakeForQuorum",
+                  "type": "uint96[]"
+                }
+              ]
+            },
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "delegation",
+          "outputs": [
+            {
+              "internalType": "contract IDelegationManager",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registryCoordinator",
+          "outputs": [
+            {
+              "internalType": "contract IRegistryCoordinator",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "stakeRegistry",
+          "outputs": [
+            {
+              "internalType": "contract IStakeRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "checkSignatures(bytes32,bytes,uint32,(uint32[],(uint256,uint256)[],(uint256,uint256)[],(uint256[2],uint256[2]),(uint256,uint256),uint32[],uint32[],uint32[][]))": {
+            "details": "Before signature verification, the function verifies operator stake information.  This includes ensuring that the provided `referenceBlockNumber` is correct, i.e., ensure that the stake returned from the specified block number is recent enough and that the stake is either the most recent update for the total stake (or the operator) or latest before the referenceBlockNumber."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "checkSignatures(bytes32,bytes,uint32,(uint32[],(uint256,uint256)[],(uint256,uint256)[],(uint256[2],uint256[2]),(uint256,uint256),uint32[],uint32[],uint32[][]))": {
+            "notice": "This function is called by disperser when it has aggregated all the signatures of the operators that are part of the quorum for a particular taskNumber and is asserting them into onchain. The function checks that the claim for aggregated signatures are valid. The thesis of this procedure entails: - getting the aggregated pubkey of all registered nodes at the time of pre-commit by the disperser (represented by apk in the parameters), - subtracting the pubkeys of all the signers not in the quorum (nonSignerPubkeys) and storing  the output in apk to get aggregated pubkey of all operators that are part of quorum. - use this aggregated pubkey to verify the aggregated signature under BLS scheme. "
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IBLSSignatureChecker.sol": "IBLSSignatureChecker"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol": {
+        "keccak256": "0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00",
+        "urls": [
+          "bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983",
+          "dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol": {
+        "keccak256": "0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb",
+        "urls": [
+          "bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e",
+          "dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol": {
+        "keccak256": "0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c",
+        "urls": [
+          "bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91",
+          "dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz"
+        ],
+        "license": "CC0-1.0"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol": {
+        "keccak256": "0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba",
+        "urls": [
+          "bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc",
+          "dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol": {
+        "keccak256": "0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f",
+        "urls": [
+          "bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d",
+          "dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": {
+        "keccak256": "0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f",
+        "urls": [
+          "bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324",
+          "dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol": {
+        "keccak256": "0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49",
+        "urls": [
+          "bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d",
+          "dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol": {
+        "keccak256": "0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092",
+        "urls": [
+          "bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c",
+          "dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol": {
+        "keccak256": "0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79",
+        "urls": [
+          "bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232",
+          "dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol": {
+        "keccak256": "0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420",
+        "urls": [
+          "bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73",
+          "dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol": {
+        "keccak256": "0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674",
+        "urls": [
+          "bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234",
+          "dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol": {
+        "keccak256": "0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9",
+        "urls": [
+          "bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235",
+          "dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol": {
+        "keccak256": "0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d",
+        "urls": [
+          "bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f",
+          "dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol": {
+        "keccak256": "0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a",
+        "urls": [
+          "bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8",
+          "dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol": {
+        "keccak256": "0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61",
+        "urls": [
+          "bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354",
+          "dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+        "urls": [
+          "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+          "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/IBLSApkRegistry.sol": {
+        "keccak256": "0x8ab1a16d2d5fd7dd89447aaceb67a3d383d6bb484bbcf2a4755e780db0011a32",
+        "urls": [
+          "bzz-raw://5b69bad830b1983d436c923870489d0582fb16a5f88a0e978057c78b52e51b9e",
+          "dweb:/ipfs/QmPnZBXLtivrjB1WxaaikCgcKUo9Bf87MkSM53DnfpUs8e"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IBLSSignatureChecker.sol": {
+        "keccak256": "0x15d69a34ec71a40a8be8f899d0b32afad4506942774fe13ec5b3761e102df0f4",
+        "urls": [
+          "bzz-raw://1ca77384149eb38672feb4fd51664af7019ccde4e4ca2e1e1437ad9bdf28ae0f",
+          "dweb:/ipfs/QmT2PmicsZEnbSHuHHdsHBjhK1jtaq7Zt1dXVx9x5roUgE"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IIndexRegistry.sol": {
+        "keccak256": "0x66ea31c35539fd47a94b874ac9339bc178f9cea3dfee932fd6deec51945f59cf",
+        "urls": [
+          "bzz-raw://48e0e16f4973a68487165cf35c178badd55c0d2c2e592c698723108694072637",
+          "dweb:/ipfs/QmUG3aFym2i2bsUFD8YbicCEM6hLh1TsgM4XR89rkEUYzy"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IRegistryCoordinator.sol": {
+        "keccak256": "0xaa994bdacd0d8718b4a9c018debece071e28a0906a3f041d53f1874eb882fad9",
+        "urls": [
+          "bzz-raw://0f175cfc849fb4ac38d1629e6f87c1d7b39bd5eb2bc62e6d40d57a9ec34a62db",
+          "dweb:/ipfs/QmQhgQNjZaYYzEpk2X732ZKPfTbFGr8y8RLhDWizZSQLxi"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IStakeRegistry.sol": {
+        "keccak256": "0xa990d3cff41340b37d8e5218627f8f83cd60acbce5e1846af28f6d65db0e2b2f",
+        "urls": [
+          "bzz-raw://68cc70d64f757e21c8a5d67b93d17543a160a8507a7b29f77bba4d2dc6f2a9c3",
+          "dweb:/ipfs/QmUjzs5cA3k86w7Cewbei7kUNfRymuEidEbEy9hKQe22Ve"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/libraries/BN254.sol": {
+        "keccak256": "0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417",
+        "urls": [
+          "bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49",
+          "dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IBLSSignatureChecker.sol",
+    "id": 70376,
+    "exportedSymbols": {
+      "BN254": [
+        72029
+      ],
+      "IBLSApkRegistry": [
+        70280
+      ],
+      "IBLSSignatureChecker": [
+        70375
+      ],
+      "IDelegationManager": [
+        7102
+      ],
+      "IRegistryCoordinator": [
+        70745
+      ],
+      "IStakeRegistry": [
+        71147
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:3869:104",
+    "nodes": [
+      {
+        "id": 70282,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:104",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 70284,
+        "nodeType": "ImportDirective",
+        "src": "63:64:104",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IRegistryCoordinator.sol",
+        "file": "./IRegistryCoordinator.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70376,
+        "sourceUnit": 70746,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70283,
+              "name": "IRegistryCoordinator",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 70745,
+              "src": "71:20:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IRegistryCoordinator_$70745_$",
+                "typeString": "type(contract IRegistryCoordinator)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70286,
+        "nodeType": "ImportDirective",
+        "src": "128:54:104",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IBLSApkRegistry.sol",
+        "file": "./IBLSApkRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70376,
+        "sourceUnit": 70281,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70285,
+              "name": "IBLSApkRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 70280,
+              "src": "136:15:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IBLSApkRegistry_$70280_$",
+                "typeString": "type(contract IBLSApkRegistry)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70289,
+        "nodeType": "ImportDirective",
+        "src": "183:72:104",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IStakeRegistry.sol",
+        "file": "./IStakeRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70376,
+        "sourceUnit": 71148,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70287,
+              "name": "IStakeRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 71147,
+              "src": "191:14:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IStakeRegistry_$71147_$",
+                "typeString": "type(contract IStakeRegistry)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 70288,
+              "name": "IDelegationManager",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 7102,
+              "src": "207:18:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IDelegationManager_$7102_$",
+                "typeString": "type(contract IDelegationManager)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70291,
+        "nodeType": "ImportDirective",
+        "src": "257:45:104",
+        "nodes": [],
+        "absolutePath": "src/libraries/BN254.sol",
+        "file": "../libraries/BN254.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70376,
+        "sourceUnit": 72030,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70290,
+              "name": "BN254",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 72029,
+              "src": "265:5:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_BN254_$72029_$",
+                "typeString": "type(library BN254)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70375,
+        "nodeType": "ContractDefinition",
+        "src": "679:3226:104",
+        "nodes": [
+          {
+            "id": 70320,
+            "nodeType": "StructDefinition",
+            "src": "740:721:104",
+            "nodes": [],
+            "canonicalName": "IBLSSignatureChecker.NonSignerStakesAndSignature",
+            "members": [
+              {
+                "constant": false,
+                "id": 70295,
+                "mutability": "mutable",
+                "name": "nonSignerQuorumBitmapIndices",
+                "nameLocation": "794:28:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "785:37:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                  "typeString": "uint32[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70293,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "785:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "id": 70294,
+                  "nodeType": "ArrayTypeName",
+                  "src": "785:8:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                    "typeString": "uint32[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70299,
+                "mutability": "mutable",
+                "name": "nonSignerPubkeys",
+                "nameLocation": "898:16:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "882:32:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_G1Point_$71161_storage_$dyn_storage_ptr",
+                  "typeString": "struct BN254.G1Point[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70297,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70296,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "882:13:104"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "882:13:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "id": 70298,
+                  "nodeType": "ArrayTypeName",
+                  "src": "882:15:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_G1Point_$71161_storage_$dyn_storage_ptr",
+                    "typeString": "struct BN254.G1Point[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70303,
+                "mutability": "mutable",
+                "name": "quorumApks",
+                "nameLocation": "979:10:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "963:26:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_G1Point_$71161_storage_$dyn_storage_ptr",
+                  "typeString": "struct BN254.G1Point[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70301,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70300,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "963:13:104"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "963:13:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "id": 70302,
+                  "nodeType": "ArrayTypeName",
+                  "src": "963:15:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_G1Point_$71161_storage_$dyn_storage_ptr",
+                    "typeString": "struct BN254.G1Point[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70306,
+                "mutability": "mutable",
+                "name": "apkG2",
+                "nameLocation": "1058:5:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "1044:19:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                  "typeString": "struct BN254.G2Point"
+                },
+                "typeName": {
+                  "id": 70305,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 70304,
+                    "name": "BN254.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 71170,
+                    "src": "1044:13:104"
+                  },
+                  "referencedDeclaration": 71170,
+                  "src": "1044:13:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                    "typeString": "struct BN254.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70309,
+                "mutability": "mutable",
+                "name": "sigma",
+                "nameLocation": "1132:5:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "1118:19:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                  "typeString": "struct BN254.G1Point"
+                },
+                "typeName": {
+                  "id": 70308,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 70307,
+                    "name": "BN254.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 71161,
+                    "src": "1118:13:104"
+                  },
+                  "referencedDeclaration": 71161,
+                  "src": "1118:13:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70312,
+                "mutability": "mutable",
+                "name": "quorumApkIndices",
+                "nameLocation": "1204:16:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "1195:25:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                  "typeString": "uint32[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70310,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1195:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "id": 70311,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1195:8:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                    "typeString": "uint32[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70315,
+                "mutability": "mutable",
+                "name": "totalStakeIndices",
+                "nameLocation": "1289:17:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "1280:26:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                  "typeString": "uint32[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70313,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1280:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "id": 70314,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1280:8:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                    "typeString": "uint32[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70319,
+                "mutability": "mutable",
+                "name": "nonSignerStakeIndices",
+                "nameLocation": "1373:21:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70320,
+                "src": "1362:32:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_array$_t_uint32_$dyn_storage_$dyn_storage_ptr",
+                  "typeString": "uint32[][]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "baseType": {
+                      "id": 70316,
+                      "name": "uint32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1362:6:104",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 70317,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1362:8:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                      "typeString": "uint32[]"
+                    }
+                  },
+                  "id": 70318,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1362:10:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_array$_t_uint32_$dyn_storage_$dyn_storage_ptr",
+                    "typeString": "uint32[][]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "NonSignerStakesAndSignature",
+            "nameLocation": "747:27:104",
+            "scope": 70375,
+            "visibility": "public"
+          },
+          {
+            "id": 70327,
+            "nodeType": "StructDefinition",
+            "src": "1682:227:104",
+            "nodes": [],
+            "canonicalName": "IBLSSignatureChecker.QuorumStakeTotals",
+            "members": [
+              {
+                "constant": false,
+                "id": 70323,
+                "mutability": "mutable",
+                "name": "signedStakeForQuorum",
+                "nameLocation": "1781:20:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70327,
+                "src": "1772:29:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint96_$dyn_storage_ptr",
+                  "typeString": "uint96[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70321,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1772:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "id": 70322,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1772:8:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint96_$dyn_storage_ptr",
+                    "typeString": "uint96[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70326,
+                "mutability": "mutable",
+                "name": "totalStakeForQuorum",
+                "nameLocation": "1883:19:104",
+                "nodeType": "VariableDeclaration",
+                "scope": 70327,
+                "src": "1874:28:104",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint96_$dyn_storage_ptr",
+                  "typeString": "uint96[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 70324,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1874:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "id": 70325,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1874:8:104",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint96_$dyn_storage_ptr",
+                    "typeString": "uint96[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "QuorumStakeTotals",
+            "nameLocation": "1689:17:104",
+            "scope": 70375,
+            "visibility": "public"
+          },
+          {
+            "id": 70332,
+            "nodeType": "EventDefinition",
+            "src": "1995:45:104",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 70328,
+              "nodeType": "StructuredDocumentation",
+              "src": "1930:60:104",
+              "text": "@notice Emitted when `staleStakesForbiddenUpdate` is set"
+            },
+            "name": "StaleStakesForbiddenUpdate",
+            "nameLocation": "2001:26:104",
+            "parameters": {
+              "id": 70331,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70330,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "2033:5:104",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70332,
+                  "src": "2028:10:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 70329,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2028:4:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2027:12:104"
+            }
+          },
+          {
+            "id": 70338,
+            "nodeType": "FunctionDefinition",
+            "src": "2084:76:104",
+            "nodes": [],
+            "functionSelector": "6d14a987",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registryCoordinator",
+            "nameLocation": "2093:19:104",
+            "parameters": {
+              "id": 70333,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2112:2:104"
+            },
+            "returnParameters": {
+              "id": 70337,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70336,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70338,
+                  "src": "2138:20:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IRegistryCoordinator_$70745",
+                    "typeString": "contract IRegistryCoordinator"
+                  },
+                  "typeName": {
+                    "id": 70335,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70334,
+                      "name": "IRegistryCoordinator",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70745,
+                      "src": "2138:20:104"
+                    },
+                    "referencedDeclaration": 70745,
+                    "src": "2138:20:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IRegistryCoordinator_$70745",
+                      "typeString": "contract IRegistryCoordinator"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2137:22:104"
+            },
+            "scope": 70375,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70344,
+            "nodeType": "FunctionDefinition",
+            "src": "2165:64:104",
+            "nodes": [],
+            "functionSelector": "68304835",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "stakeRegistry",
+            "nameLocation": "2174:13:104",
+            "parameters": {
+              "id": 70339,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2187:2:104"
+            },
+            "returnParameters": {
+              "id": 70343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70342,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70344,
+                  "src": "2213:14:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStakeRegistry_$71147",
+                    "typeString": "contract IStakeRegistry"
+                  },
+                  "typeName": {
+                    "id": 70341,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70340,
+                      "name": "IStakeRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71147,
+                      "src": "2213:14:104"
+                    },
+                    "referencedDeclaration": 71147,
+                    "src": "2213:14:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStakeRegistry_$71147",
+                      "typeString": "contract IStakeRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2212:16:104"
+            },
+            "scope": 70375,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70350,
+            "nodeType": "FunctionDefinition",
+            "src": "2234:66:104",
+            "nodes": [],
+            "functionSelector": "5df45946",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "blsApkRegistry",
+            "nameLocation": "2243:14:104",
+            "parameters": {
+              "id": 70345,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2257:2:104"
+            },
+            "returnParameters": {
+              "id": 70349,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70348,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70350,
+                  "src": "2283:15:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBLSApkRegistry_$70280",
+                    "typeString": "contract IBLSApkRegistry"
+                  },
+                  "typeName": {
+                    "id": 70347,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70346,
+                      "name": "IBLSApkRegistry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70280,
+                      "src": "2283:15:104"
+                    },
+                    "referencedDeclaration": 70280,
+                    "src": "2283:15:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBLSApkRegistry_$70280",
+                      "typeString": "contract IBLSApkRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2282:17:104"
+            },
+            "scope": 70375,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70356,
+            "nodeType": "FunctionDefinition",
+            "src": "2305:65:104",
+            "nodes": [],
+            "functionSelector": "df5cf723",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "delegation",
+            "nameLocation": "2314:10:104",
+            "parameters": {
+              "id": 70351,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2324:2:104"
+            },
+            "returnParameters": {
+              "id": 70355,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70354,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70356,
+                  "src": "2350:18:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                    "typeString": "contract IDelegationManager"
+                  },
+                  "typeName": {
+                    "id": 70353,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70352,
+                      "name": "IDelegationManager",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7102,
+                      "src": "2350:18:104"
+                    },
+                    "referencedDeclaration": 7102,
+                    "src": "2350:18:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IDelegationManager_$7102",
+                      "typeString": "contract IDelegationManager"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2349:20:104"
+            },
+            "scope": 70375,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70374,
+            "nodeType": "FunctionDefinition",
+            "src": "3580:323:104",
+            "nodes": [],
+            "documentation": {
+              "id": 70357,
+              "nodeType": "StructuredDocumentation",
+              "src": "2376:1199:104",
+              "text": " @notice This function is called by disperser when it has aggregated all the signatures of the operators\n that are part of the quorum for a particular taskNumber and is asserting them into onchain. The function\n checks that the claim for aggregated signatures are valid.\n The thesis of this procedure entails:\n - getting the aggregated pubkey of all registered nodes at the time of pre-commit by the\n disperser (represented by apk in the parameters),\n - subtracting the pubkeys of all the signers not in the quorum (nonSignerPubkeys) and storing \n the output in apk to get aggregated pubkey of all operators that are part of quorum.\n - use this aggregated pubkey to verify the aggregated signature under BLS scheme.\n \n @dev Before signature verification, the function verifies operator stake information.  This includes ensuring that the provided `referenceBlockNumber`\n is correct, i.e., ensure that the stake returned from the specified block number is recent enough and that the stake is either the most recent update\n for the total stake (or the operator) or latest before the referenceBlockNumber."
+            },
+            "functionSelector": "6efb4636",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkSignatures",
+            "nameLocation": "3589:15:104",
+            "parameters": {
+              "id": 70367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70359,
+                  "mutability": "mutable",
+                  "name": "msgHash",
+                  "nameLocation": "3622:7:104",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3614:15:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70358,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3614:7:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70361,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "3655:13:104",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3640:28:104",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70360,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3640:5:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70363,
+                  "mutability": "mutable",
+                  "name": "referenceBlockNumber",
+                  "nameLocation": "3685:20:104",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3678:27:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70362,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3678:6:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70366,
+                  "mutability": "mutable",
+                  "name": "nonSignerStakesAndSignature",
+                  "nameLocation": "3751:27:104",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3716:62:104",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_NonSignerStakesAndSignature_$70320_memory_ptr",
+                    "typeString": "struct IBLSSignatureChecker.NonSignerStakesAndSignature"
+                  },
+                  "typeName": {
+                    "id": 70365,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70364,
+                      "name": "NonSignerStakesAndSignature",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70320,
+                      "src": "3716:27:104"
+                    },
+                    "referencedDeclaration": 70320,
+                    "src": "3716:27:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NonSignerStakesAndSignature_$70320_storage_ptr",
+                      "typeString": "struct IBLSSignatureChecker.NonSignerStakesAndSignature"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3604:180:104"
+            },
+            "returnParameters": {
+              "id": 70373,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70370,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3847:24:104",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_QuorumStakeTotals_$70327_memory_ptr",
+                    "typeString": "struct IBLSSignatureChecker.QuorumStakeTotals"
+                  },
+                  "typeName": {
+                    "id": 70369,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70368,
+                      "name": "QuorumStakeTotals",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70327,
+                      "src": "3847:17:104"
+                    },
+                    "referencedDeclaration": 70327,
+                    "src": "3847:17:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_QuorumStakeTotals_$70327_storage_ptr",
+                      "typeString": "struct IBLSSignatureChecker.QuorumStakeTotals"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70372,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70374,
+                  "src": "3885:7:104",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70371,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3885:7:104",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3833:69:104"
+            },
+            "scope": 70375,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBLSSignatureChecker",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 70292,
+          "nodeType": "StructuredDocumentation",
+          "src": "304:374:104",
+          "text": " @title Used for checking BLS aggregate signatures from the operators of a EigenLayer AVS with the RegistryCoordinator/BLSApkRegistry/StakeRegistry architechture.\n @author Layr Labs, Inc.\n @notice Terms of Service: https://docs.eigenlayer.xyz/overview/terms-of-service\n @notice This is the contract for checking the validity of aggregate operator signatures."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70375
+        ],
+        "name": "IBLSSignatureChecker",
+        "nameLocation": "689:20:104",
+        "scope": 70376,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 104
+}

@@ -1,0 +1,230 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "foo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50607780601d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063c298557814602d575b600080fd5b600060405190815260200160405180910390f3fea2646970667358221220cb7e65f3ab2f7fa61de3f90751d92a0a381db4df6fdf380bf281ab20b3443b3c64736f6c634300080c0033",
+    "sourceMap": "63:101:39:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063c298557814602d575b600080fd5b600060405190815260200160405180910390f3fea2646970667358221220cb7e65f3ab2f7fa61de3f90751d92a0a381db4df6fdf380bf281ab20b3443b3c64736f6c634300080c0033",
+    "sourceMap": "63:101:39:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;92:70;128:7;92:70;;160:25:156;;;148:2;133:18;92:70:39;;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "foo()": "c2985578"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"foo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/test/mocks/EmptyContract.sol\":\"EmptyContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/test/mocks/EmptyContract.sol\":{\"keccak256\":\"0xc23734a6f0a10c16ff3066fff15191e9774d75dd8be855126e12cf9a12d57415\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://7fa9de4fd189a4054469c518e6d72c2880a0aa0f019981088290ba777b4c0b16\",\"dweb:/ipfs/QmeLtixx9MucCqFad9X3ueHhULH6Kfj7DdtkMTeiqLaroN\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "foo",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/test/mocks/EmptyContract.sol": "EmptyContract"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/test/mocks/EmptyContract.sol": {
+        "keccak256": "0xc23734a6f0a10c16ff3066fff15191e9774d75dd8be855126e12cf9a12d57415",
+        "urls": [
+          "bzz-raw://7fa9de4fd189a4054469c518e6d72c2880a0aa0f019981088290ba777b4c0b16",
+          "dweb:/ipfs/QmeLtixx9MucCqFad9X3ueHhULH6Kfj7DdtkMTeiqLaroN"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/test/mocks/EmptyContract.sol",
+    "id": 15597,
+    "exportedSymbols": {
+      "EmptyContract": [
+        15596
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:128:39",
+    "nodes": [
+      {
+        "id": 15587,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:39",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 15596,
+        "nodeType": "ContractDefinition",
+        "src": "63:101:39",
+        "nodes": [
+          {
+            "id": 15595,
+            "nodeType": "FunctionDefinition",
+            "src": "92:70:39",
+            "nodes": [],
+            "body": {
+              "id": 15594,
+              "nodeType": "Block",
+              "src": "137:25:39",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "30",
+                    "id": 15592,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "154:1:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "functionReturnParameters": 15591,
+                  "id": 15593,
+                  "nodeType": "Return",
+                  "src": "147:8:39"
+                }
+              ]
+            },
+            "functionSelector": "c2985578",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "foo",
+            "nameLocation": "101:3:39",
+            "parameters": {
+              "id": 15588,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "104:2:39"
+            },
+            "returnParameters": {
+              "id": 15591,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15590,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15595,
+                  "src": "128:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15589,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "128:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "127:9:39"
+            },
+            "scope": 15596,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "EmptyContract",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          15596
+        ],
+        "name": "EmptyContract",
+        "nameLocation": "72:13:39",
+        "scope": 15597,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 39
+}

@@ -1,0 +1,1067 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint96",
+          "name": "minimumStake",
+          "type": "uint96"
+        }
+      ],
+      "name": "MinimumStakeForQuorumUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint96",
+          "name": "stake",
+          "type": "uint96"
+        }
+      ],
+      "name": "OperatorStakeUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "QuorumCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IStrategy",
+          "name": "strategy",
+          "type": "address"
+        }
+      ],
+      "name": "StrategyAddedToQuorum",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IStrategy",
+          "name": "strategy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "name": "StrategyMultiplierUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IStrategy",
+          "name": "strategy",
+          "type": "address"
+        }
+      ],
+      "name": "StrategyRemovedFromQuorum",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint96\",\"name\":\"minimumStake\",\"type\":\"uint96\"}],\"name\":\"MinimumStakeForQuorumUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"name\":\"OperatorStakeUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"QuorumCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"}],\"name\":\"StrategyAddedToQuorum\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"multiplier\",\"type\":\"uint256\"}],\"name\":\"StrategyMultiplierUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"}],\"name\":\"StrategyRemovedFromQuorum\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"MinimumStakeForQuorumUpdated(uint8,uint96)\":{\"notice\":\"emitted when the minimum stake for a quorum is updated\"},\"OperatorStakeUpdate(bytes32,uint8,uint96)\":{\"notice\":\"emitted whenever the stake of `operator` is updated\"},\"QuorumCreated(uint8)\":{\"notice\":\"emitted when a new quorum is created\"},\"StrategyAddedToQuorum(uint8,address)\":{\"notice\":\"emitted when `strategy` has been added to the array at `strategyParams[quorumNumber]`\"},\"StrategyMultiplierUpdated(uint8,address,uint256)\":{\"notice\":\"emitted when `strategy` has its `multiplier` updated in the array at `strategyParams[quorumNumber]`\"},\"StrategyRemovedFromQuorum(uint8,address)\":{\"notice\":\"emitted when `strategy` has removed from the array at `strategyParams[quorumNumber]`\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/events/IStakeRegistryEvents.sol\":\"IStakeRegistryEvents\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol\":{\"keccak256\":\"0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983\",\"dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol\":{\"keccak256\":\"0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e\",\"dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol\":{\"keccak256\":\"0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91\",\"dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol\":{\"keccak256\":\"0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc\",\"dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol\":{\"keccak256\":\"0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d\",\"dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":{\"keccak256\":\"0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324\",\"dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol\":{\"keccak256\":\"0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d\",\"dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol\":{\"keccak256\":\"0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c\",\"dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol\":{\"keccak256\":\"0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232\",\"dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol\":{\"keccak256\":\"0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73\",\"dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol\":{\"keccak256\":\"0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234\",\"dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol\":{\"keccak256\":\"0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235\",\"dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol\":{\"keccak256\":\"0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f\",\"dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ\"]},\"lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol\":{\"keccak256\":\"0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8\",\"dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss\"]},\"lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354\",\"dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]},\"src/interfaces/IStakeRegistry.sol\":{\"keccak256\":\"0xa990d3cff41340b37d8e5218627f8f83cd60acbce5e1846af28f6d65db0e2b2f\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://68cc70d64f757e21c8a5d67b93d17543a160a8507a7b29f77bba4d2dc6f2a9c3\",\"dweb:/ipfs/QmUjzs5cA3k86w7Cewbei7kUNfRymuEidEbEy9hKQe22Ve\"]},\"test/events/IStakeRegistryEvents.sol\":{\"keccak256\":\"0x8e1c13188c69c50aa4680b5f3586397c0a24bc89c6a44ed7d25e5227cd2fb984\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c552fc81f73e814c5b54443ab090d83067296fc3655f6311527737dfbdffc171\",\"dweb:/ipfs/QmZnLqUzgJwzrJpkKxrozNWLMB4RYKBQQQdyTuhR2cxknW\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "uint96",
+              "name": "minimumStake",
+              "type": "uint96",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "MinimumStakeForQuorumUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": false
+            },
+            {
+              "internalType": "uint96",
+              "name": "stake",
+              "type": "uint96",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorStakeUpdate",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "QuorumCreated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyAddedToQuorum",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "multiplier",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyMultiplierUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyRemovedFromQuorum",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "test/events/IStakeRegistryEvents.sol": "IStakeRegistryEvents"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IBeaconChainOracle.sol": {
+        "keccak256": "0x0fef07aa6179c77198f1514e12e628aa1c876e04f9c181ec853a322179e5be00",
+        "urls": [
+          "bzz-raw://51438325876cc2d4c77f58488a7e27b488015d1b663c50be6a5cafbd73b9c983",
+          "dweb:/ipfs/QmViCuGoYZzi6wtXA8PPKigqVv3KMuNxEVQ1Td9dGqjL18"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol": {
+        "keccak256": "0x6808a4feea1bde54f60f9816251f8552d05f0340d87e9a57523ffacdecdb7dfb",
+        "urls": [
+          "bzz-raw://24dd16f797a63f918428e52b22a821deda75cae1a6728c003375e3ad15fcb22e",
+          "dweb:/ipfs/QmNidYeCGhstsjnZm4Mb6LMmRSNbRAx21nUCng1SMbuBqt"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol": {
+        "keccak256": "0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c",
+        "urls": [
+          "bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91",
+          "dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz"
+        ],
+        "license": "CC0-1.0"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol": {
+        "keccak256": "0xb50c36ad96b6679bb80fd8331f949cbfbcba0f529026e1421a4d2bae64396eba",
+        "urls": [
+          "bzz-raw://5719181d780120f1e688c0da276992a8caf185815917f453b3550537c31ed4cc",
+          "dweb:/ipfs/QmYprRC5ZEXhz3zAUND5E8Xjn6s5TL8ZF8QbnndVq7aVPR"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol": {
+        "keccak256": "0x8f78b8483d90f107fb003d346e04eed4632c9413f33f8531b8480ccb1d44197f",
+        "urls": [
+          "bzz-raw://7e1fede3a364eb82b37763721043fbeac65c49fa0fc92dea31b55faae2a0dc4d",
+          "dweb:/ipfs/QmSUqwXjjHAn3hgn6tSpTd6V5z3VaRHCU61BWbQKBjKRt3"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": {
+        "keccak256": "0x98cffc894842947377e24c1d375813a1120dd73a84c29782ab68404e109cb34f",
+        "urls": [
+          "bzz-raw://b3474f6c350ceaee57cbdfb08fb48835d0c6e81ae8ebfbb9667899584a139324",
+          "dweb:/ipfs/QmWELKtksdtWxQbqAccd8yGyhKqrgPZXTADKR7BuT27Zg5"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol": {
+        "keccak256": "0x9de8dd682bc0d812bbd6583c0231cbf35448d5eff58b74a93efa64cb9a768c49",
+        "urls": [
+          "bzz-raw://c00d6c675b9c72b092d287fe85fd37782588df32b8eb59ab4c7db7a86be25e7d",
+          "dweb:/ipfs/QmeYokY3HhAdbBaCPdHg3PgQEdRCDFEJy3Wf7VtgHBkQSx"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol": {
+        "keccak256": "0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092",
+        "urls": [
+          "bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c",
+          "dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol": {
+        "keccak256": "0x45dfaa2cfdde87f48a6ee38bb6fb739847aef7cf3f6137bdcd8c8a330559ec79",
+        "urls": [
+          "bzz-raw://1b7f6bd75b42fcaa91ceb7140cb2c41926a1fe6ee2d3161e4fe6186b181ba232",
+          "dweb:/ipfs/QmZjbdKiSs33C9i3GDc3sdD39Pz4YPkDoKftowoUF4kHmY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol": {
+        "keccak256": "0xc530c6a944b70051fd0dac0222de9a4b5baadeaf94ad194daac6ad8d2ace7420",
+        "urls": [
+          "bzz-raw://3767df0364ce835b52e786d2851431eb9223fe4747602107505477e162231d73",
+          "dweb:/ipfs/QmZkH5bKUygQrJomndNaQqkefVRW4rRefCa8HPJ5HMczxJ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol": {
+        "keccak256": "0xc40998ca52abf38829f8ee99a28c5eed741361194d8774e84783c75a74902674",
+        "urls": [
+          "bzz-raw://2d03e87c279200f81ec9031ca1dc839e65829952e375748de0ed95a3d6861234",
+          "dweb:/ipfs/QmQEhmNMQXxqmjFJdgrDceEYqwJQ4AWJR5TxgDy1ZMSrqN"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol": {
+        "keccak256": "0x52a4332cc4086b57164d5d3827bfcfa75821cd89470c65560de1dd28ab060ef9",
+        "urls": [
+          "bzz-raw://da7845149b78dc63678db512fee35d136a05d586f1848f163d987dea8dc8a235",
+          "dweb:/ipfs/QmZg38VFXSrQjA9dyGH66ber2cfVgaYQKb1bLEBxw5H3Kj"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol": {
+        "keccak256": "0xf3b72653ba2567a978d4612703fa5f71c5fcd015d8dac7818468f22772d90a9d",
+        "urls": [
+          "bzz-raw://cee9d09370d968138d775c39525db4cd0768d60d17be7685519de12444e7dd2f",
+          "dweb:/ipfs/QmUdGh8wpMei3edKiEWA6S96s9dRt4ekZKJ4nau356X8xQ"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol": {
+        "keccak256": "0x2a2b15842b11da4f2e6ea7016a4f94cfcfce18f2306c3bb3bb17b05831bd2c2a",
+        "urls": [
+          "bzz-raw://9c4b5da7c287fcb1a95b2543ba9d33df8829420dce39c1d15e950f31af6035a8",
+          "dweb:/ipfs/QmWM2LYsvnf69g4aLjYXUKE6gQ54Rd95PLXU3xTQ2xiBss"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol": {
+        "keccak256": "0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61",
+        "urls": [
+          "bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354",
+          "dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+        "urls": [
+          "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+          "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IStakeRegistry.sol": {
+        "keccak256": "0xa990d3cff41340b37d8e5218627f8f83cd60acbce5e1846af28f6d65db0e2b2f",
+        "urls": [
+          "bzz-raw://68cc70d64f757e21c8a5d67b93d17543a160a8507a7b29f77bba4d2dc6f2a9c3",
+          "dweb:/ipfs/QmUjzs5cA3k86w7Cewbei7kUNfRymuEidEbEy9hKQe22Ve"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "test/events/IStakeRegistryEvents.sol": {
+        "keccak256": "0x8e1c13188c69c50aa4680b5f3586397c0a24bc89c6a44ed7d25e5227cd2fb984",
+        "urls": [
+          "bzz-raw://c552fc81f73e814c5b54443ab090d83067296fc3655f6311527737dfbdffc171",
+          "dweb:/ipfs/QmZnLqUzgJwzrJpkKxrozNWLMB4RYKBQQQdyTuhR2cxknW"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "test/events/IStakeRegistryEvents.sol",
+    "id": 72548,
+    "exportedSymbols": {
+      "IStakeRegistry": [
+        71147
+      ],
+      "IStakeRegistryEvents": [
+        72547
+      ],
+      "IStrategy": [
+        8135
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:1185:115",
+    "nodes": [
+      {
+        "id": 72496,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:115",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 72499,
+        "nodeType": "ImportDirective",
+        "src": "63:76:115",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IStakeRegistry.sol",
+        "file": "src/interfaces/IStakeRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 72548,
+        "sourceUnit": 71148,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 72497,
+              "name": "IStakeRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 71147,
+              "src": "71:14:115",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IStakeRegistry_$71147_$",
+                "typeString": "type(contract IStakeRegistry)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 72498,
+              "name": "IStrategy",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 8135,
+              "src": "87:9:115",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IStrategy_$8135_$",
+                "typeString": "type(contract IStrategy)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 72547,
+        "nodeType": "ContractDefinition",
+        "src": "141:1081:115",
+        "nodes": [
+          {
+            "id": 72508,
+            "nodeType": "EventDefinition",
+            "src": "246:118:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72500,
+              "nodeType": "StructuredDocumentation",
+              "src": "178:63:115",
+              "text": "@notice emitted whenever the stake of `operator` is updated"
+            },
+            "name": "OperatorStakeUpdate",
+            "nameLocation": "252:19:115",
+            "parameters": {
+              "id": 72507,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72502,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "297:10:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72508,
+                  "src": "281:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 72501,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "281:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72504,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "323:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72508,
+                  "src": "317:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72503,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "317:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72506,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "stake",
+                  "nameLocation": "352:5:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72508,
+                  "src": "345:12:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 72505,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:6:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "271:92:115"
+            }
+          },
+          {
+            "id": 72515,
+            "nodeType": "EventDefinition",
+            "src": "440:84:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72509,
+              "nodeType": "StructuredDocumentation",
+              "src": "369:66:115",
+              "text": "@notice emitted when the minimum stake for a quorum is updated"
+            },
+            "name": "MinimumStakeForQuorumUpdated",
+            "nameLocation": "446:28:115",
+            "parameters": {
+              "id": 72514,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72511,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "489:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72515,
+                  "src": "475:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72510,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72513,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "minimumStake",
+                  "nameLocation": "510:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72515,
+                  "src": "503:19:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 72512,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "503:6:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:49:115"
+            }
+          },
+          {
+            "id": 72520,
+            "nodeType": "EventDefinition",
+            "src": "582:48:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72516,
+              "nodeType": "StructuredDocumentation",
+              "src": "529:48:115",
+              "text": "@notice emitted when a new quorum is created"
+            },
+            "name": "QuorumCreated",
+            "nameLocation": "588:13:115",
+            "parameters": {
+              "id": 72519,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72518,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "616:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72520,
+                  "src": "602:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72517,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "602:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "601:28:115"
+            }
+          },
+          {
+            "id": 72528,
+            "nodeType": "EventDefinition",
+            "src": "737:76:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72521,
+              "nodeType": "StructuredDocumentation",
+              "src": "635:97:115",
+              "text": "@notice emitted when `strategy` has been added to the array at `strategyParams[quorumNumber]`"
+            },
+            "name": "StrategyAddedToQuorum",
+            "nameLocation": "743:21:115",
+            "parameters": {
+              "id": 72527,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72523,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "779:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72528,
+                  "src": "765:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72522,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72526,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "strategy",
+                  "nameLocation": "803:8:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72528,
+                  "src": "793:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStrategy_$8135",
+                    "typeString": "contract IStrategy"
+                  },
+                  "typeName": {
+                    "id": 72525,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 72524,
+                      "name": "IStrategy",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8135,
+                      "src": "793:9:115"
+                    },
+                    "referencedDeclaration": 8135,
+                    "src": "793:9:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStrategy_$8135",
+                      "typeString": "contract IStrategy"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "764:48:115"
+            }
+          },
+          {
+            "id": 72536,
+            "nodeType": "EventDefinition",
+            "src": "919:80:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72529,
+              "nodeType": "StructuredDocumentation",
+              "src": "818:96:115",
+              "text": "@notice emitted when `strategy` has removed from the array at `strategyParams[quorumNumber]`"
+            },
+            "name": "StrategyRemovedFromQuorum",
+            "nameLocation": "925:25:115",
+            "parameters": {
+              "id": 72535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72531,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "965:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72536,
+                  "src": "951:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72530,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72534,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "strategy",
+                  "nameLocation": "989:8:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72536,
+                  "src": "979:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStrategy_$8135",
+                    "typeString": "contract IStrategy"
+                  },
+                  "typeName": {
+                    "id": 72533,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 72532,
+                      "name": "IStrategy",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8135,
+                      "src": "979:9:115"
+                    },
+                    "referencedDeclaration": 8135,
+                    "src": "979:9:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStrategy_$8135",
+                      "typeString": "contract IStrategy"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "950:48:115"
+            }
+          },
+          {
+            "id": 72546,
+            "nodeType": "EventDefinition",
+            "src": "1120:100:115",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 72537,
+              "nodeType": "StructuredDocumentation",
+              "src": "1004:111:115",
+              "text": "@notice emitted when `strategy` has its `multiplier` updated in the array at `strategyParams[quorumNumber]`"
+            },
+            "name": "StrategyMultiplierUpdated",
+            "nameLocation": "1126:25:115",
+            "parameters": {
+              "id": 72545,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72539,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "1166:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72546,
+                  "src": "1152:26:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 72538,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:5:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72542,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "strategy",
+                  "nameLocation": "1190:8:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72546,
+                  "src": "1180:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStrategy_$8135",
+                    "typeString": "contract IStrategy"
+                  },
+                  "typeName": {
+                    "id": 72541,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 72540,
+                      "name": "IStrategy",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8135,
+                      "src": "1180:9:115"
+                    },
+                    "referencedDeclaration": 8135,
+                    "src": "1180:9:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStrategy_$8135",
+                      "typeString": "contract IStrategy"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72544,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "multiplier",
+                  "nameLocation": "1208:10:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72546,
+                  "src": "1200:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 72543,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1200:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:68:115"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IStakeRegistryEvents",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          72547
+        ],
+        "name": "IStakeRegistryEvents",
+        "nameLocation": "151:20:115",
+        "scope": 72548,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 115
+}

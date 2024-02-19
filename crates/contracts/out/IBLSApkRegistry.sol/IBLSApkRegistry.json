@@ -1,0 +1,3125 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct BN254.G1Point",
+          "name": "pubkeyG1",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256[2]",
+              "name": "X",
+              "type": "uint256[2]"
+            },
+            {
+              "internalType": "uint256[2]",
+              "name": "Y",
+              "type": "uint256[2]"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct BN254.G2Point",
+          "name": "pubkeyG2",
+          "type": "tuple"
+        }
+      ],
+      "name": "NewPubkeyRegistration",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "OperatorAddedToQuorums",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "OperatorRemovedFromQuorums",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "deregisterOperator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "getApk",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct BN254.G1Point",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "blockNumber",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApkHashAtBlockNumberAndIndex",
+      "outputs": [
+        {
+          "internalType": "bytes24",
+          "name": "",
+          "type": "bytes24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApkIndicesAtBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApkUpdateAtIndex",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes24",
+              "name": "apkHash",
+              "type": "bytes24"
+            },
+            {
+              "internalType": "uint32",
+              "name": "updateBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "nextUpdateBlockNumber",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IBLSApkRegistry.ApkUpdate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "pubkeyHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getOperatorFromPubkeyHash",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "getOperatorId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "getRegisteredPubkey",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct BN254.G1Point",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "quorumNumber",
+          "type": "uint8"
+        }
+      ],
+      "name": "initializeQuorum",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "operatorToPubkeyHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "pubkeyHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "pubkeyHashToOperator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BN254.G1Point",
+              "name": "pubkeyRegistrationSignature",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BN254.G1Point",
+              "name": "pubkeyG1",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct BN254.G2Point",
+              "name": "pubkeyG2",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct IBLSApkRegistry.PubkeyRegistrationParams",
+          "name": "params",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct BN254.G1Point",
+          "name": "pubkeyRegistrationMessageHash",
+          "type": "tuple"
+        }
+      ],
+      "name": "registerBLSPublicKey",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "operatorId",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "quorumNumbers",
+          "type": "bytes"
+        }
+      ],
+      "name": "registerOperator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registryCoordinator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "deregisterOperator(address,bytes)": "f4e24fe5",
+    "getApk(uint8)": "5f61a884",
+    "getApkHashAtBlockNumberAndIndex(uint8,uint32,uint256)": "68bccaac",
+    "getApkIndicesAtBlockNumber(bytes,uint256)": "d5254a8c",
+    "getApkUpdateAtIndex(uint8,uint256)": "605747d5",
+    "getOperatorFromPubkeyHash(bytes32)": "47b314e8",
+    "getOperatorId(address)": "13542a4e",
+    "getRegisteredPubkey(address)": "7ff81a87",
+    "initializeQuorum(uint8)": "26d941f2",
+    "operatorToPubkeyHash(address)": "de29fac0",
+    "pubkeyHashToOperator(bytes32)": "e8bb9ae6",
+    "registerBLSPublicKey(address,((uint256,uint256),(uint256,uint256),(uint256[2],uint256[2])),(uint256,uint256))": "bf79ce58",
+    "registerOperator(address,bytes)": "3fb27952",
+    "registryCoordinator()": "6d14a987"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct BN254.G1Point\",\"name\":\"pubkeyG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"indexed\":false,\"internalType\":\"struct BN254.G2Point\",\"name\":\"pubkeyG2\",\"type\":\"tuple\"}],\"name\":\"NewPubkeyRegistration\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"OperatorAddedToQuorums\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"OperatorRemovedFromQuorums\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"deregisterOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getApk\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getApkHashAtBlockNumberAndIndex\",\"outputs\":[{\"internalType\":\"bytes24\",\"name\":\"\",\"type\":\"bytes24\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getApkIndicesAtBlockNumber\",\"outputs\":[{\"internalType\":\"uint32[]\",\"name\":\"\",\"type\":\"uint32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getApkUpdateAtIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes24\",\"name\":\"apkHash\",\"type\":\"bytes24\"},{\"internalType\":\"uint32\",\"name\":\"updateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"nextUpdateBlockNumber\",\"type\":\"uint32\"}],\"internalType\":\"struct IBLSApkRegistry.ApkUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"pubkeyHash\",\"type\":\"bytes32\"}],\"name\":\"getOperatorFromPubkeyHash\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"getOperatorId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"getRegisteredPubkey\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"\",\"type\":\"tuple\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"initializeQuorum\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"operatorToPubkeyHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"pubkeyHash\",\"type\":\"bytes32\"}],\"name\":\"pubkeyHashToOperator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"pubkeyRegistrationSignature\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"pubkeyG1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"struct BN254.G2Point\",\"name\":\"pubkeyG2\",\"type\":\"tuple\"}],\"internalType\":\"struct IBLSApkRegistry.PubkeyRegistrationParams\",\"name\":\"params\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct BN254.G1Point\",\"name\":\"pubkeyRegistrationMessageHash\",\"type\":\"tuple\"}],\"name\":\"registerBLSPublicKey\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"registerOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registryCoordinator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{\"deregisterOperator(address,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for\",\"params\":{\"operator\":\"The address of the operator to deregister.\",\"quorumNumbers\":\"The quorum numbers the operator is deregistering from, where each byte is an 8 bit integer quorumNumber.\"}},\"getApkHashAtBlockNumberAndIndex(uint8,uint32,uint256)\":{\"params\":{\"blockNumber\":\"is the number of the block for which the latest ApkHash will be retrieved\",\"index\":\"is the index of the apkUpdate being retrieved from the list of quorum apkUpdates in storage\",\"quorumNumber\":\"is the quorum whose ApkHash is being retrieved\"}},\"getOperatorId(address)\":{\"details\":\"Returns zero in the event that the `operator` has never registered for the AVS\"},\"getRegisteredPubkey(address)\":{\"details\":\"Reverts if the operator has not registered a valid pubkey\"},\"initializeQuorum(uint8)\":{\"params\":{\"quorumNumber\":\"The number of the new quorum\"}},\"registerBLSPublicKey(address,((uint256,uint256),(uint256,uint256),(uint256[2],uint256[2])),(uint256,uint256))\":{\"params\":{\"operator\":\"is the operator for whom the key is being registered\",\"params\":\"contains the G1 & G2 public keys of the operator, and a signature proving their ownership\",\"pubkeyRegistrationMessageHash\":\"is a hash that the operator must sign to prove key ownership\"}},\"registerOperator(address,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered\",\"params\":{\"operator\":\"The address of the operator to register.\",\"quorumNumbers\":\"The quorum numbers the operator is registering for, where each byte is an 8 bit integer quorumNumber.\"}}},\"title\":\"Minimal interface for a registry that keeps track of aggregate operator public keys across many quorums.\",\"version\":1},\"userdoc\":{\"events\":{\"NewPubkeyRegistration(address,(uint256,uint256),(uint256[2],uint256[2]))\":{\"notice\":\"Emitted when `operator` registers with the public keys `pubkeyG1` and `pubkeyG2`.\"}},\"kind\":\"user\",\"methods\":{\"deregisterOperator(address,bytes)\":{\"notice\":\"Deregisters the `operator`'s pubkey for the specified `quorumNumbers`.\"},\"getApk(uint8)\":{\"notice\":\"Returns the current APK for the provided `quorumNumber `\"},\"getApkHashAtBlockNumberAndIndex(uint8,uint32,uint256)\":{\"notice\":\"get 24 byte hash of the apk of `quorumNumber` at `blockNumber` using the provided `index`; called by checkSignatures in BLSSignatureChecker.sol.\"},\"getApkIndicesAtBlockNumber(bytes,uint256)\":{\"notice\":\"Returns the index of the quorumApk index at `blockNumber` for the provided `quorumNumber`\"},\"getApkUpdateAtIndex(uint8,uint256)\":{\"notice\":\"Returns the `ApkUpdate` struct at `index` in the list of APK updates for the `quorumNumber`\"},\"getOperatorFromPubkeyHash(bytes32)\":{\"notice\":\"Returns the operator address for the given `pubkeyHash`\"},\"getOperatorId(address)\":{\"notice\":\"returns the ID used to identify the `operator` within this AVS.\"},\"getRegisteredPubkey(address)\":{\"notice\":\"Returns the pubkey and pubkey hash of an operator\"},\"initializeQuorum(uint8)\":{\"notice\":\"Initializes a new quorum by pushing its first apk update\"},\"operatorToPubkeyHash(address)\":{\"notice\":\"mapping from operator address to pubkey hash. Returns *zero* if the `operator` has never registered, and otherwise returns the hash of the public key of the operator.\"},\"pubkeyHashToOperator(bytes32)\":{\"notice\":\"mapping from pubkey hash to operator address. Returns *zero* if no operator has ever registered the public key corresponding to `pubkeyHash`, and otherwise returns the (unique) registered operator who owns the BLS public key that is the preimage of `pubkeyHash`.\"},\"registerBLSPublicKey(address,((uint256,uint256),(uint256,uint256),(uint256[2],uint256[2])),(uint256,uint256))\":{\"notice\":\"Called by the RegistryCoordinator register an operator as the owner of a BLS public key.\"},\"registerOperator(address,bytes)\":{\"notice\":\"Registers the `operator`'s pubkey for the specified `quorumNumbers`.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IBLSApkRegistry.sol\":\"IBLSApkRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/IBLSApkRegistry.sol\":{\"keccak256\":\"0x8ab1a16d2d5fd7dd89447aaceb67a3d383d6bb484bbcf2a4755e780db0011a32\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://5b69bad830b1983d436c923870489d0582fb16a5f88a0e978057c78b52e51b9e\",\"dweb:/ipfs/QmPnZBXLtivrjB1WxaaikCgcKUo9Bf87MkSM53DnfpUs8e\"]},\"src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]},\"src/libraries/BN254.sol\":{\"keccak256\":\"0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49\",\"dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "struct BN254.G1Point",
+              "name": "pubkeyG1",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false
+            },
+            {
+              "internalType": "struct BN254.G2Point",
+              "name": "pubkeyG2",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "NewPubkeyRegistration",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorAddedToQuorums",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorRemovedFromQuorums",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deregisterOperator"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getApk",
+          "outputs": [
+            {
+              "internalType": "struct BN254.G1Point",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getApkHashAtBlockNumberAndIndex",
+          "outputs": [
+            {
+              "internalType": "bytes24",
+              "name": "",
+              "type": "bytes24"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "blockNumber",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getApkIndicesAtBlockNumber",
+          "outputs": [
+            {
+              "internalType": "uint32[]",
+              "name": "",
+              "type": "uint32[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getApkUpdateAtIndex",
+          "outputs": [
+            {
+              "internalType": "struct IBLSApkRegistry.ApkUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes24",
+                  "name": "apkHash",
+                  "type": "bytes24"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "updateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "nextUpdateBlockNumber",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "pubkeyHash",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getOperatorFromPubkeyHash",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getOperatorId",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getRegisteredPubkey",
+          "outputs": [
+            {
+              "internalType": "struct BN254.G1Point",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "initializeQuorum"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "operatorToPubkeyHash",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "pubkeyHash",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "pubkeyHashToOperator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "struct IBLSApkRegistry.PubkeyRegistrationParams",
+              "name": "params",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "struct BN254.G1Point",
+                  "name": "pubkeyRegistrationSignature",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "X",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "Y",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct BN254.G1Point",
+                  "name": "pubkeyG1",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "X",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "Y",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct BN254.G2Point",
+                  "name": "pubkeyG2",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256[2]",
+                      "name": "X",
+                      "type": "uint256[2]"
+                    },
+                    {
+                      "internalType": "uint256[2]",
+                      "name": "Y",
+                      "type": "uint256[2]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "internalType": "struct BN254.G1Point",
+              "name": "pubkeyRegistrationMessageHash",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerBLSPublicKey",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerOperator"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registryCoordinator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "deregisterOperator(address,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for",
+            "params": {
+              "operator": "The address of the operator to deregister.",
+              "quorumNumbers": "The quorum numbers the operator is deregistering from, where each byte is an 8 bit integer quorumNumber."
+            }
+          },
+          "getApkHashAtBlockNumberAndIndex(uint8,uint32,uint256)": {
+            "params": {
+              "blockNumber": "is the number of the block for which the latest ApkHash will be retrieved",
+              "index": "is the index of the apkUpdate being retrieved from the list of quorum apkUpdates in storage",
+              "quorumNumber": "is the quorum whose ApkHash is being retrieved"
+            }
+          },
+          "getOperatorId(address)": {
+            "details": "Returns zero in the event that the `operator` has never registered for the AVS"
+          },
+          "getRegisteredPubkey(address)": {
+            "details": "Reverts if the operator has not registered a valid pubkey"
+          },
+          "initializeQuorum(uint8)": {
+            "params": {
+              "quorumNumber": "The number of the new quorum"
+            }
+          },
+          "registerBLSPublicKey(address,((uint256,uint256),(uint256,uint256),(uint256[2],uint256[2])),(uint256,uint256))": {
+            "params": {
+              "operator": "is the operator for whom the key is being registered",
+              "params": "contains the G1 & G2 public keys of the operator, and a signature proving their ownership",
+              "pubkeyRegistrationMessageHash": "is a hash that the operator must sign to prove key ownership"
+            }
+          },
+          "registerOperator(address,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered",
+            "params": {
+              "operator": "The address of the operator to register.",
+              "quorumNumbers": "The quorum numbers the operator is registering for, where each byte is an 8 bit integer quorumNumber."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "deregisterOperator(address,bytes)": {
+            "notice": "Deregisters the `operator`'s pubkey for the specified `quorumNumbers`."
+          },
+          "getApk(uint8)": {
+            "notice": "Returns the current APK for the provided `quorumNumber `"
+          },
+          "getApkHashAtBlockNumberAndIndex(uint8,uint32,uint256)": {
+            "notice": "get 24 byte hash of the apk of `quorumNumber` at `blockNumber` using the provided `index`; called by checkSignatures in BLSSignatureChecker.sol."
+          },
+          "getApkIndicesAtBlockNumber(bytes,uint256)": {
+            "notice": "Returns the index of the quorumApk index at `blockNumber` for the provided `quorumNumber`"
+          },
+          "getApkUpdateAtIndex(uint8,uint256)": {
+            "notice": "Returns the `ApkUpdate` struct at `index` in the list of APK updates for the `quorumNumber`"
+          },
+          "getOperatorFromPubkeyHash(bytes32)": {
+            "notice": "Returns the operator address for the given `pubkeyHash`"
+          },
+          "getOperatorId(address)": {
+            "notice": "returns the ID used to identify the `operator` within this AVS."
+          },
+          "getRegisteredPubkey(address)": {
+            "notice": "Returns the pubkey and pubkey hash of an operator"
+          },
+          "initializeQuorum(uint8)": {
+            "notice": "Initializes a new quorum by pushing its first apk update"
+          },
+          "operatorToPubkeyHash(address)": {
+            "notice": "mapping from operator address to pubkey hash. Returns *zero* if the `operator` has never registered, and otherwise returns the hash of the public key of the operator."
+          },
+          "pubkeyHashToOperator(bytes32)": {
+            "notice": "mapping from pubkey hash to operator address. Returns *zero* if no operator has ever registered the public key corresponding to `pubkeyHash`, and otherwise returns the (unique) registered operator who owns the BLS public key that is the preimage of `pubkeyHash`."
+          },
+          "registerBLSPublicKey(address,((uint256,uint256),(uint256,uint256),(uint256[2],uint256[2])),(uint256,uint256))": {
+            "notice": "Called by the RegistryCoordinator register an operator as the owner of a BLS public key."
+          },
+          "registerOperator(address,bytes)": {
+            "notice": "Registers the `operator`'s pubkey for the specified `quorumNumbers`."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IBLSApkRegistry.sol": "IBLSApkRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IBLSApkRegistry.sol": {
+        "keccak256": "0x8ab1a16d2d5fd7dd89447aaceb67a3d383d6bb484bbcf2a4755e780db0011a32",
+        "urls": [
+          "bzz-raw://5b69bad830b1983d436c923870489d0582fb16a5f88a0e978057c78b52e51b9e",
+          "dweb:/ipfs/QmPnZBXLtivrjB1WxaaikCgcKUo9Bf87MkSM53DnfpUs8e"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "src/libraries/BN254.sol": {
+        "keccak256": "0x40a9a94aaa705b67d1c4efdccb8e1ff8ccf41d1ce20639f6cd6fd27d84891417",
+        "urls": [
+          "bzz-raw://4b7a07633fc3fce4d2eac8dc16ee2cf138e34583e1822d3d705d7c567667bf49",
+          "dweb:/ipfs/QmVWYp64T71yKnT2Bpoq4wj7bADUKmjW8w5uzhCTh5Bs91"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IBLSApkRegistry.sol",
+    "id": 70281,
+    "exportedSymbols": {
+      "BN254": [
+        72029
+      ],
+      "IBLSApkRegistry": [
+        70280
+      ],
+      "IRegistry": [
+        70498
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:6826:103",
+    "nodes": [
+      {
+        "id": 70110,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:103",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "=",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 70112,
+        "nodeType": "ImportDirective",
+        "src": "63:42:103",
+        "nodes": [],
+        "absolutePath": "src/interfaces/IRegistry.sol",
+        "file": "./IRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70281,
+        "sourceUnit": 70499,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70111,
+              "name": "IRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 70498,
+              "src": "71:9:103",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_IRegistry_$70498_$",
+                "typeString": "type(contract IRegistry)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70114,
+        "nodeType": "ImportDirective",
+        "src": "107:45:103",
+        "nodes": [],
+        "absolutePath": "src/libraries/BN254.sol",
+        "file": "../libraries/BN254.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 70281,
+        "sourceUnit": 72030,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70113,
+              "name": "BN254",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 72029,
+              "src": "115:5:103",
+              "typeDescriptions": {
+                "typeIdentifier": "t_type$_t_contract$_BN254_$72029_$",
+                "typeString": "type(library BN254)"
+              }
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 70280,
+        "nodeType": "ContractDefinition",
+        "src": "304:6558:103",
+        "nodes": [
+          {
+            "id": 70124,
+            "nodeType": "StructDefinition",
+            "src": "466:303:103",
+            "nodes": [],
+            "canonicalName": "IBLSApkRegistry.ApkUpdate",
+            "members": [
+              {
+                "constant": false,
+                "id": 70119,
+                "mutability": "mutable",
+                "name": "apkHash",
+                "nameLocation": "572:7:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70124,
+                "src": "564:15:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes24",
+                  "typeString": "bytes24"
+                },
+                "typeName": {
+                  "id": 70118,
+                  "name": "bytes24",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "564:7:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes24",
+                    "typeString": "bytes24"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70121,
+                "mutability": "mutable",
+                "name": "updateBlockNumber",
+                "nameLocation": "649:17:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70124,
+                "src": "642:24:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 70120,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "642:6:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70123,
+                "mutability": "mutable",
+                "name": "nextUpdateBlockNumber",
+                "nameLocation": "741:21:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70124,
+                "src": "734:28:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 70122,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "734:6:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ApkUpdate",
+            "nameLocation": "473:9:103",
+            "scope": 70280,
+            "visibility": "public"
+          },
+          {
+            "id": 70134,
+            "nodeType": "StructDefinition",
+            "src": "1113:154:103",
+            "nodes": [],
+            "canonicalName": "IBLSApkRegistry.PubkeyRegistrationParams",
+            "members": [
+              {
+                "constant": false,
+                "id": 70127,
+                "mutability": "mutable",
+                "name": "pubkeyRegistrationSignature",
+                "nameLocation": "1169:27:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70134,
+                "src": "1155:41:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                  "typeString": "struct BN254.G1Point"
+                },
+                "typeName": {
+                  "id": 70126,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 70125,
+                    "name": "BN254.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 71161,
+                    "src": "1155:13:103"
+                  },
+                  "referencedDeclaration": 71161,
+                  "src": "1155:13:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70130,
+                "mutability": "mutable",
+                "name": "pubkeyG1",
+                "nameLocation": "1220:8:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70134,
+                "src": "1206:22:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                  "typeString": "struct BN254.G1Point"
+                },
+                "typeName": {
+                  "id": 70129,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 70128,
+                    "name": "BN254.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 71161,
+                    "src": "1206:13:103"
+                  },
+                  "referencedDeclaration": 71161,
+                  "src": "1206:13:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70133,
+                "mutability": "mutable",
+                "name": "pubkeyG2",
+                "nameLocation": "1252:8:103",
+                "nodeType": "VariableDeclaration",
+                "scope": 70134,
+                "src": "1238:22:103",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                  "typeString": "struct BN254.G2Point"
+                },
+                "typeName": {
+                  "id": 70132,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 70131,
+                    "name": "BN254.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 71170,
+                    "src": "1238:13:103"
+                  },
+                  "referencedDeclaration": 71170,
+                  "src": "1238:13:103",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                    "typeString": "struct BN254.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "PubkeyRegistrationParams",
+            "nameLocation": "1120:24:103",
+            "scope": 70280,
+            "visibility": "public"
+          },
+          {
+            "id": 70145,
+            "nodeType": "EventDefinition",
+            "src": "1385:102:103",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 70135,
+              "nodeType": "StructuredDocumentation",
+              "src": "1287:93:103",
+              "text": "@notice Emitted when `operator` registers with the public keys `pubkeyG1` and `pubkeyG2`."
+            },
+            "name": "NewPubkeyRegistration",
+            "nameLocation": "1391:21:103",
+            "parameters": {
+              "id": 70144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70137,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1429:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70145,
+                  "src": "1413:24:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70136,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1413:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70140,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "pubkeyG1",
+                  "nameLocation": "1453:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70145,
+                  "src": "1439:22:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_memory_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  },
+                  "typeName": {
+                    "id": 70139,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70138,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "1439:13:103"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "1439:13:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70143,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "pubkeyG2",
+                  "nameLocation": "1477:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70145,
+                  "src": "1463:22:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$71170_memory_ptr",
+                    "typeString": "struct BN254.G2Point"
+                  },
+                  "typeName": {
+                    "id": 70142,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70141,
+                      "name": "BN254.G2Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71170,
+                      "src": "1463:13:103"
+                    },
+                    "referencedDeclaration": 71170,
+                    "src": "1463:13:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G2Point_$71170_storage_ptr",
+                      "typeString": "struct BN254.G2Point"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1412:74:103"
+            }
+          },
+          {
+            "id": 70151,
+            "nodeType": "EventDefinition",
+            "src": "1578:90:103",
+            "nodes": [],
+            "anonymous": false,
+            "name": "OperatorAddedToQuorums",
+            "nameLocation": "1584:22:103",
+            "parameters": {
+              "id": 70150,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70147,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1624:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70151,
+                  "src": "1616:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70146,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1616:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70149,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "1648:13:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70151,
+                  "src": "1642:19:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70148,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1642:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1606:61:103"
+            }
+          },
+          {
+            "id": 70157,
+            "nodeType": "EventDefinition",
+            "src": "1754:95:103",
+            "nodes": [],
+            "anonymous": false,
+            "name": "OperatorRemovedFromQuorums",
+            "nameLocation": "1760:26:103",
+            "parameters": {
+              "id": 70156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70153,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1804:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70157,
+                  "src": "1796:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1796:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70155,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "1829:13:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70157,
+                  "src": "1823:19:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70154,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1823:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1786:62:103"
+            }
+          },
+          {
+            "id": 70165,
+            "nodeType": "FunctionDefinition",
+            "src": "2504:83:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70158,
+              "nodeType": "StructuredDocumentation",
+              "src": "1855:644:103",
+              "text": " @notice Registers the `operator`'s pubkey for the specified `quorumNumbers`.\n @param operator The address of the operator to register.\n @param quorumNumbers The quorum numbers the operator is registering for, where each byte is an 8 bit integer quorumNumber.\n @dev access restricted to the RegistryCoordinator\n @dev Preconditions (these are assumed, not validated in this contract):\n         1) `quorumNumbers` has no duplicates\n         2) `quorumNumbers.length` != 0\n         3) `quorumNumbers` is ordered in ascending order\n         4) the operator is not already registered"
+            },
+            "functionSelector": "3fb27952",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerOperator",
+            "nameLocation": "2513:16:103",
+            "parameters": {
+              "id": 70163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70160,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "2538:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70165,
+                  "src": "2530:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70159,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2530:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70162,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "2563:13:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70165,
+                  "src": "2548:28:103",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70161,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2548:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2529:48:103"
+            },
+            "returnParameters": {
+              "id": 70164,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2586:0:103"
+            },
+            "scope": 70280,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70173,
+            "nodeType": "FunctionDefinition",
+            "src": "3355:85:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70166,
+              "nodeType": "StructuredDocumentation",
+              "src": "2593:756:103",
+              "text": " @notice Deregisters the `operator`'s pubkey for the specified `quorumNumbers`.\n @param operator The address of the operator to deregister.\n @param quorumNumbers The quorum numbers the operator is deregistering from, where each byte is an 8 bit integer quorumNumber.\n @dev access restricted to the RegistryCoordinator\n @dev Preconditions (these are assumed, not validated in this contract):\n         1) `quorumNumbers` has no duplicates\n         2) `quorumNumbers.length` != 0\n         3) `quorumNumbers` is ordered in ascending order\n         4) the operator is not already deregistered\n         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for"
+            },
+            "functionSelector": "f4e24fe5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deregisterOperator",
+            "nameLocation": "3364:18:103",
+            "parameters": {
+              "id": 70171,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70168,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "3391:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70173,
+                  "src": "3383:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70167,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3383:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70170,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "3416:13:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70173,
+                  "src": "3401:28:103",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70169,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3401:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3382:48:103"
+            },
+            "returnParameters": {
+              "id": 70172,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3439:0:103"
+            },
+            "scope": 70280,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70179,
+            "nodeType": "FunctionDefinition",
+            "src": "3594:55:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70174,
+              "nodeType": "StructuredDocumentation",
+              "src": "3450:139:103",
+              "text": " @notice Initializes a new quorum by pushing its first apk update\n @param quorumNumber The number of the new quorum"
+            },
+            "functionSelector": "26d941f2",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initializeQuorum",
+            "nameLocation": "3603:16:103",
+            "parameters": {
+              "id": 70177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70176,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "3626:12:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70179,
+                  "src": "3620:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70175,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3620:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3619:20:103"
+            },
+            "returnParameters": {
+              "id": 70178,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3648:0:103"
+            },
+            "scope": 70280,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70187,
+            "nodeType": "FunctionDefinition",
+            "src": "3860:80:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70180,
+              "nodeType": "StructuredDocumentation",
+              "src": "3655:200:103",
+              "text": " @notice mapping from operator address to pubkey hash.\n Returns *zero* if the `operator` has never registered, and otherwise returns the hash of the public key of the operator."
+            },
+            "functionSelector": "de29fac0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "operatorToPubkeyHash",
+            "nameLocation": "3869:20:103",
+            "parameters": {
+              "id": 70183,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70182,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "3898:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70187,
+                  "src": "3890:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70181,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3890:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3889:18:103"
+            },
+            "returnParameters": {
+              "id": 70186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70185,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70187,
+                  "src": "3931:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70184,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3931:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3930:9:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70195,
+            "nodeType": "FunctionDefinition",
+            "src": "4254:82:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70188,
+              "nodeType": "StructuredDocumentation",
+              "src": "3946:303:103",
+              "text": " @notice mapping from pubkey hash to operator address.\n Returns *zero* if no operator has ever registered the public key corresponding to `pubkeyHash`,\n and otherwise returns the (unique) registered operator who owns the BLS public key that is the preimage of `pubkeyHash`."
+            },
+            "functionSelector": "e8bb9ae6",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pubkeyHashToOperator",
+            "nameLocation": "4263:20:103",
+            "parameters": {
+              "id": 70191,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70190,
+                  "mutability": "mutable",
+                  "name": "pubkeyHash",
+                  "nameLocation": "4292:10:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70195,
+                  "src": "4284:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70189,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4284:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4283:20:103"
+            },
+            "returnParameters": {
+              "id": 70194,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70193,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70195,
+                  "src": "4327:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70192,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4327:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4326:9:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70209,
+            "nodeType": "FunctionDefinition",
+            "src": "4754:212:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70196,
+              "nodeType": "StructuredDocumentation",
+              "src": "4342:407:103",
+              "text": " @notice Called by the RegistryCoordinator register an operator as the owner of a BLS public key.\n @param operator is the operator for whom the key is being registered\n @param params contains the G1 & G2 public keys of the operator, and a signature proving their ownership\n @param pubkeyRegistrationMessageHash is a hash that the operator must sign to prove key ownership"
+            },
+            "functionSelector": "bf79ce58",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerBLSPublicKey",
+            "nameLocation": "4763:20:103",
+            "parameters": {
+              "id": 70205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70198,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "4801:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70209,
+                  "src": "4793:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70197,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4793:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70201,
+                  "mutability": "mutable",
+                  "name": "params",
+                  "nameLocation": "4853:6:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70209,
+                  "src": "4819:40:103",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PubkeyRegistrationParams_$70134_calldata_ptr",
+                    "typeString": "struct IBLSApkRegistry.PubkeyRegistrationParams"
+                  },
+                  "typeName": {
+                    "id": 70200,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70199,
+                      "name": "PubkeyRegistrationParams",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70134,
+                      "src": "4819:24:103"
+                    },
+                    "referencedDeclaration": 70134,
+                    "src": "4819:24:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PubkeyRegistrationParams_$70134_storage_ptr",
+                      "typeString": "struct IBLSApkRegistry.PubkeyRegistrationParams"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70204,
+                  "mutability": "mutable",
+                  "name": "pubkeyRegistrationMessageHash",
+                  "nameLocation": "4892:29:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70209,
+                  "src": "4869:52:103",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_calldata_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  },
+                  "typeName": {
+                    "id": 70203,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70202,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "4869:13:103"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "4869:13:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4783:144:103"
+            },
+            "returnParameters": {
+              "id": 70208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70207,
+                  "mutability": "mutable",
+                  "name": "operatorId",
+                  "nameLocation": "4954:10:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70209,
+                  "src": "4946:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70206,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4946:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4945:20:103"
+            },
+            "scope": 70280,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70220,
+            "nodeType": "FunctionDefinition",
+            "src": "5123:101:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70210,
+              "nodeType": "StructuredDocumentation",
+              "src": "4972:146:103",
+              "text": " @notice Returns the pubkey and pubkey hash of an operator\n @dev Reverts if the operator has not registered a valid pubkey"
+            },
+            "functionSelector": "7ff81a87",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRegisteredPubkey",
+            "nameLocation": "5132:19:103",
+            "parameters": {
+              "id": 70213,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70212,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "5160:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70220,
+                  "src": "5152:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70211,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5152:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5151:18:103"
+            },
+            "returnParameters": {
+              "id": 70219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70216,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70220,
+                  "src": "5193:20:103",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_memory_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  },
+                  "typeName": {
+                    "id": 70215,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70214,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "5193:13:103"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "5193:13:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70218,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70220,
+                  "src": "5215:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70217,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5215:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5192:31:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70229,
+            "nodeType": "FunctionDefinition",
+            "src": "5303:81:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70221,
+              "nodeType": "StructuredDocumentation",
+              "src": "5230:68:103",
+              "text": "@notice Returns the current APK for the provided `quorumNumber `"
+            },
+            "functionSelector": "5f61a884",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getApk",
+            "nameLocation": "5312:6:103",
+            "parameters": {
+              "id": 70224,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70223,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "5325:12:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70229,
+                  "src": "5319:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70222,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5319:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5318:20:103"
+            },
+            "returnParameters": {
+              "id": 70228,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70227,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70229,
+                  "src": "5362:20:103",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$71161_memory_ptr",
+                    "typeString": "struct BN254.G1Point"
+                  },
+                  "typeName": {
+                    "id": 70226,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70225,
+                      "name": "BN254.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71161,
+                      "src": "5362:13:103"
+                    },
+                    "referencedDeclaration": 71161,
+                    "src": "5362:13:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$71161_storage_ptr",
+                      "typeString": "struct BN254.G1Point"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5361:22:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70240,
+            "nodeType": "FunctionDefinition",
+            "src": "5496:126:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70230,
+              "nodeType": "StructuredDocumentation",
+              "src": "5390:101:103",
+              "text": "@notice Returns the index of the quorumApk index at `blockNumber` for the provided `quorumNumber`"
+            },
+            "functionSelector": "d5254a8c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getApkIndicesAtBlockNumber",
+            "nameLocation": "5505:26:103",
+            "parameters": {
+              "id": 70235,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70232,
+                  "mutability": "mutable",
+                  "name": "quorumNumbers",
+                  "nameLocation": "5547:13:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70240,
+                  "src": "5532:28:103",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 70231,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5532:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70234,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nameLocation": "5570:11:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70240,
+                  "src": "5562:19:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 70233,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5562:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5531:51:103"
+            },
+            "returnParameters": {
+              "id": 70239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70238,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70240,
+                  "src": "5605:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$dyn_memory_ptr",
+                    "typeString": "uint32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 70236,
+                      "name": "uint32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "5605:6:103",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 70237,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5605:8:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint32_$dyn_storage_ptr",
+                      "typeString": "uint32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5604:17:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70251,
+            "nodeType": "FunctionDefinition",
+            "src": "5736:105:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70241,
+              "nodeType": "StructuredDocumentation",
+              "src": "5628:103:103",
+              "text": "@notice Returns the `ApkUpdate` struct at `index` in the list of APK updates for the `quorumNumber`"
+            },
+            "functionSelector": "605747d5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getApkUpdateAtIndex",
+            "nameLocation": "5745:19:103",
+            "parameters": {
+              "id": 70246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70243,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "5771:12:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70251,
+                  "src": "5765:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70242,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5765:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70245,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "5793:5:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70251,
+                  "src": "5785:13:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 70244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5785:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5764:35:103"
+            },
+            "returnParameters": {
+              "id": 70250,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70249,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70251,
+                  "src": "5823:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ApkUpdate_$70124_memory_ptr",
+                    "typeString": "struct IBLSApkRegistry.ApkUpdate"
+                  },
+                  "typeName": {
+                    "id": 70248,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70247,
+                      "name": "ApkUpdate",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 70124,
+                      "src": "5823:9:103"
+                    },
+                    "referencedDeclaration": 70124,
+                    "src": "5823:9:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ApkUpdate_$70124_storage_ptr",
+                      "typeString": "struct IBLSApkRegistry.ApkUpdate"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5822:18:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70259,
+            "nodeType": "FunctionDefinition",
+            "src": "5919:87:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70252,
+              "nodeType": "StructuredDocumentation",
+              "src": "5847:67:103",
+              "text": "@notice Returns the operator address for the given `pubkeyHash`"
+            },
+            "functionSelector": "47b314e8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOperatorFromPubkeyHash",
+            "nameLocation": "5928:25:103",
+            "parameters": {
+              "id": 70255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70254,
+                  "mutability": "mutable",
+                  "name": "pubkeyHash",
+                  "nameLocation": "5962:10:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70259,
+                  "src": "5954:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70253,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5954:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5953:20:103"
+            },
+            "returnParameters": {
+              "id": 70258,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70257,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70259,
+                  "src": "5997:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70256,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5997:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5996:9:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70271,
+            "nodeType": "FunctionDefinition",
+            "src": "6481:128:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70260,
+              "nodeType": "StructuredDocumentation",
+              "src": "6012:464:103",
+              "text": " @notice get 24 byte hash of the apk of `quorumNumber` at `blockNumber` using the provided `index`;\n called by checkSignatures in BLSSignatureChecker.sol.\n @param quorumNumber is the quorum whose ApkHash is being retrieved\n @param blockNumber is the number of the block for which the latest ApkHash will be retrieved\n @param index is the index of the apkUpdate being retrieved from the list of quorum apkUpdates in storage"
+            },
+            "functionSelector": "68bccaac",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getApkHashAtBlockNumberAndIndex",
+            "nameLocation": "6490:31:103",
+            "parameters": {
+              "id": 70267,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70262,
+                  "mutability": "mutable",
+                  "name": "quorumNumber",
+                  "nameLocation": "6528:12:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70271,
+                  "src": "6522:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 70261,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6522:5:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70264,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nameLocation": "6549:11:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70271,
+                  "src": "6542:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 70263,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6542:6:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70266,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "6570:5:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70271,
+                  "src": "6562:13:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 70265,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6562:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6521:55:103"
+            },
+            "returnParameters": {
+              "id": 70270,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70269,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70271,
+                  "src": "6600:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes24",
+                    "typeString": "bytes24"
+                  },
+                  "typeName": {
+                    "id": 70268,
+                    "name": "bytes24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6600:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes24",
+                      "typeString": "bytes24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6599:9:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70279,
+            "nodeType": "FunctionDefinition",
+            "src": "6787:73:103",
+            "nodes": [],
+            "documentation": {
+              "id": 70272,
+              "nodeType": "StructuredDocumentation",
+              "src": "6615:167:103",
+              "text": "@notice returns the ID used to identify the `operator` within this AVS.\n @dev Returns zero in the event that the `operator` has never registered for the AVS"
+            },
+            "functionSelector": "13542a4e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOperatorId",
+            "nameLocation": "6796:13:103",
+            "parameters": {
+              "id": 70275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70274,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "6818:8:103",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70279,
+                  "src": "6810:16:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70273,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6810:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6809:18:103"
+            },
+            "returnParameters": {
+              "id": 70278,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70277,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70279,
+                  "src": "6851:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 70276,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6851:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6850:9:103"
+            },
+            "scope": 70280,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 70116,
+              "name": "IRegistry",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 70498,
+              "src": "333:9:103"
+            },
+            "id": 70117,
+            "nodeType": "InheritanceSpecifier",
+            "src": "333:9:103"
+          }
+        ],
+        "canonicalName": "IBLSApkRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 70115,
+          "nodeType": "StructuredDocumentation",
+          "src": "154:149:103",
+          "text": " @title Minimal interface for a registry that keeps track of aggregate operator public keys across many quorums.\n @author Layr Labs, Inc."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70280,
+          70498
+        ],
+        "name": "IBLSApkRegistry",
+        "nameLocation": "314:15:103",
+        "scope": 70281,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 103
+}

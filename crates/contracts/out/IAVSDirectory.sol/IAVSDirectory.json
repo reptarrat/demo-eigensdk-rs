@@ -1,0 +1,1352 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "avs",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "metadataURI",
+          "type": "string"
+        }
+      ],
+      "name": "AVSMetadataURIUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "avs",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum IAVSDirectory.OperatorAVSRegistrationStatus",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "OperatorAVSRegistrationStatusUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "OPERATOR_AVS_REGISTRATION_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "avs",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "salt",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expiry",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateOperatorAVSRegistrationDigestHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "deregisterOperatorFromAVS",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "salt",
+          "type": "bytes32"
+        }
+      ],
+      "name": "operatorSaltIsSpent",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expiry",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ISignatureUtils.SignatureWithSaltAndExpiry",
+          "name": "operatorSignature",
+          "type": "tuple"
+        }
+      ],
+      "name": "registerOperatorToAVS",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "metadataURI",
+          "type": "string"
+        }
+      ],
+      "name": "updateAVSMetadataURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "OPERATOR_AVS_REGISTRATION_TYPEHASH()": "d79aceab",
+    "calculateOperatorAVSRegistrationDigestHash(address,address,bytes32,uint256)": "a1060c88",
+    "deregisterOperatorFromAVS(address)": "a364f4da",
+    "operatorSaltIsSpent(address,bytes32)": "374823b5",
+    "registerOperatorToAVS(address,(bytes,bytes32,uint256))": "9926ee7d",
+    "updateAVSMetadataURI(string)": "a98fb355"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"avs\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"AVSMetadataURIUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"avs\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum IAVSDirectory.OperatorAVSRegistrationStatus\",\"name\":\"status\",\"type\":\"uint8\"}],\"name\":\"OperatorAVSRegistrationStatusUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"OPERATOR_AVS_REGISTRATION_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"avs\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"expiry\",\"type\":\"uint256\"}],\"name\":\"calculateOperatorAVSRegistrationDigestHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"deregisterOperatorFromAVS\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"name\":\"operatorSaltIsSpent\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"expiry\",\"type\":\"uint256\"}],\"internalType\":\"struct ISignatureUtils.SignatureWithSaltAndExpiry\",\"name\":\"operatorSignature\",\"type\":\"tuple\"}],\"name\":\"registerOperatorToAVS\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"updateAVSMetadataURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"AVSMetadataURIUpdated(address,string)\":{\"details\":\"Note that these strings are *never stored in storage* and are instead purely emitted in events for off-chain indexing\"}},\"kind\":\"dev\",\"methods\":{\"calculateOperatorAVSRegistrationDigestHash(address,address,bytes32,uint256)\":{\"params\":{\"avs\":\"The AVS the operator is registering to\",\"expiry\":\"Time after which the approver's signature becomes invalid\",\"operator\":\"The account registering as an operator\",\"salt\":\"A unique and single use value associated with the approver signature.\"}},\"deregisterOperatorFromAVS(address)\":{\"params\":{\"operator\":\"The address of the operator to deregister.\"}},\"operatorSaltIsSpent(address,bytes32)\":{\"details\":\"Salts is used in the `registerOperatorToAVS` function.\"},\"registerOperatorToAVS(address,(bytes,bytes32,uint256))\":{\"params\":{\"operator\":\"The address of the operator to register.\",\"operatorSignature\":\"The signature, salt, and expiry of the operator's signature.\"}},\"updateAVSMetadataURI(string)\":{\"details\":\"Note that the `metadataURI` is *never stored * and is only emitted in the `AVSMetadataURIUpdated` event\",\"params\":{\"metadataURI\":\"The URI for metadata associated with an AVS\"}}},\"version\":1},\"userdoc\":{\"events\":{\"AVSMetadataURIUpdated(address,string)\":{\"notice\":\"Emitted when @param avs indicates that they are updating their MetadataURI string\"},\"OperatorAVSRegistrationStatusUpdated(address,address,uint8)\":{\"notice\":\"Emitted when an operator's registration status for an AVS is updated\"}},\"kind\":\"user\",\"methods\":{\"OPERATOR_AVS_REGISTRATION_TYPEHASH()\":{\"notice\":\"The EIP-712 typehash for the Registration struct used by the contract\"},\"calculateOperatorAVSRegistrationDigestHash(address,address,bytes32,uint256)\":{\"notice\":\"Calculates the digest hash to be signed by an operator to register with an AVS\"},\"deregisterOperatorFromAVS(address)\":{\"notice\":\"Called by an avs to deregister an operator with the avs.\"},\"operatorSaltIsSpent(address,bytes32)\":{\"notice\":\"Returns whether or not the salt has already been used by the operator.\"},\"registerOperatorToAVS(address,(bytes,bytes32,uint256))\":{\"notice\":\"Called by an avs to register an operator with the avs.\"},\"updateAVSMetadataURI(string)\":{\"notice\":\"Called by an AVS to emit an `AVSMetadataURIUpdated` event indicating the information has updated.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IAVSDirectory.sol\":\"IAVSDirectory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IAVSDirectory.sol\":{\"keccak256\":\"0x3f67ab9b510b02dc3c07014b49785f1e167401bdb39cc10f737bbf545632d938\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://48d1267e2df6c8ac9b8f419269ff3d23be9b62606ee6b6d2278c27ffebfd73aa\",\"dweb:/ipfs/QmaFyywKCm1eotKjF1evryW8BMQJzPDstZm1wMRW79phXG\"]},\"lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol\":{\"keccak256\":\"0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c\",\"dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "avs",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "string",
+              "name": "metadataURI",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AVSMetadataURIUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "avs",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "enum IAVSDirectory.OperatorAVSRegistrationStatus",
+              "name": "status",
+              "type": "uint8",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorAVSRegistrationStatusUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "OPERATOR_AVS_REGISTRATION_TYPEHASH",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "avs",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expiry",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "calculateOperatorAVSRegistrationDigestHash",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deregisterOperatorFromAVS"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "operatorSaltIsSpent",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "struct ISignatureUtils.SignatureWithSaltAndExpiry",
+              "name": "operatorSignature",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "salt",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "expiry",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerOperatorToAVS"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "metadataURI",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateAVSMetadataURI"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "calculateOperatorAVSRegistrationDigestHash(address,address,bytes32,uint256)": {
+            "params": {
+              "avs": "The AVS the operator is registering to",
+              "expiry": "Time after which the approver's signature becomes invalid",
+              "operator": "The account registering as an operator",
+              "salt": "A unique and single use value associated with the approver signature."
+            }
+          },
+          "deregisterOperatorFromAVS(address)": {
+            "params": {
+              "operator": "The address of the operator to deregister."
+            }
+          },
+          "operatorSaltIsSpent(address,bytes32)": {
+            "details": "Salts is used in the `registerOperatorToAVS` function."
+          },
+          "registerOperatorToAVS(address,(bytes,bytes32,uint256))": {
+            "params": {
+              "operator": "The address of the operator to register.",
+              "operatorSignature": "The signature, salt, and expiry of the operator's signature."
+            }
+          },
+          "updateAVSMetadataURI(string)": {
+            "details": "Note that the `metadataURI` is *never stored * and is only emitted in the `AVSMetadataURIUpdated` event",
+            "params": {
+              "metadataURI": "The URI for metadata associated with an AVS"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "OPERATOR_AVS_REGISTRATION_TYPEHASH()": {
+            "notice": "The EIP-712 typehash for the Registration struct used by the contract"
+          },
+          "calculateOperatorAVSRegistrationDigestHash(address,address,bytes32,uint256)": {
+            "notice": "Calculates the digest hash to be signed by an operator to register with an AVS"
+          },
+          "deregisterOperatorFromAVS(address)": {
+            "notice": "Called by an avs to deregister an operator with the avs."
+          },
+          "operatorSaltIsSpent(address,bytes32)": {
+            "notice": "Returns whether or not the salt has already been used by the operator."
+          },
+          "registerOperatorToAVS(address,(bytes,bytes32,uint256))": {
+            "notice": "Called by an avs to register an operator with the avs."
+          },
+          "updateAVSMetadataURI(string)": {
+            "notice": "Called by an AVS to emit an `AVSMetadataURIUpdated` event indicating the information has updated."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/contracts/interfaces/IAVSDirectory.sol": "IAVSDirectory"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IAVSDirectory.sol": {
+        "keccak256": "0x3f67ab9b510b02dc3c07014b49785f1e167401bdb39cc10f737bbf545632d938",
+        "urls": [
+          "bzz-raw://48d1267e2df6c8ac9b8f419269ff3d23be9b62606ee6b6d2278c27ffebfd73aa",
+          "dweb:/ipfs/QmaFyywKCm1eotKjF1evryW8BMQJzPDstZm1wMRW79phXG"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol": {
+        "keccak256": "0x5e52482a31d94401a8502f3014c4aada1142b4450fc0596dff8e1866a85fe092",
+        "urls": [
+          "bzz-raw://17dc326c9361bc1453379f26545963557b2883b0c88bc07d4477e04dbcc0cc8c",
+          "dweb:/ipfs/QmZXT7A816W5JH2ymirE2ETaJttqztFCsEL22AV8oEfCK9"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IAVSDirectory.sol",
+    "id": 6451,
+    "exportedSymbols": {
+      "IAVSDirectory": [
+        6450
+      ],
+      "ISignatureUtils": [
+        7794
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:2927:8",
+    "nodes": [
+      {
+        "id": 6375,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:8",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ]
+      },
+      {
+        "id": 6376,
+        "nodeType": "ImportDirective",
+        "src": "63:31:8",
+        "nodes": [],
+        "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol",
+        "file": "./ISignatureUtils.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 6451,
+        "sourceUnit": 7795,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 6450,
+        "nodeType": "ContractDefinition",
+        "src": "96:2867:8",
+        "nodes": [
+          {
+            "id": 6381,
+            "nodeType": "EnumDefinition",
+            "src": "232:162:8",
+            "nodes": [],
+            "canonicalName": "IAVSDirectory.OperatorAVSRegistrationStatus",
+            "members": [
+              {
+                "id": 6379,
+                "name": "UNREGISTERED",
+                "nameLocation": "277:12:8",
+                "nodeType": "EnumValue",
+                "src": "277:12:8"
+              },
+              {
+                "id": 6380,
+                "name": "REGISTERED",
+                "nameLocation": "339:10:8",
+                "nodeType": "EnumValue",
+                "src": "339:10:8"
+              }
+            ],
+            "name": "OperatorAVSRegistrationStatus",
+            "nameLocation": "237:29:8"
+          },
+          {
+            "id": 6388,
+            "nodeType": "EventDefinition",
+            "src": "643:69:8",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 6382,
+              "nodeType": "StructuredDocumentation",
+              "src": "400:238:8",
+              "text": " @notice Emitted when @param avs indicates that they are updating their MetadataURI string\n @dev Note that these strings are *never stored in storage* and are instead purely emitted in events for off-chain indexing"
+            },
+            "name": "AVSMetadataURIUpdated",
+            "nameLocation": "649:21:8",
+            "parameters": {
+              "id": 6387,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6384,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "avs",
+                  "nameLocation": "687:3:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6388,
+                  "src": "671:19:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6383,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "671:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6386,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "699:11:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6388,
+                  "src": "692:18:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6385,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "692:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "670:41:8"
+            }
+          },
+          {
+            "id": 6398,
+            "nodeType": "EventDefinition",
+            "src": "803:128:8",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 6389,
+              "nodeType": "StructuredDocumentation",
+              "src": "718:80:8",
+              "text": "@notice Emitted when an operator's registration status for an AVS is updated"
+            },
+            "name": "OperatorAVSRegistrationStatusUpdated",
+            "nameLocation": "809:36:8",
+            "parameters": {
+              "id": 6397,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6391,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "862:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6398,
+                  "src": "846:24:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6390,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "846:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6393,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "avs",
+                  "nameLocation": "888:3:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6398,
+                  "src": "872:19:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6392,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "872:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6396,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "nameLocation": "923:6:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6398,
+                  "src": "893:36:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_OperatorAVSRegistrationStatus_$6381",
+                    "typeString": "enum IAVSDirectory.OperatorAVSRegistrationStatus"
+                  },
+                  "typeName": {
+                    "id": 6395,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6394,
+                      "name": "OperatorAVSRegistrationStatus",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6381,
+                      "src": "893:29:8"
+                    },
+                    "referencedDeclaration": 6381,
+                    "src": "893:29:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_OperatorAVSRegistrationStatus_$6381",
+                      "typeString": "enum IAVSDirectory.OperatorAVSRegistrationStatus"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "845:85:8"
+            }
+          },
+          {
+            "id": 6407,
+            "nodeType": "FunctionDefinition",
+            "src": "1180:149:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6399,
+              "nodeType": "StructuredDocumentation",
+              "src": "937:238:8",
+              "text": " @notice Called by an avs to register an operator with the avs.\n @param operator The address of the operator to register.\n @param operatorSignature The signature, salt, and expiry of the operator's signature."
+            },
+            "functionSelector": "9926ee7d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerOperatorToAVS",
+            "nameLocation": "1189:21:8",
+            "parameters": {
+              "id": 6405,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6401,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1228:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6407,
+                  "src": "1220:16:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6400,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1220:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6404,
+                  "mutability": "mutable",
+                  "name": "operatorSignature",
+                  "nameLocation": "1296:17:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6407,
+                  "src": "1246:67:8",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SignatureWithSaltAndExpiry_$7793_memory_ptr",
+                    "typeString": "struct ISignatureUtils.SignatureWithSaltAndExpiry"
+                  },
+                  "typeName": {
+                    "id": 6403,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6402,
+                      "name": "ISignatureUtils.SignatureWithSaltAndExpiry",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7793,
+                      "src": "1246:42:8"
+                    },
+                    "referencedDeclaration": 7793,
+                    "src": "1246:42:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SignatureWithSaltAndExpiry_$7793_storage_ptr",
+                      "typeString": "struct ISignatureUtils.SignatureWithSaltAndExpiry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1210:109:8"
+            },
+            "returnParameters": {
+              "id": 6406,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1328:0:8"
+            },
+            "scope": 6450,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6413,
+            "nodeType": "FunctionDefinition",
+            "src": "1489:62:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6408,
+              "nodeType": "StructuredDocumentation",
+              "src": "1335:149:8",
+              "text": " @notice Called by an avs to deregister an operator with the avs.\n @param operator The address of the operator to deregister."
+            },
+            "functionSelector": "a364f4da",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deregisterOperatorFromAVS",
+            "nameLocation": "1498:25:8",
+            "parameters": {
+              "id": 6411,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6410,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1532:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6413,
+                  "src": "1524:16:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6409,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1524:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1523:18:8"
+            },
+            "returnParameters": {
+              "id": 6412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1550:0:8"
+            },
+            "scope": 6450,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6419,
+            "nodeType": "FunctionDefinition",
+            "src": "1872:68:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6414,
+              "nodeType": "StructuredDocumentation",
+              "src": "1557:310:8",
+              "text": " @notice Called by an AVS to emit an `AVSMetadataURIUpdated` event indicating the information has updated.\n @param metadataURI The URI for metadata associated with an AVS\n @dev Note that the `metadataURI` is *never stored * and is only emitted in the `AVSMetadataURIUpdated` event"
+            },
+            "functionSelector": "a98fb355",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateAVSMetadataURI",
+            "nameLocation": "1881:20:8",
+            "parameters": {
+              "id": 6417,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6416,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "1918:11:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6419,
+                  "src": "1902:27:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6415,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1902:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1901:29:8"
+            },
+            "returnParameters": {
+              "id": 6418,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1939:0:8"
+            },
+            "scope": 6450,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6429,
+            "nodeType": "FunctionDefinition",
+            "src": "2115:90:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6420,
+              "nodeType": "StructuredDocumentation",
+              "src": "1946:164:8",
+              "text": " @notice Returns whether or not the salt has already been used by the operator.\n @dev Salts is used in the `registerOperatorToAVS` function."
+            },
+            "functionSelector": "374823b5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "operatorSaltIsSpent",
+            "nameLocation": "2124:19:8",
+            "parameters": {
+              "id": 6425,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6422,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "2152:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6429,
+                  "src": "2144:16:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6421,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2144:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6424,
+                  "mutability": "mutable",
+                  "name": "salt",
+                  "nameLocation": "2170:4:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6429,
+                  "src": "2162:12:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6423,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2162:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2143:32:8"
+            },
+            "returnParameters": {
+              "id": 6428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6427,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6429,
+                  "src": "2199:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6426,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2199:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2198:6:8"
+            },
+            "scope": 6450,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6443,
+            "nodeType": "FunctionDefinition",
+            "src": "2608:183:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6430,
+              "nodeType": "StructuredDocumentation",
+              "src": "2211:392:8",
+              "text": " @notice Calculates the digest hash to be signed by an operator to register with an AVS\n @param operator The account registering as an operator\n @param avs The AVS the operator is registering to\n @param salt A unique and single use value associated with the approver signature.\n @param expiry Time after which the approver's signature becomes invalid"
+            },
+            "functionSelector": "a1060c88",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateOperatorAVSRegistrationDigestHash",
+            "nameLocation": "2617:42:8",
+            "parameters": {
+              "id": 6439,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6432,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "2677:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6443,
+                  "src": "2669:16:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6431,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2669:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6434,
+                  "mutability": "mutable",
+                  "name": "avs",
+                  "nameLocation": "2703:3:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6443,
+                  "src": "2695:11:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6433,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2695:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6436,
+                  "mutability": "mutable",
+                  "name": "salt",
+                  "nameLocation": "2724:4:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6443,
+                  "src": "2716:12:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6435,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2716:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6438,
+                  "mutability": "mutable",
+                  "name": "expiry",
+                  "nameLocation": "2746:6:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6443,
+                  "src": "2738:14:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6437,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2738:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2659:99:8"
+            },
+            "returnParameters": {
+              "id": 6442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6441,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6443,
+                  "src": "2782:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6440,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2782:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2781:9:8"
+            },
+            "scope": 6450,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6449,
+            "nodeType": "FunctionDefinition",
+            "src": "2883:78:8",
+            "nodes": [],
+            "documentation": {
+              "id": 6444,
+              "nodeType": "StructuredDocumentation",
+              "src": "2797:81:8",
+              "text": "@notice The EIP-712 typehash for the Registration struct used by the contract"
+            },
+            "functionSelector": "d79aceab",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "OPERATOR_AVS_REGISTRATION_TYPEHASH",
+            "nameLocation": "2892:34:8",
+            "parameters": {
+              "id": 6445,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2926:2:8"
+            },
+            "returnParameters": {
+              "id": 6448,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6447,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6449,
+                  "src": "2952:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6446,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2952:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2951:9:8"
+            },
+            "scope": 6450,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 6377,
+              "name": "ISignatureUtils",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7794,
+              "src": "123:15:8"
+            },
+            "id": 6378,
+            "nodeType": "InheritanceSpecifier",
+            "src": "123:15:8"
+          }
+        ],
+        "canonicalName": "IAVSDirectory",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          6450,
+          7794
+        ],
+        "name": "IAVSDirectory",
+        "nameLocation": "106:13:8",
+        "scope": 6451,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 8
+}

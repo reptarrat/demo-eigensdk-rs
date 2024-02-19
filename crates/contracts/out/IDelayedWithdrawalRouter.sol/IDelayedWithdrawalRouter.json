@@ -1,0 +1,2325 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "DelayedWithdrawalCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountClaimed",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "delayedWithdrawalsCompleted",
+          "type": "uint256"
+        }
+      ],
+      "name": "DelayedWithdrawalsClaimed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "previousValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "WithdrawalDelayBlocksSet",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "canClaimDelayedWithdrawal",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "maxNumberOfWithdrawalsToClaim",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimDelayedWithdrawals",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxNumberOfWithdrawalsToClaim",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimDelayedWithdrawals",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "podOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "createDelayedWithdrawal",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getClaimableUserDelayedWithdrawals",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "amount",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockCreated",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserDelayedWithdrawals",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "amount",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockCreated",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "setWithdrawalDelayBlocks",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "userDelayedWithdrawalByIndex",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "amount",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockCreated",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "userWithdrawals",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "delayedWithdrawalsCompleted",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "amount",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "blockCreated",
+                  "type": "uint32"
+                }
+              ],
+              "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+              "name": "delayedWithdrawals",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct IDelayedWithdrawalRouter.UserDelayedWithdrawals",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "userWithdrawalsLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawalDelayBlocks",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "canClaimDelayedWithdrawal(address,uint256)": "75608896",
+    "claimDelayedWithdrawals(address,uint256)": "e5db06c0",
+    "claimDelayedWithdrawals(uint256)": "d44e1b76",
+    "createDelayedWithdrawal(address,address)": "c0db354c",
+    "getClaimableUserDelayedWithdrawals(address)": "1f39d87f",
+    "getUserDelayedWithdrawals(address)": "3e1de008",
+    "setWithdrawalDelayBlocks(uint256)": "4d50f9a4",
+    "userDelayedWithdrawalByIndex(address,uint256)": "85594e58",
+    "userWithdrawals(address)": "ecb7cb1b",
+    "userWithdrawalsLength(address)": "e4f4f887",
+    "withdrawalDelayBlocks()": "50f73e7c"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"DelayedWithdrawalCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountClaimed\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"delayedWithdrawalsCompleted\",\"type\":\"uint256\"}],\"name\":\"DelayedWithdrawalsClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"previousValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newValue\",\"type\":\"uint256\"}],\"name\":\"WithdrawalDelayBlocksSet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"canClaimDelayedWithdrawal\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"maxNumberOfWithdrawalsToClaim\",\"type\":\"uint256\"}],\"name\":\"claimDelayedWithdrawals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"maxNumberOfWithdrawalsToClaim\",\"type\":\"uint256\"}],\"name\":\"claimDelayedWithdrawals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"podOwner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"}],\"name\":\"createDelayedWithdrawal\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getClaimableUserDelayedWithdrawals\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"amount\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"blockCreated\",\"type\":\"uint32\"}],\"internalType\":\"struct IDelayedWithdrawalRouter.DelayedWithdrawal[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserDelayedWithdrawals\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"amount\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"blockCreated\",\"type\":\"uint32\"}],\"internalType\":\"struct IDelayedWithdrawalRouter.DelayedWithdrawal[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newValue\",\"type\":\"uint256\"}],\"name\":\"setWithdrawalDelayBlocks\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"userDelayedWithdrawalByIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"amount\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"blockCreated\",\"type\":\"uint32\"}],\"internalType\":\"struct IDelayedWithdrawalRouter.DelayedWithdrawal\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"userWithdrawals\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"delayedWithdrawalsCompleted\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint224\",\"name\":\"amount\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"blockCreated\",\"type\":\"uint32\"}],\"internalType\":\"struct IDelayedWithdrawalRouter.DelayedWithdrawal[]\",\"name\":\"delayedWithdrawals\",\"type\":\"tuple[]\"}],\"internalType\":\"struct IDelayedWithdrawalRouter.UserDelayedWithdrawals\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"userWithdrawalsLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawalDelayBlocks\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"claimDelayedWithdrawals(address,uint256)\":{\"params\":{\"maxNumberOfWithdrawalsToClaim\":\"Used to limit the maximum number of withdrawals to loop through claiming.\",\"recipient\":\"The address to claim delayedWithdrawals for.\"}},\"claimDelayedWithdrawals(uint256)\":{\"params\":{\"maxNumberOfWithdrawalsToClaim\":\"Used to limit the maximum number of withdrawals to loop through claiming.\"}},\"createDelayedWithdrawal(address,address)\":{\"details\":\"Only callable by the `podOwner`'s EigenPod contract.\"}},\"version\":1},\"userdoc\":{\"events\":{\"DelayedWithdrawalCreated(address,address,uint256,uint256)\":{\"notice\":\"event for delayedWithdrawal creation\"},\"DelayedWithdrawalsClaimed(address,uint256,uint256)\":{\"notice\":\"event for the claiming of delayedWithdrawals\"},\"WithdrawalDelayBlocksSet(uint256,uint256)\":{\"notice\":\"Emitted when the `withdrawalDelayBlocks` variable is modified from `previousValue` to `newValue`.\"}},\"kind\":\"user\",\"methods\":{\"canClaimDelayedWithdrawal(address,uint256)\":{\"notice\":\"Convenience function for checking whether or not the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array is currently claimable\"},\"claimDelayedWithdrawals(address,uint256)\":{\"notice\":\"Called in order to withdraw delayed withdrawals made to the `recipient` that have passed the `withdrawalDelayBlocks` period.\"},\"claimDelayedWithdrawals(uint256)\":{\"notice\":\"Called in order to withdraw delayed withdrawals made to the caller that have passed the `withdrawalDelayBlocks` period.\"},\"createDelayedWithdrawal(address,address)\":{\"notice\":\"Creates an delayed withdrawal for `msg.value` to the `recipient`.\"},\"getClaimableUserDelayedWithdrawals(address)\":{\"notice\":\"Getter function to get all delayedWithdrawals that are currently claimable by the `user`\"},\"getUserDelayedWithdrawals(address)\":{\"notice\":\"Getter function to get all delayedWithdrawals of the `user`\"},\"setWithdrawalDelayBlocks(uint256)\":{\"notice\":\"Owner-only function for modifying the value of the `withdrawalDelayBlocks` variable.\"},\"userDelayedWithdrawalByIndex(address,uint256)\":{\"notice\":\"Getter function for fetching the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array\"},\"userWithdrawals(address)\":{\"notice\":\"Getter function for the mapping `_userWithdrawals`\"},\"userWithdrawalsLength(address)\":{\"notice\":\"Getter function for fetching the length of the delayedWithdrawals array of a specific user\"},\"withdrawalDelayBlocks()\":{\"notice\":\"Delay enforced by this contract for completing any delayedWithdrawal. Measured in blocks, and adjustable by this contract's owner, up to a maximum of `MAX_WITHDRAWAL_DELAY_BLOCKS`. Minimum value is 0 (i.e. no delay enforced).\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IDelayedWithdrawalRouter.sol\":\"IDelayedWithdrawalRouter\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-contracts/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eigenlayer-contracts/src/contracts/interfaces/IDelayedWithdrawalRouter.sol\":{\"keccak256\":\"0x85e4ebbcbebd5f73f0aef9fb969bd92e4678a86fe05578e8faed88e16c7f22f6\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://0cc6e7165bcf2e25fd656db688a20f2d0b36cbb2e77007b02104217fb0043bf9\",\"dweb:/ipfs/QmQXNrSPgjfqoRNKt3rrtL2Lv2UZHHhgVhj7Ey14jerjLa\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.12+commit.f00d7308"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "DelayedWithdrawalCreated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountClaimed",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "delayedWithdrawalsCompleted",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "DelayedWithdrawalsClaimed",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "previousValue",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "newValue",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "WithdrawalDelayBlocksSet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "canClaimDelayedWithdrawal",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "maxNumberOfWithdrawalsToClaim",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "claimDelayedWithdrawals"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxNumberOfWithdrawalsToClaim",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "claimDelayedWithdrawals"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "podOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "createDelayedWithdrawal"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getClaimableUserDelayedWithdrawals",
+          "outputs": [
+            {
+              "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "amount",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "blockCreated",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getUserDelayedWithdrawals",
+          "outputs": [
+            {
+              "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "amount",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "blockCreated",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newValue",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setWithdrawalDelayBlocks"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "userDelayedWithdrawalByIndex",
+          "outputs": [
+            {
+              "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "amount",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "blockCreated",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "userWithdrawals",
+          "outputs": [
+            {
+              "internalType": "struct IDelayedWithdrawalRouter.UserDelayedWithdrawals",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "delayedWithdrawalsCompleted",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]",
+                  "name": "delayedWithdrawals",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "uint224",
+                      "name": "amount",
+                      "type": "uint224"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "blockCreated",
+                      "type": "uint32"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "userWithdrawalsLength",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "withdrawalDelayBlocks",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "claimDelayedWithdrawals(address,uint256)": {
+            "params": {
+              "maxNumberOfWithdrawalsToClaim": "Used to limit the maximum number of withdrawals to loop through claiming.",
+              "recipient": "The address to claim delayedWithdrawals for."
+            }
+          },
+          "claimDelayedWithdrawals(uint256)": {
+            "params": {
+              "maxNumberOfWithdrawalsToClaim": "Used to limit the maximum number of withdrawals to loop through claiming."
+            }
+          },
+          "createDelayedWithdrawal(address,address)": {
+            "details": "Only callable by the `podOwner`'s EigenPod contract."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "canClaimDelayedWithdrawal(address,uint256)": {
+            "notice": "Convenience function for checking whether or not the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array is currently claimable"
+          },
+          "claimDelayedWithdrawals(address,uint256)": {
+            "notice": "Called in order to withdraw delayed withdrawals made to the `recipient` that have passed the `withdrawalDelayBlocks` period."
+          },
+          "claimDelayedWithdrawals(uint256)": {
+            "notice": "Called in order to withdraw delayed withdrawals made to the caller that have passed the `withdrawalDelayBlocks` period."
+          },
+          "createDelayedWithdrawal(address,address)": {
+            "notice": "Creates an delayed withdrawal for `msg.value` to the `recipient`."
+          },
+          "getClaimableUserDelayedWithdrawals(address)": {
+            "notice": "Getter function to get all delayedWithdrawals that are currently claimable by the `user`"
+          },
+          "getUserDelayedWithdrawals(address)": {
+            "notice": "Getter function to get all delayedWithdrawals of the `user`"
+          },
+          "setWithdrawalDelayBlocks(uint256)": {
+            "notice": "Owner-only function for modifying the value of the `withdrawalDelayBlocks` variable."
+          },
+          "userDelayedWithdrawalByIndex(address,uint256)": {
+            "notice": "Getter function for fetching the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array"
+          },
+          "userWithdrawals(address)": {
+            "notice": "Getter function for the mapping `_userWithdrawals`"
+          },
+          "userWithdrawalsLength(address)": {
+            "notice": "Getter function for fetching the length of the delayedWithdrawals array of a specific user"
+          },
+          "withdrawalDelayBlocks()": {
+            "notice": "Delay enforced by this contract for completing any delayedWithdrawal. Measured in blocks, and adjustable by this contract's owner, up to a maximum of `MAX_WITHDRAWAL_DELAY_BLOCKS`. Minimum value is 0 (i.e. no delay enforced)."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "ds-test/=lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-contracts/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-contracts/src/contracts/interfaces/IDelayedWithdrawalRouter.sol": "IDelayedWithdrawalRouter"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-contracts/src/contracts/interfaces/IDelayedWithdrawalRouter.sol": {
+        "keccak256": "0x85e4ebbcbebd5f73f0aef9fb969bd92e4678a86fe05578e8faed88e16c7f22f6",
+        "urls": [
+          "bzz-raw://0cc6e7165bcf2e25fd656db688a20f2d0b36cbb2e77007b02104217fb0043bf9",
+          "dweb:/ipfs/QmQXNrSPgjfqoRNKt3rrtL2Lv2UZHHhgVhj7Ey14jerjLa"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eigenlayer-contracts/src/contracts/interfaces/IDelayedWithdrawalRouter.sol",
+    "id": 6597,
+    "exportedSymbols": {
+      "IDelayedWithdrawalRouter": [
+        6596
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:3828:10",
+    "nodes": [
+      {
+        "id": 6464,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:10",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ]
+      },
+      {
+        "id": 6596,
+        "nodeType": "ContractDefinition",
+        "src": "63:3801:10",
+        "nodes": [
+          {
+            "id": 6469,
+            "nodeType": "StructDefinition",
+            "src": "163:85:10",
+            "nodes": [],
+            "canonicalName": "IDelayedWithdrawalRouter.DelayedWithdrawal",
+            "members": [
+              {
+                "constant": false,
+                "id": 6466,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "206:6:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 6469,
+                "src": "198:14:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint224",
+                  "typeString": "uint224"
+                },
+                "typeName": {
+                  "id": 6465,
+                  "name": "uint224",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "198:7:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint224",
+                    "typeString": "uint224"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6468,
+                "mutability": "mutable",
+                "name": "blockCreated",
+                "nameLocation": "229:12:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 6469,
+                "src": "222:19:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 6467,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "222:6:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "DelayedWithdrawal",
+            "nameLocation": "170:17:10",
+            "scope": 6596,
+            "visibility": "public"
+          },
+          {
+            "id": 6476,
+            "nodeType": "StructDefinition",
+            "src": "320:130:10",
+            "nodes": [],
+            "canonicalName": "IDelayedWithdrawalRouter.UserDelayedWithdrawals",
+            "members": [
+              {
+                "constant": false,
+                "id": 6471,
+                "mutability": "mutable",
+                "name": "delayedWithdrawalsCompleted",
+                "nameLocation": "368:27:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 6476,
+                "src": "360:35:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6470,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "360:7:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6475,
+                "mutability": "mutable",
+                "name": "delayedWithdrawals",
+                "nameLocation": "425:18:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 6476,
+                "src": "405:38:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_storage_$dyn_storage_ptr",
+                  "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 6473,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6472,
+                      "name": "DelayedWithdrawal",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6469,
+                      "src": "405:17:10"
+                    },
+                    "referencedDeclaration": 6469,
+                    "src": "405:17:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DelayedWithdrawal_$6469_storage_ptr",
+                      "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal"
+                    }
+                  },
+                  "id": 6474,
+                  "nodeType": "ArrayTypeName",
+                  "src": "405:19:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_storage_$dyn_storage_ptr",
+                    "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "UserDelayedWithdrawals",
+            "nameLocation": "327:22:10",
+            "scope": 6596,
+            "visibility": "public"
+          },
+          {
+            "id": 6487,
+            "nodeType": "EventDefinition",
+            "src": "510:99:10",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 6477,
+              "nodeType": "StructuredDocumentation",
+              "src": "457:48:10",
+              "text": "@notice event for delayedWithdrawal creation"
+            },
+            "name": "DelayedWithdrawalCreated",
+            "nameLocation": "516:24:10",
+            "parameters": {
+              "id": 6486,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6479,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "podOwner",
+                  "nameLocation": "549:8:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6487,
+                  "src": "541:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6478,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "541:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6481,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "567:9:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6487,
+                  "src": "559:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6480,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6483,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "586:6:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6487,
+                  "src": "578:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6482,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "578:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6485,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "602:5:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6487,
+                  "src": "594:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6484,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "594:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "540:68:10"
+            }
+          },
+          {
+            "id": 6496,
+            "nodeType": "EventDefinition",
+            "src": "676:111:10",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 6488,
+              "nodeType": "StructuredDocumentation",
+              "src": "615:56:10",
+              "text": "@notice event for the claiming of delayedWithdrawals"
+            },
+            "name": "DelayedWithdrawalsClaimed",
+            "nameLocation": "682:25:10",
+            "parameters": {
+              "id": 6495,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6490,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "716:9:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6496,
+                  "src": "708:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6489,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "708:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6492,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountClaimed",
+                  "nameLocation": "735:13:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6496,
+                  "src": "727:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6491,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "727:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6494,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "delayedWithdrawalsCompleted",
+                  "nameLocation": "758:27:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6496,
+                  "src": "750:35:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6493,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "707:79:10"
+            }
+          },
+          {
+            "id": 6503,
+            "nodeType": "EventDefinition",
+            "src": "907:72:10",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 6497,
+              "nodeType": "StructuredDocumentation",
+              "src": "793:109:10",
+              "text": "@notice Emitted when the `withdrawalDelayBlocks` variable is modified from `previousValue` to `newValue`."
+            },
+            "name": "WithdrawalDelayBlocksSet",
+            "nameLocation": "913:24:10",
+            "parameters": {
+              "id": 6502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6499,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "previousValue",
+                  "nameLocation": "946:13:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6503,
+                  "src": "938:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6498,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "938:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6501,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newValue",
+                  "nameLocation": "969:8:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6503,
+                  "src": "961:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6500,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "961:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "937:41:10"
+            }
+          },
+          {
+            "id": 6511,
+            "nodeType": "FunctionDefinition",
+            "src": "1147:87:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6504,
+              "nodeType": "StructuredDocumentation",
+              "src": "985:157:10",
+              "text": " @notice Creates an delayed withdrawal for `msg.value` to the `recipient`.\n @dev Only callable by the `podOwner`'s EigenPod contract."
+            },
+            "functionSelector": "c0db354c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createDelayedWithdrawal",
+            "nameLocation": "1156:23:10",
+            "parameters": {
+              "id": 6509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6506,
+                  "mutability": "mutable",
+                  "name": "podOwner",
+                  "nameLocation": "1188:8:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6511,
+                  "src": "1180:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6505,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1180:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6508,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "1206:9:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6511,
+                  "src": "1198:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6507,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1198:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1179:37:10"
+            },
+            "returnParameters": {
+              "id": 6510,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1233:0:10"
+            },
+            "scope": 6596,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6519,
+            "nodeType": "FunctionDefinition",
+            "src": "1583:100:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6512,
+              "nodeType": "StructuredDocumentation",
+              "src": "1240:338:10",
+              "text": " @notice Called in order to withdraw delayed withdrawals made to the `recipient` that have passed the `withdrawalDelayBlocks` period.\n @param recipient The address to claim delayedWithdrawals for.\n @param maxNumberOfWithdrawalsToClaim Used to limit the maximum number of withdrawals to loop through claiming."
+            },
+            "functionSelector": "e5db06c0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimDelayedWithdrawals",
+            "nameLocation": "1592:23:10",
+            "parameters": {
+              "id": 6517,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6514,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "1624:9:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6519,
+                  "src": "1616:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6513,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1616:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6516,
+                  "mutability": "mutable",
+                  "name": "maxNumberOfWithdrawalsToClaim",
+                  "nameLocation": "1643:29:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6519,
+                  "src": "1635:37:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6515,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1635:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1615:58:10"
+            },
+            "returnParameters": {
+              "id": 6518,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1682:0:10"
+            },
+            "scope": 6596,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6525,
+            "nodeType": "FunctionDefinition",
+            "src": "1958:81:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6520,
+              "nodeType": "StructuredDocumentation",
+              "src": "1689:264:10",
+              "text": " @notice Called in order to withdraw delayed withdrawals made to the caller that have passed the `withdrawalDelayBlocks` period.\n @param maxNumberOfWithdrawalsToClaim Used to limit the maximum number of withdrawals to loop through claiming."
+            },
+            "functionSelector": "d44e1b76",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimDelayedWithdrawals",
+            "nameLocation": "1967:23:10",
+            "parameters": {
+              "id": 6523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6522,
+                  "mutability": "mutable",
+                  "name": "maxNumberOfWithdrawalsToClaim",
+                  "nameLocation": "1999:29:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6525,
+                  "src": "1991:37:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6521,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1991:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1990:39:10"
+            },
+            "returnParameters": {
+              "id": 6524,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2038:0:10"
+            },
+            "scope": 6596,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6531,
+            "nodeType": "FunctionDefinition",
+            "src": "2146:61:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6526,
+              "nodeType": "StructuredDocumentation",
+              "src": "2045:96:10",
+              "text": "@notice Owner-only function for modifying the value of the `withdrawalDelayBlocks` variable."
+            },
+            "functionSelector": "4d50f9a4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setWithdrawalDelayBlocks",
+            "nameLocation": "2155:24:10",
+            "parameters": {
+              "id": 6529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6528,
+                  "mutability": "mutable",
+                  "name": "newValue",
+                  "nameLocation": "2188:8:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6531,
+                  "src": "2180:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6527,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2180:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2179:18:10"
+            },
+            "returnParameters": {
+              "id": 6530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2206:0:10"
+            },
+            "scope": 6596,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6540,
+            "nodeType": "FunctionDefinition",
+            "src": "2280:93:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6532,
+              "nodeType": "StructuredDocumentation",
+              "src": "2213:62:10",
+              "text": "@notice Getter function for the mapping `_userWithdrawals`"
+            },
+            "functionSelector": "ecb7cb1b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userWithdrawals",
+            "nameLocation": "2289:15:10",
+            "parameters": {
+              "id": 6535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6534,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "2313:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "2305:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6533,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2305:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2304:14:10"
+            },
+            "returnParameters": {
+              "id": 6539,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6538,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6540,
+                  "src": "2342:29:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserDelayedWithdrawals_$6476_memory_ptr",
+                    "typeString": "struct IDelayedWithdrawalRouter.UserDelayedWithdrawals"
+                  },
+                  "typeName": {
+                    "id": 6537,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6536,
+                      "name": "UserDelayedWithdrawals",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6476,
+                      "src": "2342:22:10"
+                    },
+                    "referencedDeclaration": 6476,
+                    "src": "2342:22:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserDelayedWithdrawals_$6476_storage_ptr",
+                      "typeString": "struct IDelayedWithdrawalRouter.UserDelayedWithdrawals"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2341:31:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6550,
+            "nodeType": "FunctionDefinition",
+            "src": "2455:100:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6541,
+              "nodeType": "StructuredDocumentation",
+              "src": "2379:71:10",
+              "text": "@notice Getter function to get all delayedWithdrawals of the `user`"
+            },
+            "functionSelector": "3e1de008",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserDelayedWithdrawals",
+            "nameLocation": "2464:25:10",
+            "parameters": {
+              "id": 6544,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6543,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "2498:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6550,
+                  "src": "2490:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6542,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2490:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2489:14:10"
+            },
+            "returnParameters": {
+              "id": 6549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6548,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6550,
+                  "src": "2527:26:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6546,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 6545,
+                        "name": "DelayedWithdrawal",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 6469,
+                        "src": "2527:17:10"
+                      },
+                      "referencedDeclaration": 6469,
+                      "src": "2527:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DelayedWithdrawal_$6469_storage_ptr",
+                        "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal"
+                      }
+                    },
+                    "id": 6547,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2527:19:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_storage_$dyn_storage_ptr",
+                      "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2526:28:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6560,
+            "nodeType": "FunctionDefinition",
+            "src": "2666:109:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6551,
+              "nodeType": "StructuredDocumentation",
+              "src": "2561:100:10",
+              "text": "@notice Getter function to get all delayedWithdrawals that are currently claimable by the `user`"
+            },
+            "functionSelector": "1f39d87f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClaimableUserDelayedWithdrawals",
+            "nameLocation": "2675:34:10",
+            "parameters": {
+              "id": 6554,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6553,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "2718:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6560,
+                  "src": "2710:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6552,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2710:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2709:14:10"
+            },
+            "returnParameters": {
+              "id": 6559,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6558,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6560,
+                  "src": "2747:26:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6556,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 6555,
+                        "name": "DelayedWithdrawal",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 6469,
+                        "src": "2747:17:10"
+                      },
+                      "referencedDeclaration": 6469,
+                      "src": "2747:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DelayedWithdrawal_$6469_storage_ptr",
+                        "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal"
+                      }
+                    },
+                    "id": 6557,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2747:19:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_DelayedWithdrawal_$6469_storage_$dyn_storage_ptr",
+                      "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2746:28:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6571,
+            "nodeType": "FunctionDefinition",
+            "src": "2930:116:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6561,
+              "nodeType": "StructuredDocumentation",
+              "src": "2781:144:10",
+              "text": "@notice Getter function for fetching the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array"
+            },
+            "functionSelector": "85594e58",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userDelayedWithdrawalByIndex",
+            "nameLocation": "2939:28:10",
+            "parameters": {
+              "id": 6566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6563,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "2976:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6571,
+                  "src": "2968:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6562,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2968:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6565,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "2990:5:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6571,
+                  "src": "2982:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6564,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2982:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2967:29:10"
+            },
+            "returnParameters": {
+              "id": 6570,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6569,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6571,
+                  "src": "3020:24:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DelayedWithdrawal_$6469_memory_ptr",
+                    "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal"
+                  },
+                  "typeName": {
+                    "id": 6568,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6567,
+                      "name": "DelayedWithdrawal",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6469,
+                      "src": "3020:17:10"
+                    },
+                    "referencedDeclaration": 6469,
+                    "src": "3020:17:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DelayedWithdrawal_$6469_storage_ptr",
+                      "typeString": "struct IDelayedWithdrawalRouter.DelayedWithdrawal"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3019:26:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6579,
+            "nodeType": "FunctionDefinition",
+            "src": "3159:77:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6572,
+              "nodeType": "StructuredDocumentation",
+              "src": "3052:102:10",
+              "text": "@notice Getter function for fetching the length of the delayedWithdrawals array of a specific user"
+            },
+            "functionSelector": "e4f4f887",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userWithdrawalsLength",
+            "nameLocation": "3168:21:10",
+            "parameters": {
+              "id": 6575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6574,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "3198:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6579,
+                  "src": "3190:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6573,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3190:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3189:14:10"
+            },
+            "returnParameters": {
+              "id": 6578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6577,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6579,
+                  "src": "3227:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6576,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3227:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3226:9:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6589,
+            "nodeType": "FunctionDefinition",
+            "src": "3434:93:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6580,
+              "nodeType": "StructuredDocumentation",
+              "src": "3242:187:10",
+              "text": "@notice Convenience function for checking whether or not the delayedWithdrawal at the `index`th entry from the `_userWithdrawals[user].delayedWithdrawals` array is currently claimable"
+            },
+            "functionSelector": "75608896",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canClaimDelayedWithdrawal",
+            "nameLocation": "3443:25:10",
+            "parameters": {
+              "id": 6585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6582,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "3477:4:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "3469:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6581,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3469:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6584,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "3491:5:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "3483:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6583,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3483:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3468:29:10"
+            },
+            "returnParameters": {
+              "id": 6588,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6587,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "3521:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6586,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3521:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3520:6:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 6595,
+            "nodeType": "FunctionDefinition",
+            "src": "3797:65:10",
+            "nodes": [],
+            "documentation": {
+              "id": 6590,
+              "nodeType": "StructuredDocumentation",
+              "src": "3533:259:10",
+              "text": " @notice Delay enforced by this contract for completing any delayedWithdrawal. Measured in blocks, and adjustable by this contract's owner,\n up to a maximum of `MAX_WITHDRAWAL_DELAY_BLOCKS`. Minimum value is 0 (i.e. no delay enforced)."
+            },
+            "functionSelector": "50f73e7c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawalDelayBlocks",
+            "nameLocation": "3806:21:10",
+            "parameters": {
+              "id": 6591,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3827:2:10"
+            },
+            "returnParameters": {
+              "id": 6594,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6593,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6595,
+                  "src": "3853:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6592,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3853:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3852:9:10"
+            },
+            "scope": 6596,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IDelayedWithdrawalRouter",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          6596
+        ],
+        "name": "IDelayedWithdrawalRouter",
+        "nameLocation": "73:24:10",
+        "scope": 6597,
+        "usedErrors": []
+      }
+    ],
+    "license": "BUSL-1.1"
+  },
+  "id": 10
+}
