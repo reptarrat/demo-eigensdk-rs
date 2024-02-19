@@ -1,0 +1,3 @@
+[submodule "crates/contracts/lib/eigenlayer-middleware.git"]
+	path = crates/contracts/lib/eigenlayer-middleware.git
+	url = https://github.com/Layr-Labs/eigenlayer-middleware.git
