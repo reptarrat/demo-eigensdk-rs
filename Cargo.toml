@@ -37,7 +37,8 @@ bls-signatures = { version = "0.15.0" }
 # eth
 alloy-primitives = { version = "0.6", default-features = false }
 alloy-json-abi = { version = "0.6", default-features = false }
-alloy-rpc-client = { git = "https://github.com/alloy-rs/alloy" }
+alloy-rpc-client = { git = "https://github.com/alloy-rs/alloy", features = ["async"] }
+ethers-solc = { git = "https://github.com/gakonst/ethers-rs" }
 
 # serde
 serde = { version = "1.0", features = ["derive"], default-features = false }

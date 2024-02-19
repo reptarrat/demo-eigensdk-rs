@@ -9,5 +9,5 @@ workspace = true
 
 [dependencies]
 alloy-primitives.workspace = true
-alloy-rpc-client.workspace = true
+# alloy-rpc-client.workspace = true
 log.workspace = true

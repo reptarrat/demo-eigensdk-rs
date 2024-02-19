@@ -10,3 +10,6 @@ workspace = true
 [dependencies]
 alloy-json-abi.workspace = true
 alloy-primitives.workspace = true
+
+[build-dependencies]
+ethers-solc.workspace = true
