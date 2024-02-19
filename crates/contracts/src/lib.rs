@@ -1,1 +1,0 @@
-//! Bindings for contract ABI's
