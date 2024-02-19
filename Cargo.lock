@@ -471,6 +471,8 @@ dependencies = [
  "alloy-json-abi",
  "alloy-primitives",
  "ethers-solc",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
