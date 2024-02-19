@@ -4,10 +4,12 @@
 fn main() {
 	println!("cargo:rerun-if-changed=lib/");
 
-	std::process::Command("forge")
+	std::process::Command::new("forge")
 		.arg("bind")
 		.arg("--bindings-path")
-		.arg("lib/eigenlayer-middleware")
+		.arg("../../lib/eigenlayer-middleware")
 		.arg("--crate-name")
 		.arg("eigenlayer-middleware")
+		.output()
+		.expect("failed to run forge build");
 }
