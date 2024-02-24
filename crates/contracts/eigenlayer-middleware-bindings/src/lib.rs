@@ -119,8 +119,6 @@ pub mod stake_registry;
 pub mod stake_registry_harness;
 pub mod stake_registry_mock;
 pub mod stake_registry_storage;
-pub mod std_invariant;
-pub mod std_style;
 pub mod storage_slot;
 pub mod strategy_base;
 pub mod strategy_base_tvl_limits;

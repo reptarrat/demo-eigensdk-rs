@@ -1,7 +1,7 @@
 [workspace]
 members = [
 	"crates/chainio",
-	"crates/contracts",
+	"crates/contracts/eigenlayer-middleware-bindings",
 	"crates/crypto/bls",
 	"crates/crypto/bn254",
 	"crates/crypto/ecdsa",
