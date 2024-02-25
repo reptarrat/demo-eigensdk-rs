@@ -15,3 +15,4 @@ ethers = "2"
 eigenlayer-middleware-bindings = { path = "../contracts/eigenlayer-middleware-bindings"}
 thiserror.workspace = true
 bitvec.workspace = true
+bls12_381.workspace = true

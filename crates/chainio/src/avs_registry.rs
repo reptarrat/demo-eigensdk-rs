@@ -1,18 +1,19 @@
 //! Client for AVS Registry interactions
 
-use crate::QuorumNum;
-use crate::MAX_NUMBER_OF_QUORUMS;
-use crate::{OperatorId, Result};
+use crate::{OperatorId, OperatorPubkeys, QuorumNum, Result, MAX_NUMBER_OF_QUORUMS};
 use bitvec::order::Lsb0;
 use bitvec::vec::BitVec;
 use eigenlayer_middleware_bindings::{
-    operator_state_retriever::{Operator, OperatorStateRetriever},
+    bls_apk_registry::BLSApkRegistry,
+    operator_state_retriever::{CheckSignaturesIndices, Operator, OperatorStateRetriever},
     registry_coordinator::RegistryCoordinator,
+    shared_types,
     stake_registry::StakeRegistry,
 };
-use ethers::core::types::U256;
-use ethers::core::types::{Address, Bytes};
-use ethers::middleware::Middleware;
+use ethers::{
+    core::types::{Address, Bytes, Filter, H160, H256, U256},
+    providers::{Http, Middleware, Provider},
+};
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -22,12 +23,12 @@ use std::sync::Arc;
 
 // Implemented methods for parity with go-sdk
 // - [ ] GetQuorumCount
-// - [x] GetOperatorsStakeInQuorumsAtCurrentBlock
-// - [ ] GetOperatorsStakeInQuorumsAtBlock
+// - [] GetOperatorsStakeInQuorumsAtCurrentBlock
+// - [x] GetOperatorsStakeInQuorumsAtBlock
 // - [] GetOperatorAddrsInQuorumsAtCurrentBlock
 // 		- [x] instead did GetOperatorAddrsInQuorumsAtBlock
-// - [x] GetOperator**s**StakeInQuorumsOfOperatorAtBlock
-// - [ ] GetOperator**s**StakeInQuorumsOfOperatorAtCurrentBlock
+// - [x] GetOperatorsStakeInQuorumsOfOperatorAtBlock
+// - [ ] GetOperatorsStakeInQuorumsOfOperatorAtCurrentBlock
 // - [x] GetOperatorStakeInQuorumsOfOperatorAtCurrentBlock
 // - [x] GetOperatorStakeInQuorumsOfOperatorAtCurrentBlock
 // - [ ] GetCheckSignaturesIndices
@@ -48,6 +49,8 @@ pub struct AvsRegistry<M> {
     /// Registry coordinator contract
     registry_coordinator: RegistryCoordinator<M>,
     stake_registry: StakeRegistry<M>,
+    bls_apk_registry: BLSApkRegistry<M>,
+    middleware: Arc<M>,
 }
 
 impl<M: Middleware + 'static> AvsRegistry<M> {
@@ -57,6 +60,7 @@ impl<M: Middleware + 'static> AvsRegistry<M> {
         operator_state_retriever_addr: Address,
         registry_coordinator_addr: Address,
         stake_registry_addr: Address,
+        bls_apk_registry_addr: Address,
     ) -> Self {
         Self {
             operator_stake_retriever: OperatorStateRetriever::new(
@@ -69,6 +73,8 @@ impl<M: Middleware + 'static> AvsRegistry<M> {
                 middleware.clone(),
             ),
             stake_registry: StakeRegistry::new(stake_registry_addr, middleware.clone()),
+            bls_apk_registry: BLSApkRegistry::new(bls_apk_registry_addr, middleware.clone()),
+            middleware,
         }
     }
 
@@ -153,6 +159,79 @@ impl<M: Middleware + 'static> AvsRegistry<M> {
         }
 
         Ok(quorum_stakes)
+    }
+
+    /// See OperatorStateRetriever.getCheckSignaturesIndices
+    pub async fn get_check_signatures_indices(
+        &self,
+        reference_block_number: u32,
+        quorum_numbers: ethers::types::Bytes,
+        non_signer_operator_ids: Vec<OperatorId>,
+    ) -> Result<CheckSignaturesIndices, M> {
+        let indices = self
+            .operator_stake_retriever
+            .get_check_signatures_indices(
+                self.registry_coordinator_addr,
+                reference_block_number,
+                quorum_numbers,
+                non_signer_operator_ids,
+            )
+            .await?;
+
+        Ok(indices)
+    }
+
+    /// See RegistryCoordinator.getOperatorId
+    pub async fn get_operator_id(&self, operator_addr: Address) -> Result<OperatorId, M> {
+        self.registry_coordinator
+            .get_operator_id(operator_addr)
+            .await
+            .map_err(Into::into)
+    }
+
+    /// See RegistryCoordinator.getOperatorFromId
+    pub async fn get_operator_from_id(&self, operator_id: OperatorId) -> Result<Address, M> {
+        self.registry_coordinator
+            .get_operator_from_id(operator_id)
+            .await
+            .map_err(Into::into)
+    }
+
+    pub async fn is_operator_registered(&self, operator_addr: Address) -> Result<bool, M> {
+        let operatorStatus = self
+            .registry_coordinator
+            .get_operator_status(operator_addr)
+            .await?;
+
+        // 0 = NEVER_REGISTERED, 1 = REGISTERED, 2 = DEREGISTERED
+        Ok(operatorStatus == 1)
+    }
+
+    pub async fn query_existing_registered_operator_pub_keys(
+        &self,
+        from_block: u32,
+        to_block: u32,
+    ) -> Result<Vec<OperatorPubkeys>, M> {
+        let logs_with_meta = self
+            .bls_apk_registry
+            .new_pubkey_registration_filter()
+            .from_block(from_block)
+            .to_block(to_block)
+            // TODO: we could also do stream (polling) or subscribe for pub/sub clients
+            .query_with_meta()
+            .await?;
+
+        // TODO: clean up
+        let mut out = vec![];
+        for (log, meta) in logs_with_meta {
+            out.push(OperatorPubkeys {
+                pubkey_g1: log.pubkey_g1,
+                pubkey_g2: log.pubkey_g2,
+                address: log.operator,
+            });
+        }
+
+        Ok(out)
     }
 }
 
