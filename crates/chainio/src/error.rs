@@ -13,9 +13,3 @@ pub enum Error<M: Middleware> {
     #[error(transparent)]
     ContractError(#[from] ContractError<M>),
 }
-
-// impl<M: Middleware> From<ContractError<M>> for Error<M> {
-// 	fn from(e: ContractError<M>) -> Self {
-// 		Error::ContractError { e }
-// 	}
-// }
