@@ -14,3 +14,4 @@ log.workspace = true
 ethers = "2"
 eigenlayer-middleware-bindings = { path = "../contracts/eigenlayer-middleware-bindings"}
 thiserror.workspace = true
+bitvec.workspace = true
