@@ -734,6 +734,7 @@ dependencies = [
  "eigenlayer-middleware-bindings",
  "ethers",
  "log",
+ "thiserror",
 ]
 
 [[package]]

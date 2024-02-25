@@ -13,3 +13,4 @@ alloy-rpc-client.workspace = true
 log.workspace = true
 ethers = "2"
 eigenlayer-middleware-bindings = { path = "../contracts/eigenlayer-middleware-bindings"}
+thiserror.workspace = true

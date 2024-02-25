@@ -53,3 +53,4 @@ log = { version = "0.4", default-features = false }
 tracing = { version = "0.1.0", default-features = false }
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"], default-features = false }
 tokio = "1.33"
+thiserror = "1"
