@@ -3,6 +3,7 @@
 # Ensure all submodules are present
 git submodule update --init --recursive
 
+# hack to never cache. TODO: look into --no-cache flag
 rm -rf /tmp/forge-cache
 
 # Use forge to generate bindings

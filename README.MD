@@ -187,7 +187,26 @@ Different AVSs may have different requirements for task queues or pools.
 
 ### Operator rotation
 
+## Development
 
+Format:
 
+```sh
+cargo +nightly fmt
+```
+
+Test:
+
+```sh
+cargo test
+```
+
+Regen contract bindings:
+
+```sh
+./bind.sh
+```
+
+Note that at the time of writing, the released version of forge has the following issue <https://github.com/foundry-rs/foundry/issues/7181>, so the current bindings where generated with forge built from commit 05158b38792455c9365af188b9a525a0e93eb9d1
 
 
